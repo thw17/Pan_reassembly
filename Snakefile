@@ -20,16 +20,16 @@ rule all:
 	input:
 		expand("reference/{assembly}.fasta.fai", assembly=["pantro4"]),
 		expand("adapters/{sample}.adapters.fa", sample=config["sras"]),
-		"multiqc/multiqc_report"
+		"multiqc/multiqc_report.html"
 
 rule prepare_reference:
 	input:
 		ref = lambda wildcards: config["genome_paths"][wildcards.assembly]
 	output:
-		new = "new_reference/{assembly}.fasta",
-		fai = "new_reference/{assembly}.fasta.fai",
-		amb = "new_reference/{assembly}.fasta.amb",
-		dict = "new_reference/{assembly}.dict"
+		new = "reference/{assembly}.fasta",
+		fai = "reference/{assembly}.fasta.fai",
+		amb = "reference/{assembly}.fasta.amb",
+		dict = "reference/{assembly}.dict"
 	params:
 		samtools = samtools_path,
 		bwa = bwa_path
