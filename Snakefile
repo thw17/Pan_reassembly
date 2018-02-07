@@ -106,7 +106,7 @@ rule fastqc_analysis_trimmed:
 	shell:
 		"{params.fastqc} -o trimmed_fastqc {input.fq1} {input.fq2}"
 
-rule multiqc_analysis:
+rule multiqc_analysis_trimmed:
 	input:
 		expand(
 			"trimmed_fastqc/{sample}_trimmed_{read}_fastqc.html",

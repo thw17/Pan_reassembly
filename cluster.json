@@ -7,5 +7,10 @@
 	"adapter_discovery" :
 	{
 		"n": 1
+	},
+
+	"trim_adapters_paired_bbduk" :
+	{
+		"n": 1
 	}
 }
