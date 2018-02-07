@@ -1,4 +1,4 @@
-{
+,{
 	"genome_paths": {
 		"pantro4": "reference/panTro4.fa"
 	},
@@ -81,862 +81,862 @@
 	},
 
 	"SRR726412":{
-		"fq1": ["SRR726412_1.fastq.gz"],
-		"fq2": ["SRR726412_2.fastq.gz"],
-		"ID": ["SRR726412"],
-		"SM": ["Nakuu"],
-		"LB": ["237583"],
-		"PU": ["HWI-ST459_71.5"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726412_1.fastq.gz",
+		"fq2": "SRR726412_2.fastq.gz",
+		"ID": "SRR726412",
+		"SM": "Nakuu",
+		"LB": "237583",
+		"PU": "HWI-ST459_71.5",
+		"PL": "Illumina"
 	},
 
 	"SRR726413":{
-		"fq1": ["SRR726413_1.fastq.gz"],
-		"fq2": ["SRR726413_2.fastq.gz"],
-		"ID": ["SRR726413"],
-		"SM": ["Nakuu"],
-		"LB": ["237583"],
-		"PU": ["HWI-ST537_58.5"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726413_1.fastq.gz",
+		"fq2": "SRR726413_2.fastq.gz",
+		"ID": "SRR726413",
+		"SM": "Nakuu",
+		"LB": "237583",
+		"PU": "HWI-ST537_58.5",
+		"PL": "Illumina"
 	},
 
 	"SRR726415":{
-		"fq1": ["SRR726415_1.fastq.gz"],
-		"fq2": ["SRR726415_2.fastq.gz"],
-		"ID": ["SRR726415"],
-		"SM": ["Nakuu"],
-		"LB": ["237583"],
-		"PU": ["HWI-ST539_52.5"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726415_1.fastq.gz",
+		"fq2": "SRR726415_2.fastq.gz",
+		"ID": "SRR726415",
+		"SM": "Nakuu",
+		"LB": "237583",
+		"PU": "HWI-ST539_52.5",
+		"PL": "Illumina"
 	},
 
 	"SRR726416":{
-		"fq1": ["SRR726416_1.fastq.gz"],
-		"fq2": ["SRR726416_2.fastq.gz"],
-		"ID": ["SRR726416"],
-		"SM": ["Nakuu"],
-		"LB": ["237583"],
-		"PU": ["HWI-ST537_57.5"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726416_1.fastq.gz",
+		"fq2": "SRR726416_2.fastq.gz",
+		"ID": "SRR726416",
+		"SM": "Nakuu",
+		"LB": "237583",
+		"PU": "HWI-ST537_57.5",
+		"PL": "Illumina"
 	},
 
 	"SRR726408":{
-		"fq1": ["SRR726408_1.fastq.gz"],
-		"fq2": ["SRR726408_2.fastq.gz"],
-		"ID": ["SRR726408"],
-		"SM": ["Nakuu"],
-		"LB": ["237541"],
-		"PU": [""],
-		"PL": ["Illumina"]
+		"fq1": "SRR726408_1.fastq.gz",
+		"fq2": "SRR726408_2.fastq.gz",
+		"ID": "SRR726408",
+		"SM": "Nakuu",
+		"LB": "237541",
+		"PU": "HWI-ST459_71.6",
+		"PL": "Illumina"
 	},
 
 	"SRR726409":{
-		"fq1": ["SRR726409_1.fastq.gz"],
-		"fq2": ["SRR726409_2.fastq.gz"],
-		"ID": ["SRR726409"],
-		"SM": ["Nakuu"],
-		"LB": ["237541"],
-		"PU": ["HWI-ST537_58.6"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726409_1.fastq.gz",
+		"fq2": "SRR726409_2.fastq.gz",
+		"ID": "SRR726409",
+		"SM": "Nakuu",
+		"LB": "237541",
+		"PU": "HWI-ST537_58.6",
+		"PL": "Illumina"
 	},
 
 	"SRR726410":{
-		"fq1": ["SRR726410_1.fastq.gz"],
-		"fq2": ["SRR726410_2.fastq.gz"],
-		"ID": ["SRR726410"],
-		"SM": ["Nakuu"],
-		"LB": ["237541"],
-		"PU": ["HWI-ST539_52.6"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726410_1.fastq.gz",
+		"fq2": "SRR726410_2.fastq.gz",
+		"ID": "SRR726410",
+		"SM": "Nakuu",
+		"LB": "237541",
+		"PU": "HWI-ST539_52.6",
+		"PL": "Illumina"
 	},
 
 	"SRR726411":{
-		"fq1": ["SRR726411_1.fastq.gz"],
-		"fq2": ["SRR726411_2.fastq.gz"],
-		"ID": ["SRR726411"],
-		"SM": ["Nakuu"],
-		"LB": ["237541"],
-		"PU": ["HWI-ST537_57.6"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726411_1.fastq.gz",
+		"fq2": "SRR726411_2.fastq.gz",
+		"ID": "SRR726411",
+		"SM": "Nakuu",
+		"LB": "237541",
+		"PU": "HWI-ST537_57.6",
+		"PL": "Illumina"
 	},
 
 	"SRR726404":{
-		"fq1": ["SRR726404_1.fastq.gz"],
-		"fq2": ["SRR726404_2.fastq.gz"],
-		"ID": ["SRR726404"],
-		"SM": ["Kidongo"],
-		"LB": ["237539"],
-		"PU": ["HWI-ST459_71.3"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726404_1.fastq.gz",
+		"fq2": "SRR726404_2.fastq.gz",
+		"ID": "SRR726404",
+		"SM": "Kidongo",
+		"LB": "237539",
+		"PU": "HWI-ST459_71.3",
+		"PL": "Illumina"
 	},
 
 	"SRR726405":{
-		"fq1": ["SRR726405_1.fastq.gz"],
-		"fq2": ["SRR726405_2.fastq.gz"],
-		"ID": ["SRR726405"],
-		"SM": ["Kidongo"],
-		"LB": ["237539"],
-		"PU": ["HWI-ST537_58.3"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726405_1.fastq.gz",
+		"fq2": "SRR726405_2.fastq.gz",
+		"ID": "SRR726405",
+		"SM": "Kidongo",
+		"LB": "237539",
+		"PU": "HWI-ST537_58.3",
+		"PL": "Illumina"
 	},
 
 	"SRR726406":{
-		"fq1": ["SRR726406_1.fastq.gz"],
-		"fq2": ["SRR726406_2.fastq.gz"],
-		"ID": ["SRR726406"],
-		"SM": ["Kidongo"],
-		"LB": ["237539"],
-		"PU": ["HWI-ST539_52.3"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726406_1.fastq.gz",
+		"fq2": "SRR726406_2.fastq.gz",
+		"ID": "SRR726406",
+		"SM": "Kidongo",
+		"LB": "237539",
+		"PU": "HWI-ST539_52.3",
+		"PL": "Illumina"
 	},
 
 	"SRR726407":{
-		"fq1": ["SRR726407_1.fastq.gz"],
-		"fq2": ["SRR726407_2.fastq.gz"],
-		"ID": ["SRR726407"],
-		"SM": ["Kidongo"],
-		"LB": ["237539"],
-		"PU": ["HWI-ST537_57.3"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726407_1.fastq.gz",
+		"fq2": "SRR726407_2.fastq.gz",
+		"ID": "SRR726407",
+		"SM": "Kidongo",
+		"LB": "237539",
+		"PU": "HWI-ST537_57.3",
+		"PL": "Illumina"
 	},
 
 	"SRR726360":{
-		"fq1": ["SRR726360_1.fastq.gz"],
-		"fq2": ["SRR726360_2.fastq.gz"],
-		"ID": ["SRR726360"],
-		"SM": ["Kidongo"],
-		"LB": ["237527"],
-		"PU": ["HWI-ST459_71.4"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726360_1.fastq.gz",
+		"fq2": "SRR726360_2.fastq.gz",
+		"ID": "SRR726360",
+		"SM": "Kidongo",
+		"LB": "237527",
+		"PU": "HWI-ST459_71.4",
+		"PL": "Illumina"
 	},
 
 	"SRR726381":{
-		"fq1": ["SRR726381_1.fastq.gz"],
-		"fq2": ["SRR726381_2.fastq.gz"],
-		"ID": ["SRR726381"],
-		"SM": ["Kidongo"],
-		"LB": ["237527"],
-		"PU": ["HWI-ST537_58.4"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726381_1.fastq.gz",
+		"fq2": "SRR726381_2.fastq.gz",
+		"ID": "SRR726381",
+		"SM": "Kidongo",
+		"LB": "237527",
+		"PU": "HWI-ST537_58.4",
+		"PL": "Illumina"
 	},
 
 	"SRR726395":{
-		"fq1": ["SRR726395_1.fastq.gz"],
-		"fq2": ["SRR726395_2.fastq.gz"],
-		"ID": ["SRR726395"],
-		"SM": ["Kidongo"],
-		"LB": ["237527"],
-		"PU": ["HWI-ST539_52.4"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726395_1.fastq.gz",
+		"fq2": "SRR726395_2.fastq.gz",
+		"ID": "SRR726395",
+		"SM": "Kidongo",
+		"LB": "237527",
+		"PU": "HWI-ST539_52.4",
+		"PL": "Illumina"
 	},
 
 	"SRR726402":{
-		"fq1": ["SRR726402_1.fastq.gz"],
-		"fq2": ["SRR726402_2.fastq.gz"],
-		"ID": ["SRR726402"],
-		"SM": ["Kidongo"],
-		"LB": ["237527"],
-		"PU": ["HWI-ST537_57.4"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726402_1.fastq.gz",
+		"fq2": "SRR726402_2.fastq.gz",
+		"ID": "SRR726402",
+		"SM": "Kidongo",
+		"LB": "237527",
+		"PU": "HWI-ST537_57.4",
+		"PL": "Illumina"
 	},
 
 	"SRR726356":{
-		"fq1": ["SRR726356_1.fastq.gz"],
-		"fq2": ["SRR726356_2.fastq.gz"],
-		"ID": ["SRR726356"],
-		"SM": ["Bwamble"],
-		"LB": ["237526"],
-		"PU": ["HWI-ST459_71.1"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726356_1.fastq.gz",
+		"fq2": "SRR726356_2.fastq.gz",
+		"ID": "SRR726356",
+		"SM": "Bwamble",
+		"LB": "237526",
+		"PU": "HWI-ST459_71.1",
+		"PL": "Illumina"
 	},
 
 	"SRR726357":{
-		"fq1": ["SRR726357_1.fastq.gz"],
-		"fq2": ["SRR726357_2.fastq.gz"],
-		"ID": ["SRR726357"],
-		"SM": ["Bwamble"],
-		"LB": ["237526"],
-		"PU": ["HWI-ST537_58.2"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726357_1.fastq.gz",
+		"fq2": "SRR726357_2.fastq.gz",
+		"ID": "SRR726357",
+		"SM": "Bwamble",
+		"LB": "237526",
+		"PU": "HWI-ST537_58.2",
+		"PL": "Illumina"
 	},
 
 	"SRR726358":{
-		"fq1": ["SRR726358_1.fastq.gz"],
-		"fq2": ["SRR726358_2.fastq.gz"],
-		"ID": ["SRR726358"],
-		"SM": ["Bwamble"],
-		"LB": ["237526"],
-		"PU": ["HWI-ST539_52.1"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726358_1.fastq.gz",
+		"fq2": "SRR726358_2.fastq.gz",
+		"ID": "SRR726358",
+		"SM": "Bwamble",
+		"LB": "237526",
+		"PU": "HWI-ST539_52.1",
+		"PL": "Illumina"
 	},
 
 	"SRR726359":{
-		"fq1": ["SRR726359_1.fastq.gz"],
-		"fq2": ["SRR726359_2.fastq.gz"],
-		"ID": ["SRR726359"],
-		"SM": ["Bwamble"],
-		"LB": ["237526"],
-		"PU": ["HWI-ST537_57.2"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726359_1.fastq.gz",
+		"fq2": "SRR726359_2.fastq.gz",
+		"ID": "SRR726359",
+		"SM": "Bwamble",
+		"LB": "237526",
+		"PU": "HWI-ST537_57.2",
+		"PL": "Illumina"
 	},
 
 	"SRR726352":{
-		"fq1": ["SRR726352_1.fastq.gz"],
-		"fq2": ["SRR726352_2.fastq.gz"],
-		"ID": ["SRR726352"],
-		"SM": ["Bwamble"],
-		"LB": ["237524"],
-		"PU": ["HWI-ST459_71.2"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726352_1.fastq.gz",
+		"fq2": "SRR726352_2.fastq.gz",
+		"ID": "SRR726352",
+		"SM": "Bwamble",
+		"LB": "237524",
+		"PU": "HWI-ST459_71.2",
+		"PL": "Illumina"
 	},
 
 	"SRR726353":{
-		"fq1": ["SRR726353_1.fastq.gz"],
-		"fq2": ["SRR726353_2.fastq.gz"],
-		"ID": ["SRR726353"],
-		"SM": ["Bwamble"],
-		"LB": ["237524"],
-		"PU": ["HWI-ST537_58.2"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726353_1.fastq.gz",
+		"fq2": "SRR726353_2.fastq.gz",
+		"ID": "SRR726353",
+		"SM": "Bwamble",
+		"LB": "237524",
+		"PU": "HWI-ST537_58.2",
+		"PL": "Illumina"
 	},
 
 	"SRR726354":{
-		"fq1": ["SRR726354_1.fastq.gz"],
-		"fq2": ["SRR726354_2.fastq.gz"],
-		"ID": ["SRR726354"],
-		"SM": ["Bwamble"],
-		"LB": ["237524"],
-		"PU": ["HWI-ST539_52.2"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726354_1.fastq.gz",
+		"fq2": "SRR726354_2.fastq.gz",
+		"ID": "SRR726354",
+		"SM": "Bwamble",
+		"LB": "237524",
+		"PU": "HWI-ST539_52.2",
+		"PL": "Illumina"
 	},
 
 	"SRR726355":{
-		"fq1": ["SRR726355_1.fastq.gz"],
-		"fq2": ["SRR726355_2.fastq.gz"],
-		"ID": ["SRR726355"],
-		"SM": ["Bwamble"],
-		"LB": ["237524"],
-		"PU": ["HWI-ST537_57.2"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726355_1.fastq.gz",
+		"fq2": "SRR726355_2.fastq.gz",
+		"ID": "SRR726355",
+		"SM": "Bwamble",
+		"LB": "237524",
+		"PU": "HWI-ST537_57.2",
+		"PL": "Illumina"
 	},
 
 	"SRR747957":{
-		"fq1": ["SRR747957_1.fastq.gz"],
-		"fq2": ["SRR747957_2.fastq.gz"],
-		"ID": ["SRR747957"],
-		"SM": ["Harriet"],
-		"LB": ["243451"],
-		"PU": ["HWI-ST449_106341471.3"],
-		"PL": ["Illumina"]
+		"fq1": "SRR747957_1.fastq.gz",
+		"fq2": "SRR747957_2.fastq.gz",
+		"ID": "SRR747957",
+		"SM": "Harriet",
+		"LB": "243451",
+		"PU": "HWI-ST449_106341471.3",
+		"PL": "Illumina"
 	},
 
 	"SRR747958":{
-		"fq1": ["SRR747958_1.fastq.gz"],
-		"fq2": ["SRR747958_2.fastq.gz"],
-		"ID": ["SRR747958"],
-		"SM": ["Harriet"],
-		"LB": ["243451"],
-		"PU": ["HWI-ST449_106341471.4"],
-		"PL": ["Illumina"]
+		"fq1": "SRR747958_1.fastq.gz",
+		"fq2": "SRR747958_2.fastq.gz",
+		"ID": "SRR747958",
+		"SM": "Harriet",
+		"LB": "243451",
+		"PU": "HWI-ST449_106341471.4",
+		"PL": "Illumina"
 	},
 
 	"SRR747955":{
-		"fq1": ["SRR747955_1.fastq.gz"],
-		"fq2": ["SRR747955_2.fastq.gz"],
-		"ID": ["SRR747955"],
-		"SM": ["Harriet"],
-		"LB": ["243450"],
-		"PU": ["HWI-ST449_106341471.1"],
-		"PL": ["Illumina"]
+		"fq1": "SRR747955_1.fastq.gz",
+		"fq2": "SRR747955_2.fastq.gz",
+		"ID": "SRR747955",
+		"SM": "Harriet",
+		"LB": "243450",
+		"PU": "HWI-ST449_106341471.1",
+		"PL": "Illumina"
 	},
 
 	"SRR747956":{
-		"fq1": ["SRR747956_1.fastq.gz"],
-		"fq2": ["SRR747956_2.fastq.gz"],
-		"ID": ["SRR747956"],
-		"SM": ["Harriet"],
-		"LB": ["243450"],
-		"PU": ["HWI-ST449_106341471.2"],
-		"PL": ["Illumina"]
+		"fq1": "SRR747956_1.fastq.gz",
+		"fq2": "SRR747956_2.fastq.gz",
+		"ID": "SRR747956",
+		"SM": "Harriet",
+		"LB": "243450",
+		"PU": "HWI-ST449_106341471.2",
+		"PL": "Illumina"
 	},
 
 	"SRR726275":{
-		"fq1": ["SRR726275_1.fastq.gz"],
-		"fq2": ["SRR726275_2.fastq.gz"],
-		"ID": ["SRR726275"],
-		"SM": ["Andromeda"],
-		"LB": ["237492"],
-		"PU": ["HWI-ST457_149.3"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726275_1.fastq.gz",
+		"fq2": "SRR726275_2.fastq.gz",
+		"ID": "SRR726275",
+		"SM": "Andromeda",
+		"LB": "237492",
+		"PU": "HWI-ST457_149.3",
+		"PL": "Illumina"
 	},
 
 	"SRR726278":{
-		"fq1": ["SRR726278_1.fastq.gz"],
-		"fq2": ["SRR726278_2.fastq.gz"],
-		"ID": ["SRR726278"],
-		"SM": ["Andromeda"],
-		"LB": ["237492"],
-		"PU": ["HWI-ST457_150.3"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726278_1.fastq.gz",
+		"fq2": "SRR726278_2.fastq.gz",
+		"ID": "SRR726278",
+		"SM": "Andromeda",
+		"LB": "237492",
+		"PU": "HWI-ST457_150.3",
+		"PL": "Illumina"
 	},
 
 	"SRR726279":{
-		"fq1": ["SRR726279_1.fastq.gz"],
-		"fq2": ["SRR726279_2.fastq.gz"],
-		"ID": ["SRR726279"],
-		"SM": ["Andromeda"],
-		"LB": ["237492"],
-		"PU": ["HWI-ST539_47.3"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726279_1.fastq.gz",
+		"fq2": "SRR726279_2.fastq.gz",
+		"ID": "SRR726279",
+		"SM": "Andromeda",
+		"LB": "237492",
+		"PU": "HWI-ST539_47.3",
+		"PL": "Illumina"
 	},
 
 	"SRR726280":{
-		"fq1": ["SRR726280_1.fastq.gz"],
-		"fq2": ["SRR726280_2.fastq.gz"],
-		"ID": ["SRR726280"],
-		"SM": ["Andromeda"],
-		"LB": ["237492"],
-		"PU": ["HWI-ST539_48.3"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726280_1.fastq.gz",
+		"fq2": "SRR726280_2.fastq.gz",
+		"ID": "SRR726280",
+		"SM": "Andromeda",
+		"LB": "237492",
+		"PU": "HWI-ST539_48.3",
+		"PL": "Illumina"
 	},
 
 	"SRR726233":{
-		"fq1": ["SRR726233_1.fastq.gz"],
-		"fq2": ["SRR726233_2.fastq.gz"],
-		"ID": ["SRR726233"],
-		"SM": ["Vincent"],
-		"LB": ["237455"],
-		"PU": ["HWI-ST457_149.2"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726233_1.fastq.gz",
+		"fq2": "SRR726233_2.fastq.gz",
+		"ID": "SRR726233",
+		"SM": "Vincent",
+		"LB": "237455",
+		"PU": "HWI-ST457_149.2",
+		"PL": "Illumina"
 	},
 
 	"SRR726241":{
-		"fq1": ["SRR726241_1.fastq.gz"],
-		"fq2": ["SRR726241_2.fastq.gz"],
-		"ID": ["SRR726241"],
-		"SM": ["Vincent"],
-		"LB": ["237455"],
-		"PU": ["HWI-ST457_150.2"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726241_1.fastq.gz",
+		"fq2": "SRR726241_2.fastq.gz",
+		"ID": "SRR726241",
+		"SM": "Vincent",
+		"LB": "237455",
+		"PU": "HWI-ST457_150.2",
+		"PL": "Illumina"
 	},
 
 	"SRR726242":{
-		"fq1": ["SRR726242_1.fastq.gz"],
-		"fq2": ["SRR726242_2.fastq.gz"],
-		"ID": ["SRR726242"],
-		"SM": ["Vincent"],
-		"LB": ["237455"],
-		"PU": ["HWI-ST539_47.2"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726242_1.fastq.gz",
+		"fq2": "SRR726242_2.fastq.gz",
+		"ID": "SRR726242",
+		"SM": "Vincent",
+		"LB": "237455",
+		"PU": "HWI-ST539_47.2",
+		"PL": "Illumina"
 	},
 
 	"SRR726243":{
-		"fq1": ["SRR726243_1.fastq.gz"],
-		"fq2": ["SRR726243_2.fastq.gz"],
-		"ID": ["SRR726243"],
-		"SM": ["Vincent"],
-		"LB": ["237455"],
-		"PU": ["HWI-ST539_48.2"],
-		"PL": ["Illumina"]
+		"fq1": "SRR726243_1.fastq.gz",
+		"fq2": "SRR726243_2.fastq.gz",
+		"ID": "SRR726243",
+		"SM": "Vincent",
+		"LB": "237455",
+		"PU": "HWI-ST539_48.2",
+		"PL": "Illumina"
 	},
 
 	"ERR1709877":{
-		"fq1": ["ERR1709877_1.fastq.gz"],
-		"fq2": ["ERR1709877_2.fastq.gz"],
-		"ID": ["ERR1709877"],
-		"SM": ["Mgbadolite"],
-		"LB": ["1286248"],
-		"PU": ["HWI-7001432L"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1709877_1.fastq.gz",
+		"fq2": "ERR1709877_2.fastq.gz",
+		"ID": "ERR1709877",
+		"SM": "Mgbadolite",
+		"LB": "1286248",
+		"PU": "C6DV6ANXX.1",
+		"PL": "Illumina"
 	},
 
 	"ERR1709876":{
-		"fq1": ["ERR1709876_1.fastq.gz"],
-		"fq2": ["ERR1709876_2.fastq.gz"],
-		"ID": ["ERR1709876"],
-		"SM": ["Mgbadolite"],
-		"LB": ["1286248"],
-		"PU": ["HWI-7001432L"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1709876_1.fastq.gz",
+		"fq2": "ERR1709876_2.fastq.gz",
+		"ID": "ERR1709876",
+		"SM": "Mgbadolite",
+		"LB": "1286248",
+		"PU": "C6DUUANXX.6",
+		"PL": "Illumina"
 	},
 
 	"ERR1709875":{
-		"fq1": ["ERR1709875_1.fastq.gz"],
-		"fq2": ["ERR1709875_2.fastq.gz"],
-		"ID": ["ERR1709875"],
-		"SM": ["Mgbadolite"],
-		"LB": ["1286248"],
-		"PU": ["HWI-7001432L"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1709875_1.fastq.gz",
+		"fq2": "ERR1709875_2.fastq.gz",
+		"ID": "ERR1709875",
+		"SM": "Mgbadolite",
+		"LB": "1286248",
+		"PU": "C6DUUANXX.7",
+		"PL": "Illumina"
 	},
 
 	"ERR1709874":{
-		"fq1": ["ERR1709874_1.fastq.gz"],
-		"fq2": ["ERR1709874_2.fastq.gz"],
-		"ID": ["ERR1709874"],
-		"SM": ["Mgbadolite"],
-		"LB": ["1286248"],
-		"PU": ["HWI-7001432L"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1709874_1.fastq.gz",
+		"fq2": "ERR1709874_2.fastq.gz",
+		"ID": "ERR1709874",
+		"SM": "Mgbadolite",
+		"LB": "1286248",
+		"PU": "C6DUUANXX.8",
+		"PL": "Illumina"
 	},
 
 	"ERR1709873":{
-		"fq1": ["ERR1709873_1.fastq.gz"],
-		"fq2": ["ERR1709873_2.fastq.gz"],
-		"ID": ["ERR1709873"],
-		"SM": ["Mgbadolite"],
-		"LB": ["1286248"],
-		"PU": ["HWI-7001432L"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1709873_1.fastq.gz",
+		"fq2": "ERR1709873_2.fastq.gz",
+		"ID": "ERR1709873",
+		"SM": "Mgbadolite",
+		"LB": "1286248",
+		"PU": "C6DUUANXX.5",
+		"PL": "Illumina"
 	},
 
 	"ERR1710116":{
-		"fq1": ["ERR1710116_1.fastq.gz"],
-		"fq2": ["ERR1710116_2.fastq.gz"],
-		"ID": ["ERR1710116"],
-		"SM": ["Washu"],
-		"LB": ["1780350"],
-		"PU": ["D6L3XBQ1_274"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710116_1.fastq.gz",
+		"fq2": "ERR1710116_2.fastq.gz",
+		"ID": "ERR1710116",
+		"SM": "Washu",
+		"LB": "1780350",
+		"PU": "D6L3XBQ1_274.8",
+		"PL": "Illumina"
 	},
 
 	"ERR1710115":{
-		"fq1": ["ERR1710115_1.fastq.gz"],
-		"fq2": ["ERR1710115_2.fastq.gz"],
-		"ID": ["ERR1710115"],
-		"SM": ["Washu"],
-		"LB": ["1780349"],
-		"PU": ["HWI-ST731_75"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710115_1.fastq.gz",
+		"fq2": "ERR1710115_2.fastq.gz",
+		"ID": "ERR1710115",
+		"SM": "Washu",
+		"LB": "1780349",
+		"PU": "HWI-ST731_75.1",
+		"PL": "Illumina"
 	},
 
 	"ERR1710114":{
-		"fq1": ["ERR1710114_1.fastq.gz"],
-		"fq2": ["ERR1710114_2.fastq.gz"],
-		"ID": ["ERR1710114"],
-		"SM": ["Washu"],
-		"LB": ["1780348"],
-		"PU": ["HWI-ST459_174"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710114_1.fastq.gz",
+		"fq2": "ERR1710114_2.fastq.gz",
+		"ID": "ERR1710114",
+		"SM": "Washu",
+		"LB": "1780348",
+		"PU": "HWI-ST459_174.3",
+		"PL": "Illumina"
 	},
 
 	"ERR1710113":{
-		"fq1": ["ERR1710113_1.fastq.gz"],
-		"fq2": ["ERR1710113_2.fastq.gz"],
-		"ID": ["ERR1710113"],
-		"SM": ["Washu"],
-		"LB": ["1780347"],
-		"PU": ["HWI-ST1450_131"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710113_1.fastq.gz",
+		"fq2": "ERR1710113_2.fastq.gz",
+		"ID": "ERR1710113",
+		"SM": "Washu",
+		"LB": "1780347",
+		"PU": "HWI-ST1450_131.1",
+		"PL": "Illumina"
 	},
 
 	"ERR1709884":{
-		"fq1": ["ERR1709884_1.fastq.gz"],
-		"fq2": ["ERR1709884_2.fastq.gz"],
-		"ID": ["ERR1709884"],
-		"SM": ["Athanga"],
-		"LB": ["1780118"],
-		"PU": ["D6L3XBQ1_282"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1709884_1.fastq.gz",
+		"fq2": "ERR1709884_2.fastq.gz",
+		"ID": "ERR1709884",
+		"SM": "Athanga",
+		"LB": "1780118",
+		"PU": "D6L3XBQ1_282.5",
+		"PL": "Illumina"
 	},
 
 	"ERR1709883":{
-		"fq1": ["ERR1709883_1.fastq.gz"],
-		"fq2": ["ERR1709883_2.fastq.gz"],
-		"ID": ["ERR1709883"],
-		"SM": ["Athanga"],
-		"LB": ["1780117"],
-		"PU": ["HWI-ST459_174"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1709883_1.fastq.gz",
+		"fq2": "ERR1709883_2.fastq.gz",
+		"ID": "ERR1709883",
+		"SM": "Athanga",
+		"LB": "1780117",
+		"PU": "HWI-ST459_174.4",
+		"PL": "Illumina"
 	},
 
 	"ERR1710108":{
-		"fq1": ["ERR1710108_1.fastq.gz"],
-		"fq2": ["ERR1710108_2.fastq.gz"],
-		"ID": ["ERR1710108"],
-		"SM": ["Coco_chimp"],
-		"LB": ["1780342"],
-		"PU": ["D6L3XBQ1_282"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710108_1.fastq.gz",
+		"fq2": "ERR1710108_2.fastq.gz",
+		"ID": "ERR1710108",
+		"SM": "Coco_chimp",
+		"LB": "1780342",
+		"PU": "D6L3XBQ1_282.6",
+		"PL": "Illumina"
 	},
 
 	"ERR1710107":{
-		"fq1": ["ERR1710107_1.fastq.gz"],
-		"fq2": ["ERR1710107_2.fastq.gz"],
-		"ID": ["ERR1710107"],
-		"SM": ["Coco_chimp"],
-		"LB": ["1780341"],
-		"PU": ["HWI-ST459_174"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710107_1.fastq.gz",
+		"fq2": "ERR1710107_2.fastq.gz",
+		"ID": "ERR1710107",
+		"SM": "Coco_chimp",
+		"LB": "1780341",
+		"PU": "HWI-ST459_174.5",
+		"PL": "Illumina"
 	},
 
 	"ERR1710112":{
-		"fq1": ["ERR1710112_1.fastq.gz"],
-		"fq2": ["ERR1710112_2.fastq.gz"],
-		"ID": ["ERR1710112"],
-		"SM": ["Maya"],
-		"LB": ["1780346"],
-		"PU": ["HWI-ST858_110"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710112_1.fastq.gz",
+		"fq2": "ERR1710112_2.fastq.gz",
+		"ID": "ERR1710112",
+		"SM": "Maya",
+		"LB": "1780346",
+		"PU": "HWI-ST858_110.1",
+		"PL": "Illumina"
 	},
 
 	"ERR1710111":{
-		"fq1": ["ERR1710111_1.fastq.gz"],
-		"fq2": ["ERR1710111_2.fastq.gz"],
-		"ID": ["ERR1710111"],
-		"SM": ["Maya"],
-		"LB": ["1780345"],
-		"PU": ["HWI-ST731_36"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710111_1.fastq.gz",
+		"fq2": "ERR1710111_2.fastq.gz",
+		"ID": "ERR1710111",
+		"SM": "Maya",
+		"LB": "1780345",
+		"PU": "HWI-ST731_36.8",
+		"PL": "Illumina"
 	},
 
 	"ERR1710110":{
-		"fq1": ["ERR1710110_1.fastq.gz"],
-		"fq2": ["ERR1710110_2.fastq.gz"],
-		"ID": ["ERR1710110"],
-		"SM": ["Maya"],
-		"LB": ["1780344"],
-		"PU": ["HWI-ST731_36"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710110_1.fastq.gz",
+		"fq2": "ERR1710110_2.fastq.gz",
+		"ID": "ERR1710110",
+		"SM": "Maya",
+		"LB": "1780344",
+		"PU": "HWI-ST731_36.6",
+		"PL": "Illumina"
 	},
 
 	"ERR1710109":{
-		"fq1": ["ERR1710109_1.fastq.gz"],
-		"fq2": ["ERR1710109_2.fastq.gz"],
-		"ID": ["ERR1710109"],
-		"SM": ["Maya"],
-		"LB": ["1780343"],
-		"PU": ["HWI-ST731_36"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710109_1.fastq.gz",
+		"fq2": "ERR1710109_2.fastq.gz",
+		"ID": "ERR1710109",
+		"SM": "Maya",
+		"LB": "1780343",
+		"PU": "HWI-ST731_36.7",
+		"PL": "Illumina"
 	},
 
 	"ERR1710106":{
-		"fq1": ["ERR1710106_1.fastq.gz"],
-		"fq2": ["ERR1710106_2.fastq.gz"],
-		"ID": ["ERR1710106"],
-		"SM": ["Frederike"],
-		"LB": ["1780340"],
-		"PU": ["D6L3XBQ1_282"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710106_1.fastq.gz",
+		"fq2": "ERR1710106_2.fastq.gz",
+		"ID": "ERR1710106",
+		"SM": "Frederike",
+		"LB": "1780340",
+		"PU": "D6L3XBQ1_282.4",
+		"PL": "Illumina"
 	},
 
 	"ERR1710105":{
-		"fq1": ["ERR1710105_1.fastq.gz"],
-		"fq2": ["ERR1710105_2.fastq.gz"],
-		"ID": ["ERR1710105"],
-		"SM": ["Frederike"],
-		"LB": ["1780339"],
-		"PU": ["D6L3XBQ1_268"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710105_1.fastq.gz",
+		"fq2": "ERR1710105_2.fastq.gz",
+		"ID": "ERR1710105",
+		"SM": "Frederike",
+		"LB": "1780339",
+		"PU": "D6L3XBQ1_268.8",
+		"PL": "Illumina"
 	},
 
 	"ERR1710120":{
-		"fq1": ["ERR1710120_1.fastq.gz"],
-		"fq2": ["ERR1710120_2.fastq.gz"],
-		"ID": ["ERR1710120"],
-		"SM": ["Trixie"],
-		"LB": ["1780354"],
-		"PU": ["HWI-ST858_110"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710120_1.fastq.gz",
+		"fq2": "ERR1710120_2.fastq.gz",
+		"ID": "ERR1710120",
+		"SM": "Trixie",
+		"LB": "1780354",
+		"PU": "HWI-ST858_110.1",
+		"PL": "Illumina"
 	},
 
 	"ERR1710119":{
-		"fq1": ["ERR1710119_1.fastq.gz"],
-		"fq2": ["ERR1710119_2.fastq.gz"],
-		"ID": ["ERR1710119"],
-		"SM": ["Trixie"],
-		"LB": ["1780353"],
-		"PU": ["D6L3XBQ1_241"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710119_1.fastq.gz",
+		"fq2": "ERR1710119_2.fastq.gz",
+		"ID": "ERR1710119",
+		"SM": "Trixie",
+		"LB": "1780353",
+		"PU": "D6L3XBQ1_241.3",
+		"PL": "Illumina"
 	},
 
 	"ERR1710118":{
-		"fq1": ["ERR1710118_1.fastq.gz"],
-		"fq2": ["ERR1710118_2.fastq.gz"],
-		"ID": ["ERR1710118"],
-		"SM": ["Trixie"],
-		"LB": ["1780352"],
-		"PU": ["D6L3XBQ1_240"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710118_1.fastq.gz",
+		"fq2": "ERR1710118_2.fastq.gz",
+		"ID": "ERR1710118",
+		"SM": "Trixie",
+		"LB": "1780352",
+		"PU": "D6L3XBQ1_240.8",
+		"PL": "Illumina"
 	},
 
 	"ERR1710117":{
-		"fq1": ["ERR1710117_1.fastq.gz"],
-		"fq2": ["ERR1710117_2.fastq.gz"],
-		"ID": ["ERR1710117"],
-		"SM": ["Trixie"],
-		"LB": ["1780351"],
-		"PU": ["D6L3XBQ1_240"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710117_1.fastq.gz",
+		"fq2": "ERR1710117_2.fastq.gz",
+		"ID": "ERR1710117",
+		"SM": "Trixie",
+		"LB": "1780351",
+		"PU": "D6L3XBQ1_240.7",
+		"PL": "Illumina"
 	},
 
 	"ERR1710102":{
-		"fq1": ["ERR1710102_1.fastq.gz"],
-		"fq2": ["ERR1710102_2.fastq.gz"],
-		"ID": ["ERR1710102"],
-		"SM": ["Bihati"],
-		"LB": ["1780336"],
-		"PU": ["HWI-ST731_36"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710102_1.fastq.gz",
+		"fq2": "ERR1710102_2.fastq.gz",
+		"ID": "ERR1710102",
+		"SM": "Bihati",
+		"LB": "1780336",
+		"PU": "HWI-ST731_36.5",
+		"PL": "Illumina"
 	},
 
 	"ERR1710101":{
-		"fq1": ["ERR1710101_1.fastq.gz"],
-		"fq2": ["ERR1710101_2.fastq.gz"],
-		"ID": ["ERR1710101"],
-		"SM": ["Bihati"],
-		"LB": ["1780335"],
-		"PU": ["HWI-ST731_36"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710101_1.fastq.gz",
+		"fq2": "ERR1710101_2.fastq.gz",
+		"ID": "ERR1710101",
+		"SM": "Bihati",
+		"LB": "1780335",
+		"PU": "HWI-ST731_36.4",
+		"PL": "Illumina"
 	},
 
 	"ERR1710100":{
-		"fq1": ["ERR1710100_1.fastq.gz"],
-		"fq2": ["ERR1710100_2.fastq.gz"],
-		"ID": ["ERR1710100"],
-		"SM": ["Bihati"],
-		"LB": ["1780334"],
-		"PU": ["HWI-ST731_36"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710100_1.fastq.gz",
+		"fq2": "ERR1710100_2.fastq.gz",
+		"ID": "ERR1710100",
+		"SM": "Bihati",
+		"LB": "1780334",
+		"PU": "HWI-ST731_36.3",
+		"PL": "Illumina"
 	},
 
 	"ERR1710099":{
-		"fq1": ["ERR1710099_1.fastq.gz"],
-		"fq2": ["ERR1710099_2.fastq.gz"],
-		"ID": ["ERR1710099"],
-		"SM": ["Bihati"],
-		"LB": ["1780333"],
-		"PU": ["HWI-ST858_110"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710099_1.fastq.gz",
+		"fq2": "ERR1710099_2.fastq.gz",
+		"ID": "ERR1710099",
+		"SM": "Bihati",
+		"LB": "1780333",
+		"PU": "HWI-ST858_110.1",
+		"PL": "Illumina"
 	},
 
 	"ERR1710029":{
-		"fq1": ["ERR1710029_1.fastq.gz"],
-		"fq2": ["ERR1710029_2.fastq.gz"],
-		"ID": ["ERR1710029"],
-		"SM": ["Cleo"],
-		"LB": ["1780263"],
-		"PU": ["D6L3XBQ1_241"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710029_1.fastq.gz",
+		"fq2": "ERR1710029_2.fastq.gz",
+		"ID": "ERR1710029",
+		"SM": "Cleo",
+		"LB": "1780263",
+		"PU": "D6L3XBQ1_241.5",
+		"PL": "Illumina"
 	},
 
 	"ERR1710028":{
-		"fq1": ["ERR1710028_1.fastq.gz"],
-		"fq2": ["ERR1710028_2.fastq.gz"],
-		"ID": ["ERR1710028"],
-		"SM": ["Cleo"],
-		"LB": ["1780262"],
-		"PU": ["HWI-ST459_158"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710028_1.fastq.gz",
+		"fq2": "ERR1710028_2.fastq.gz",
+		"ID": "ERR1710028",
+		"SM": "Cleo",
+		"LB": "1780262",
+		"PU": "HWI-ST459_158.1",
+		"PL": "Illumina"
 	},
 
 	"ERR1710027":{
-		"fq1": ["ERR1710027_1.fastq.gz"],
-		"fq2": ["ERR1710027_2.fastq.gz"],
-		"ID": ["ERR1710027"],
-		"SM": ["Cleo"],
-		"LB": ["1780261"],
-		"PU": ["D6L3XBQ1_241"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710027_1.fastq.gz",
+		"fq2": "ERR1710027_2.fastq.gz",
+		"ID": "ERR1710027",
+		"SM": "Cleo",
+		"LB": "1780261",
+		"PU": "D6L3XBQ1_241.4",
+		"PL": "Illumina"
 	},
 
 	"ERR1710026":{
-		"fq1": ["ERR1710026_1.fastq.gz"],
-		"fq2": ["ERR1710026_2.fastq.gz"],
-		"ID": ["ERR1710026"],
-		"SM": ["Cleo"],
-		"LB": ["1780260"],
-		"PU": ["HWI-ST731_36"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710026_1.fastq.gz",
+		"fq2": "ERR1710026_2.fastq.gz",
+		"ID": "ERR1710026",
+		"SM": "Cleo",
+		"LB": "1780260",
+		"PU": "HWI-ST731_36.1",
+		"PL": "Illumina"
 	},
 
 	"ERR1710025":{
-		"fq1": ["ERR1710025_1.fastq.gz"],
-		"fq2": ["ERR1710025_2.fastq.gz"],
-		"ID": ["ERR1710025"],
-		"SM": ["Cleo"],
-		"LB": ["1780259"],
-		"PU": ["HWI-ST858_110"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710025_1.fastq.gz",
+		"fq2": "ERR1710025_2.fastq.gz",
+		"ID": "ERR1710025",
+		"SM": "Cleo",
+		"LB": "1780259",
+		"PU": "HWI-ST858_110.1",
+		"PL": "Illumina"
 	},
 
 	"ERR1710024":{
-		"fq1": ["ERR1710024_1.fastq.gz"],
-		"fq2": ["ERR1710024_2.fastq.gz"],
-		"ID": ["ERR1710024"],
-		"SM": ["Cleo"],
-		"LB": ["1780258"],
-		"PU": ["HWI-ST858_132"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710024_1.fastq.gz",
+		"fq2": "ERR1710024_2.fastq.gz",
+		"ID": "ERR1710024",
+		"SM": "Cleo",
+		"LB": "1780258",
+		"PU": "HWI-ST858_132.1",
+		"PL": "Illumina"
 	},
 
 	"ERR1710098":{
-		"fq1": ["ERR1710098_1.fastq.gz"],
-		"fq2": ["ERR1710098_2.fastq.gz"],
-		"ID": ["ERR1710098"],
-		"SM": ["Tongo"],
-		"LB": ["1780332"],
-		"PU": ["D6L3XBQ1_240"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710098_1.fastq.gz",
+		"fq2": "ERR1710098_2.fastq.gz",
+		"ID": "ERR1710098",
+		"SM": "Tongo",
+		"LB": "1780332",
+		"PU": "D6L3XBQ1_240.3",
+		"PL": "Illumina"
 	},
 
 	"ERR1710097":{
-		"fq1": ["ERR1710097_1.fastq.gz"],
-		"fq2": ["ERR1710097_2.fastq.gz"],
-		"ID": ["ERR1710097"],
-		"SM": ["Tongo"],
-		"LB": ["1780331"],
-		"PU": ["D6L3XBQ1_240"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710097_1.fastq.gz",
+		"fq2": "ERR1710097_2.fastq.gz",
+		"ID": "ERR1710097",
+		"SM": "Tongo",
+		"LB": "1780331",
+		"PU": "D6L3XBQ1_240.4",
+		"PL": "Illumina"
 	},
 
 	"ERR1710096":{
-		"fq1": ["ERR1710096_1.fastq.gz"],
-		"fq2": ["ERR1710096_2.fastq.gz"],
-		"ID": ["ERR1710096"],
-		"SM": ["Tongo"],
-		"LB": ["1780330"],
-		"PU": ["D6L3XBQ1_241"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710096_1.fastq.gz",
+		"fq2": "ERR1710096_2.fastq.gz",
+		"ID": "ERR1710096",
+		"SM": "Tongo",
+		"LB": "1780330",
+		"PU": "D6L3XBQ1_241.1",
+		"PL": "Illumina"
 	},
 
 	"ERR1710095":{
-		"fq1": ["ERR1710095_1.fastq.gz"],
-		"fq2": ["ERR1710095_2.fastq.gz"],
-		"ID": ["ERR1710095"],
-		"SM": ["Tongo"],
-		"LB": ["1780329"],
-		"PU": ["HWI-ST858_110"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710095_1.fastq.gz",
+		"fq2": "ERR1710095_2.fastq.gz",
+		"ID": "ERR1710095",
+		"SM": "Tongo",
+		"LB": "1780329",
+		"PU": "HWI-ST858_110.1",
+		"PL": "Illumina"
 	},
 
 	"ERR1710152":{
-		"fq1": ["ERR1710152_1.fastq.gz"],
-		"fq2": ["ERR1710152_2.fastq.gz"],
-		"ID": ["ERR1710152"],
-		"SM": ["Ikuru"],
-		"LB": ["1780386"],
-		"PU": ["HWI-ST700660_220"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710152_1.fastq.gz",
+		"fq2": "ERR1710152_2.fastq.gz",
+		"ID": "ERR1710152",
+		"SM": "Ikuru",
+		"LB": "1780386",
+		"PU": "HWI-ST700660_220.7",
+		"PL": "Illumina"
 	},
 
 	"ERR1710151":{
-		"fq1": ["ERR1710151_1.fastq.gz"],
-		"fq2": ["ERR1710151_2.fastq.gz"],
-		"ID": ["ERR1710151"],
-		"SM": ["Ikuru"],
-		"LB": ["1780385"],
-		"PU": ["HWI-ST858_147"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710151_1.fastq.gz",
+		"fq2": "ERR1710151_2.fastq.gz",
+		"ID": "ERR1710151",
+		"SM": "Ikuru",
+		"LB": "1780385",
+		"PU": "HWI-ST858_147.7",
+		"PL": "Illumina"
 	},
 
 	"ERR1710150":{
-		"fq1": ["ERR1710150_1.fastq.gz"],
-		"fq2": ["ERR1710150_2.fastq.gz"],
-		"ID": ["ERR1710150"],
-		"SM": ["Ikuru"],
-		"LB": ["1780384"],
-		"PU": ["HWI-ST539_170"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710150_1.fastq.gz",
+		"fq2": "ERR1710150_2.fastq.gz",
+		"ID": "ERR1710150",
+		"SM": "Ikuru",
+		"LB": "1780384",
+		"PU": "HWI-ST539_170.8",
+		"PL": "Illumina"
 	},
 
 	"ERR1710149":{
-		"fq1": ["ERR1710149_1.fastq.gz"],
-		"fq2": ["ERR1710149_2.fastq.gz"],
-		"ID": ["ERR1710149"],
-		"SM": ["Ikuru"],
-		"LB": ["1780383"],
-		"PU": ["HWI-ST0857_183"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710149_1.fastq.gz",
+		"fq2": "ERR1710149_2.fastq.gz",
+		"ID": "ERR1710149",
+		"SM": "Ikuru",
+		"LB": "1780383",
+		"PU": "HWI-ST0857_183.7",
+		"PL": "Illumina"
 	},
 
 	"ERR1710088":{
-		"fq1": ["ERR1710088_1.fastq.gz"],
-		"fq2": ["ERR1710088_2.fastq.gz"],
-		"ID": ["ERR1710088"],
-		"SM": ["Cindy_schwein"],
-		"LB": ["1780322"],
-		"PU": ["HWI-ST539_170"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710088_1.fastq.gz",
+		"fq2": "ERR1710088_2.fastq.gz",
+		"ID": "ERR1710088",
+		"SM": "Cindy_schwein",
+		"LB": "1780322",
+		"PU": "HWI-ST539_170.8",
+		"PL": "Illumina"
 	},
 
 	"ERR1710087":{
-		"fq1": ["ERR1710087_1.fastq.gz"],
-		"fq2": ["ERR1710087_2.fastq.gz"],
-		"ID": ["ERR1710087"],
-		"SM": ["Cindy_schwein"],
-		"LB": ["1780321"],
-		"PU": ["HWI-ST700660_220"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710087_1.fastq.gz",
+		"fq2": "ERR1710087_2.fastq.gz",
+		"ID": "ERR1710087",
+		"SM": "Cindy_schwein",
+		"LB": "1780321",
+		"PU": "HWI-ST700660_220.6",
+		"PL": "Illumina"
 	},
 
 	"ERR1710086":{
-		"fq1": ["ERR1710086_1.fastq.gz"],
-		"fq2": ["ERR1710086_2.fastq.gz"],
-		"ID": ["ERR1710086"],
-		"SM": ["Cindy_schwein"],
-		"LB": ["1780320"],
-		"PU": ["HWI-ST858_147"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710086_1.fastq.gz",
+		"fq2": "ERR1710086_2.fastq.gz",
+		"ID": "ERR1710086",
+		"SM": "Cindy_schwein",
+		"LB": "1780320",
+		"PU": "HWI-ST858_147.6",
+		"PL": "Illumina"
 	},
 
 	"ERR1710085":{
-		"fq1": ["ERR1710085_1.fastq.gz"],
-		"fq2": ["ERR1710085_2.fastq.gz"],
-		"ID": ["ERR1710085"],
-		"SM": ["Cindy_schwein"],
-		"LB": ["1780319"],
-		"PU": ["HWI-ST0857_183"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1710085_1.fastq.gz",
+		"fq2": "ERR1710085_2.fastq.gz",
+		"ID": "ERR1710085",
+		"SM": "Cindy_schwein",
+		"LB": "1780319",
+		"PU": "HWI-ST0857_183.6",
+		"PL": "Illumina"
 	},
 
 	"ERR1709993":{
-		"fq1": ["ERR1709993_1.fastq.gz"],
-		"fq2": ["ERR1709993_2.fastq.gz"],
-		"ID": ["ERR1709993"],
-		"SM": ["Padda"],
-		"LB": ["1780227"],
-		"PU": ["HWI-ST0857_183"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1709993_1.fastq.gz",
+		"fq2": "ERR1709993_2.fastq.gz",
+		"ID": "ERR1709993",
+		"SM": "Padda",
+		"LB": "1780227",
+		"PU": "HWI-ST0857_183.3",
+		"PL": "Illumina"
 	},
 
 	"ERR1709992":{
-		"fq1": ["ERR1709992_1.fastq.gz"],
-		"fq2": ["ERR1709992_2.fastq.gz"],
-		"ID": ["ERR1709992"],
-		"SM": ["Padda"],
-		"LB": ["1780226"],
-		"PU": ["HWI-ST700660_220"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1709992_1.fastq.gz",
+		"fq2": "ERR1709992_2.fastq.gz",
+		"ID": "ERR1709992",
+		"SM": "Padda",
+		"LB": "1780226",
+		"PU": "HWI-ST700660_220.3",
+		"PL": "Illumina"
 	},
 
 	"ERR1709991":{
-		"fq1": ["ERR1709991_1.fastq.gz"],
-		"fq2": ["ERR1709991_2.fastq.gz"],
-		"ID": ["ERR1709991"],
-		"SM": ["Padda"],
-		"LB": ["1780225"],
-		"PU": ["HWI-ST539_170"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1709991_1.fastq.gz",
+		"fq2": "ERR1709991_2.fastq.gz",
+		"ID": "ERR1709991",
+		"SM": "Padda",
+		"LB": "1780225",
+		"PU": "HWI-ST539_170.8",
+		"PL": "Illumina"
 	},
 
 	"ERR1709990":{
-		"fq1": ["ERR1709990_1.fastq.gz"],
-		"fq2": ["ERR1709990_2.fastq.gz"],
-		"ID": ["ERR1709990"],
-		"SM": ["Padda"],
-		"LB": ["1780224"],
-		"PU": ["HWI-ST858_147"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1709990_1.fastq.gz",
+		"fq2": "ERR1709990_2.fastq.gz",
+		"ID": "ERR1709990",
+		"SM": "Padda",
+		"LB": "1780224",
+		"PU": "HWI-ST858_147.3",
+		"PL": "Illumina"
 	},
 
 	"ERR1709878":{
-		"fq1": ["ERR1709878_1.fastq.gz"],
-		"fq2": ["ERR1709878_2.fastq.gz"],
-		"ID": ["ERR1709878"],
-		"SM": ["Mgbadolite"],
-		"LB": ["1286248"],
-		"PU": ["HWI-7001432L"],
-		"PL": ["Illumina"]
+		"fq1": "ERR1709878_1.fastq.gz",
+		"fq2": "ERR1709878_2.fastq.gz",
+		"ID": "ERR1709878",
+		"SM": "Mgbadolite",
+		"LB": "1286248",
+		"PU": "C6DUUANXX.4",
+		"PL": "Illumina"
 	}
 }
