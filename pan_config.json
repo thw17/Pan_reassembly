@@ -928,5 +928,15 @@
 		"LB": ["1780224"],
 		"PU": ["HWI-ST858_147"],
 		"PL": ["Illumina"]
-	}
+	},
+
+	"ERR1709878":{
+		"fq1": ["ERR1709878_1.fastq.gz"],
+		"fq2": ["ERR1709878_2.fastq.gz"],
+		"ID": ["ERR1709878"],
+		"SM": ["Mgbadolite"],
+		"LB": ["1286248"],
+		"PU": ["HWI-7001432L"],
+		"PL": ["Illumina"]
+	},
 }
