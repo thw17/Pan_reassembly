@@ -82,8 +82,8 @@ rule adapter_discovery:
 
 rule trim_adapters_paired_bbduk:
 	input:
-		fq1 = os.path.join(fastq_directory, "{sample}_read1.fastq.gz"),
-		fq2 = os.path.join(fastq_directory, "{sample}_read2.fastq.gz")
+		fq1 = lambda wildcards: os.path.join(fastq_directory, config[wildcards.sample]["fq1"]),
+		fq2 = lambda wildcards: os.path.join(fastq_directory, config[wildcards.sample]["fq2"])
 	output:
 		out_fq1 = "trimmed_fastqs/{sample}_trimmed_read1.fastq.gz",
 		out_fq2 = "trimmed_fastqs/{sample}_trimmed_read2.fastq.gz"
