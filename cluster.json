@@ -1,6 +1,11 @@
 {
 	"__default__" :
 	{
+		"n": 2
+	},
+
+	"adapter_discovery" :
+	{
 		"n": 1
 	}
 }
