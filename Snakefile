@@ -6,6 +6,7 @@ fastq_directory = "/mnt/storage/COMBINEDLABPUB/greatapes/fastq"
 
 temp_directory = "temp/"
 
+bbduksh_path = "bbduk.sh"
 bbmerge_sh_path = "bbmerge.sh"
 bwa_path = "bwa"
 fastqc_path = "fastqc"
