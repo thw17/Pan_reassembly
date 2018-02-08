@@ -22,7 +22,10 @@ rule all:
 		expand("reference/{assembly}.fasta.fai", assembly=["pantro4"]),
 		expand("adapters/{sample}.adapters.fa", sample=config["sras"]),
 		"multiqc/multiqc_report.html",
-		"multiqc_trimmed/multiqc_report.html"
+		"multiqc_trimmed/multiqc_report.html",
+		expand(
+			"processed_bams/{sample}.{genome}.sorted.merged.bam",
+			sample=config["sample_names"], genome=["pantro4"])
 
 rule prepare_reference:
 	input:
@@ -119,3 +122,54 @@ rule multiqc_analysis_trimmed:
 	shell:
 		"export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && "
 		"{params.multiqc} -o multiqc_trimmed trimmed_fastqc"
+
+rule map_and_process_trimmed_reads:
+	input:
+		fq1 = "trimmed_fastqs/{sample}_trimmed_read1.fastq.gz",
+		fq2 = "trimmed_fastqs/{sample}_trimmed_read2.fastq.gz",
+		new = "reference/{assembly}.fasta",
+		fai = "reference/{assembly}.fasta.fai"
+	output:
+		"processed_bams/{sample}.{assembly}.sorted.bam"
+	params:
+		id = lambda wildcards: config[wildcards.sample]["ID"],
+		sm = lambda wildcards: config[wildcards.sample]["SM"],
+		lb = lambda wildcards: config[wildcards.sample]["LB"],
+		pu = lambda wildcards: config[wildcards.sample]["PU"],
+		pl = lambda wildcards: config[wildcards.sample]["PL"],
+		bwa = bwa_path,
+		samtools = samtools_path
+	threads: 4
+	shell:
+		" {params.bwa} mem -t {threads} -R "
+	 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
+		"{input.ref_xy} {input.fq1} {input.fq2}"
+		"| {params.samtools} fixmate -O bam - - | {params.samtools} sort "
+		"-O bam -o {output}"
+
+rule index_bam:
+	input:
+		"processed_bams/{sample}.{genome}.sorted.bam"
+	output:
+		"processed_bams/{sample}.{genome}.sorted.bam.bai"
+	params:
+		samtools = samtools_path
+	shell:
+		"{params.samtools} index {input}"
+
+rule merge_bams:
+	input:
+		bams = lambda wildcards: expand(
+			"processed_bams/{sample}.{genome}.sorted.bam",
+			sample=config["samples"][wildcards.sample], genome=wildcards.genome),
+		bais = lambda wildcards: expand(
+			"processed_bams/{sample}.{genome}.sorted.bam.bai",
+			sample=config["samples"][wildcards.sample], genome=wildcards.genome)
+	output:
+		"processed_bams/{sample}.{genome}.sorted.merged.bam"
+	threads:
+		4
+	params:
+		sambamba = sambamba_path
+	shell:
+		"{params.sambamba} merge -t {threads} {output} {input.bams}"
