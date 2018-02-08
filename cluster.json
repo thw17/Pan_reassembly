@@ -2,5 +2,15 @@
 	"__default__" :
 	{
 		"n": 2
+	},
+
+	"map_and_process_trimmed_reads" :
+	{
+		"n": 4
+	},
+
+	"merge_bams" :
+	{
+		"n": 4
 	}
 }

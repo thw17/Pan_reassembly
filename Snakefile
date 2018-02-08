@@ -24,7 +24,7 @@ rule all:
 		"multiqc/multiqc_report.html",
 		"multiqc_trimmed/multiqc_report.html",
 		expand(
-			"processed_bams/{sample}.{genome}.sorted.merged.bam",
+			"processed_bams/{sample}.{genome}.sorted.merged.bam.bai",
 			sample=config["sample_names"], genome=["pantro4"])
 
 rule prepare_reference:
@@ -173,3 +173,13 @@ rule merge_bams:
 		sambamba = sambamba_path
 	shell:
 		"{params.sambamba} merge -t {threads} {output} {input.bams}"
+
+rule index_merged_bam:
+	input:
+		"processed_bams/{sample}.{genome}.sorted.merged.bam"
+	output:
+		"processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
+	params:
+		samtools = samtools_path
+	shell:
+		"{params.samtools} index {input}"
