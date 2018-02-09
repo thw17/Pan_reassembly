@@ -11,6 +11,7 @@ bbmerge_sh_path = "bbmerge.sh"
 bwa_path = "bwa"
 fastqc_path = "fastqc"
 multiqc_path = "multiqc"
+sambamba_path = "sambamba"
 samtools_path = "samtools"
 
 fastq_prefixes = [
