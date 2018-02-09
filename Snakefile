@@ -11,6 +11,7 @@ bbmerge_sh_path = "bbmerge.sh"
 bwa_path = "bwa"
 fastqc_path = "fastqc"
 multiqc_path = "multiqc"
+sambamba_path = "sambamba"
 samtools_path = "samtools"
 
 fastq_prefixes = [
@@ -142,12 +143,13 @@ rule map_and_process_trimmed_reads:
 		pu = lambda wildcards: config[wildcards.sample]["PU"],
 		pl = lambda wildcards: config[wildcards.sample]["PL"],
 		bwa = bwa_path,
-		samtools = samtools_path
+		samtools = samtools_path,
+		threads = 4
 	threads: 4
 	shell:
-		" {params.bwa} mem -t {threads} -R "
+		" {params.bwa} mem -t {params.threads} -R "
 	 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
-		"{input.ref_xy} {input.fq1} {input.fq2}"
+		"{input.new} {input.fq1} {input.fq2}"
 		"| {params.samtools} fixmate -O bam - - | {params.samtools} sort "
 		"-O bam -o {output}"
 
@@ -171,12 +173,12 @@ rule merge_bams:
 			sample=config["samples"][wildcards.sample], genome=wildcards.genome)
 	output:
 		"processed_bams/{sample}.{genome}.sorted.merged.bam"
-	threads:
-		4
+	threads: 4
 	params:
-		sambamba = sambamba_path
+		sambamba = sambamba_path,
+		threads = 4
 	shell:
-		"{params.sambamba} merge -t {threads} {output} {input.bams}"
+		"{params.sambamba} merge -t {params.threads} {output} {input.bams}"
 
 rule index_merged_bam:
 	input:
