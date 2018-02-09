@@ -144,7 +144,7 @@ rule map_and_process_trimmed_reads:
 	shell:
 		" {params.bwa} mem -t {threads} -R "
 	 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
-		"{input.ref_xy} {input.fq1} {input.fq2}"
+		"{input.new} {input.fq1} {input.fq2}"
 		"| {params.samtools} fixmate -O bam - - | {params.samtools} sort "
 		"-O bam -o {output}"
 
