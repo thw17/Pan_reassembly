@@ -26,6 +26,9 @@ rule all:
 		"multiqc_trimmed/multiqc_report.html",
 		expand(
 			"processed_bams/{sample}.{genome}.sorted.merged.bam.bai",
+			sample=config["sample_names"], genome=["pantro4"]),
+		expand(
+			"processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai",
 			sample=config["sample_names"], genome=["pantro4"])
 
 rule prepare_reference:
@@ -185,6 +188,29 @@ rule index_merged_bam:
 		"processed_bams/{sample}.{genome}.sorted.merged.bam"
 	output:
 		"processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
+	params:
+		samtools = samtools_path
+	shell:
+		"{params.samtools} index {input}"
+
+rule sambamba_mark_dups:
+	input:
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.bam",
+		bai = "processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
+	output:
+		"processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam"
+	threads: 4
+	params:
+		sambamba = sambamba_path,
+		threads = 4
+	shell:
+		"{params.sambamba} markdup -t {params.threads} {input.bam} {output}"
+
+rule index_mkdup_bam:
+	input:
+		"processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam"
+	output:
+		"processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
 	params:
 		samtools = samtools_path
 	shell:
