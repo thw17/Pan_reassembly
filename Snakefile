@@ -222,7 +222,7 @@ rule picard_mkdups:
 	params:
 		picard = picard_path
 	shell:
-		"{params.picard} MarkDuplicates I={input.bam} O={output.bam} "
+		"{params.picard} -Xmx8g MarkDuplicates I={input.bam} O={output.bam} "
 		"M={output.metrics}"
 
 rule index_mkdup_bam:
