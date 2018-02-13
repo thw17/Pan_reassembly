@@ -12,5 +12,9 @@
 	"merge_bams" :
 	{
 		"n": 4
+	},
+
+	"sambamba_mark_dups_only_analysis_chroms" : {
+		"n": 4
 	}
 }

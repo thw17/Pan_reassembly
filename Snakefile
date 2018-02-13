@@ -193,7 +193,7 @@ rule index_merged_bam:
 	shell:
 		"{params.samtools} index {input}"
 
-rule sambamba_mark_dups:
+rule sambamba_mark_dups_only_analysis_chroms:
 	input:
 		bam = "processed_bams/{sample}.{genome}.sorted.merged.bam",
 		bai = "processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
@@ -202,9 +202,13 @@ rule sambamba_mark_dups:
 	threads: 4
 	params:
 		sambamba = sambamba_path,
+		samtools = samtools_path,
+		regions = lambda wildcards: config[
+			"chromosomes_to_analyze"][wildcards.genome],
 		threads = 4
 	shell:
-		"{params.sambamba} markdup -t {params.threads} {input.bam} {output}"
+		"{params.samtools} view -b {input.bam} {params.regions} | "
+		"{params.sambamba} markdup -t {params.threads} /dev/stdin {output}"
 
 rule index_mkdup_bam:
 	input:
