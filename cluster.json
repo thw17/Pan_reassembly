@@ -16,5 +16,9 @@
 
 	"sambamba_mark_dups_only_analysis_chroms" : {
 		"n": 4
+	},
+
+	"picard_mkdups" : {
+		"n": 4
 	}
 }

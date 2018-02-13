@@ -218,11 +218,11 @@ rule picard_mkdups:
 	output:
 		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
 		metrics = "stats/{sample}.{genome}.picard_mkdup_metrics.txt"
-	threads: 2
+	threads: 4
 	params:
 		picard = picard_path
 	shell:
-		"{params.picard} -Xmx8g MarkDuplicates I={input.bam} O={output.bam} "
+		"{params.picard} -Xmx14g MarkDuplicates I={input.bam} O={output.bam} "
 		"M={output.metrics}"
 
 rule index_mkdup_bam:
