@@ -11,6 +11,7 @@ bbmerge_sh_path = "bbmerge.sh"
 bwa_path = "bwa"
 fastqc_path = "fastqc"
 multiqc_path = "multiqc"
+picard_path = "picard"
 sambamba_path = "sambamba"
 samtools_path = "samtools"
 
@@ -193,22 +194,36 @@ rule index_merged_bam:
 	shell:
 		"{params.samtools} index {input}"
 
-rule sambamba_mark_dups_only_analysis_chroms:
+# rule sambamba_mark_dups_only_analysis_chroms:
+# 	input:
+# 		bam = "processed_bams/{sample}.{genome}.sorted.merged.bam",
+# 		bai = "processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
+# 	output:
+# 		"processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam"
+# 	threads: 4
+# 	params:
+# 		sambamba = sambamba_path,
+# 		samtools = samtools_path,
+# 		regions = lambda wildcards: config[
+# 			"chromosomes_to_analyze"][wildcards.genome],
+# 		threads = 4
+# 	shell:
+# 		"{params.samtools} view -b {input.bam} {params.regions} | "
+# 		"{params.sambamba} markdup -t {params.threads} /dev/stdin {output}"
+
+rule picard_mkdups:
 	input:
 		bam = "processed_bams/{sample}.{genome}.sorted.merged.bam",
 		bai = "processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
 	output:
-		"processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam"
-	threads: 4
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
+		metrics = "stats/{sample}.{genome}.picard_mkdup_metrics.txt"
+	threads: 2
 	params:
-		sambamba = sambamba_path,
-		samtools = samtools_path,
-		regions = lambda wildcards: config[
-			"chromosomes_to_analyze"][wildcards.genome],
-		threads = 4
+		picard = picard_path
 	shell:
-		"{params.samtools} view -b {input.bam} {params.regions} | "
-		"{params.sambamba} markdup -t {params.threads} /dev/stdin {output}"
+		"{params.picard} MarkDuplicates I={input.bam} O={output.bam} "
+		"M={output.metrics}"
 
 rule index_mkdup_bam:
 	input:
