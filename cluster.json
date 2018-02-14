@@ -20,5 +20,9 @@
 
 	"picard_mkdups" : {
 		"n": 4
+	},
+
+	"gatk_gvcf" : {
+		"n": 4
 	}
 }

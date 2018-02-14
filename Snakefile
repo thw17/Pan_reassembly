@@ -10,6 +10,7 @@ bbduksh_path = "bbduk.sh"
 bbmerge_sh_path = "bbmerge.sh"
 bwa_path = "bwa"
 fastqc_path = "fastqc"
+gatk_path = "gatk-launch"
 multiqc_path = "multiqc"
 picard_path = "picard"
 sambamba_path = "sambamba"
@@ -30,6 +31,9 @@ rule all:
 			sample=config["sample_names"], genome=["pantro4"]),
 		expand(
 			"processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai",
+			sample=config["sample_names"], genome=["pantro4"]),
+		expand(
+			"stats/{sample}.{genome}.sorted.mkdup.bam.stats",
 			sample=config["sample_names"], genome=["pantro4"])
 
 rule prepare_reference:
@@ -234,3 +238,29 @@ rule index_mkdup_bam:
 		samtools = samtools_path
 	shell:
 		"{params.samtools} index {input}"
+
+rule bam_stats:
+	input:
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
+		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
+	output:
+		"stats/{sample}.{genome}.sorted.mkdup.bam.stats"
+	params:
+		samtools = samtools_path
+	shell:
+		"{params.samtools} stats {input.bam} | grep ^SN | cut -f 2- > {output}"
+
+rule gatk_gvcf:
+	input:
+		ref = ref_path,
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
+		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
+	output:
+		"vcf/{sample}.{genome}.g.vcf.gz"
+	params:
+		temp_dir = temp_directory,
+		gatk = gatk_path
+	threads:
+		4
+	shell:
+		"{params.gatk} --java-options '-Xmx15g -Djava.io.tmpdir={params.temp_dir}' HaplotypeCaller -R {input.ref} -I {input.bam} -contamination 0.05 --emitRefConfidence GVCF -o {output}"
