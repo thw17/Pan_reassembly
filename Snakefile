@@ -252,7 +252,7 @@ rule bam_stats:
 
 rule gatk_gvcf:
 	input:
-		ref = ref_path,
+		ref = "reference/{genome}.fasta",
 		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
 		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
 	output:
