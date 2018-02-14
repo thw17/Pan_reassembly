@@ -34,7 +34,10 @@ rule all:
 			sample=config["sample_names"], genome=["pantro4"]),
 		expand(
 			"stats/{sample}.{genome}.sorted.mkdup.bam.stats",
-			sample=config["sample_names"], genome=["pantro4"])
+			sample=config["sample_names"], genome=["pantro4"]),
+		expand(
+			"vcf/{sample}.{genome}.g.vcf.gz",
+			sample=config["sample_names"], genome=["pantro4"]),
 
 rule prepare_reference:
 	input:
