@@ -6,11 +6,12 @@ fastq_directory = "/mnt/storage/COMBINEDLABPUB/greatapes/fastq"
 
 temp_directory = "temp/"
 
+gatk_path = "/home/thwebste/Tools/GenomeAnalysisTK_37.jar"
+
 bbduksh_path = "bbduk.sh"
 bbmerge_sh_path = "bbmerge.sh"
 bwa_path = "bwa"
 fastqc_path = "fastqc"
-gatk_path = "gatk-launch"
 multiqc_path = "multiqc"
 picard_path = "picard"
 sambamba_path = "sambamba"
@@ -266,4 +267,6 @@ rule gatk_gvcf:
 	threads:
 		4
 	shell:
-		"{params.gatk} --java-options '-Xmx15g -Djava.io.tmpdir={params.temp_dir}' HaplotypeCaller --reference {input.ref} --input {input.bam} -contamination 0.05 --emit-ref-confidence GVCF --output {output}"
+		"java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk} "
+		"-T HaplotypeCaller --reference {input.ref} --input {input.bam} "
+		"-contamination 0.05 --emitRefConfidence GVCF --output {output}"
