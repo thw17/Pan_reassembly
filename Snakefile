@@ -266,4 +266,4 @@ rule gatk_gvcf:
 	threads:
 		4
 	shell:
-		"{params.gatk} --java-options '-Xmx15g -Djava.io.tmpdir={params.temp_dir}' HaplotypeCaller -R {input.ref} -I {input.bam} -contamination 0.05 --emitRefConfidence GVCF -o {output}"
+		"{params.gatk} --java-options '-Xmx15g -Djava.io.tmpdir={params.temp_dir}' HaplotypeCaller -R {input.ref} -I {input.bam} -contamination 0.05 --emit-ref-confidence GVCF -o {output}"
