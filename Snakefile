@@ -255,22 +255,22 @@ rule bam_stats:
 	shell:
 		"{params.samtools} stats {input.bam} | grep ^SN | cut -f 2- > {output}"
 
-rule gatk_gvcf:
-	input:
-		ref = "reference/{genome}.fasta",
-		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
-		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
-	output:
-		"vcf/{sample}.{genome}.g.vcf.gz"
-	params:
-		temp_dir = temp_directory,
-		gatk = gatk_path
-	threads:
-		4
-	shell:
-		"java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk} "
-		"-T HaplotypeCaller -R {input.ref} -I {input.bam} "
-		"-contamination 0.05 --emitRefConfidence GVCF -o {output}"
+# rule gatk_gvcf:
+# 	input:
+# 		ref = "reference/{genome}.fasta",
+# 		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
+# 		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
+# 	output:
+# 		"vcf/{sample}.{genome}.g.vcf.gz"
+# 	params:
+# 		temp_dir = temp_directory,
+# 		gatk = gatk_path
+# 	threads:
+# 		4
+# 	shell:
+# 		"java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk} "
+# 		"-T HaplotypeCaller -R {input.ref} -I {input.bam} "
+# 		"-contamination 0.05 --emitRefConfidence GVCF -o {output}"
 
 rule gatk_gvcf_per_chrom:
 	input:
