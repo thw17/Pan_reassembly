@@ -24,5 +24,9 @@
 
 	"gatk_gvcf" : {
 		"n": 4
+	},
+
+	"gatk_gvcf_per_chrom" : {
+		"n": 4
 	}
 }

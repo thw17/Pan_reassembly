@@ -37,8 +37,9 @@ rule all:
 			"stats/{sample}.{genome}.sorted.mkdup.bam.stats",
 			sample=config["sample_names"], genome=["pantro4"]),
 		expand(
-			"vcf/{sample}.{genome}.g.vcf.gz",
-			sample=config["sample_names"], genome=["pantro4"]),
+			"vcf/{sample}.{genome}.{chrom}.g.vcf.gz",
+			sample=config["sample_names"], genome=["pantro4"],
+			chrom=config["chromosomes_to_analyze"]["panTro4"])
 
 rule prepare_reference:
 	input:
@@ -269,4 +270,21 @@ rule gatk_gvcf:
 	shell:
 		"java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk} "
 		"-T HaplotypeCaller -R {input.ref} -I {input.bam} "
+		"-contamination 0.05 --emitRefConfidence GVCF -o {output}"
+
+rule gatk_gvcf_per_chrom:
+	input:
+		ref = "reference/{genome}.fasta",
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
+		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
+	output:
+		"vcf/{sample}.{genome}.{chrom}.g.vcf.gz"
+	params:
+		temp_dir = temp_directory,
+		gatk = gatk_path
+	threads:
+		4
+	shell:
+		"java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk} "
+		"-T HaplotypeCaller -R {input.ref} -I {input.bam} -L {wildcards.chrom} "
 		"-contamination 0.05 --emitRefConfidence GVCF -o {output}"
