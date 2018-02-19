@@ -39,7 +39,7 @@ rule all:
 		expand(
 			"vcf/{sample}.{genome}.{chrom}.g.vcf.gz",
 			sample=config["sample_names"], genome=["pantro4"],
-			chrom=config["chromosomes_to_analyze"]["panTro4"])
+			chrom=config["chromosomes_to_analyze"]["pantro4"])
 
 rule prepare_reference:
 	input:
