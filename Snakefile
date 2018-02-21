@@ -298,8 +298,9 @@ rule genotype_gvcfs_per_chrom:
 	input:
 		ref = "reference/{genome}.fasta",
 		gvcfs = lambda wildcards: expand(
-			"vcf/{sample}.{{genome}}.{{chrom}}.g.vcf.gz",
-			sample=config["subspecies"][wildcards.population])
+			"vcf/{sample}.{genome}.{{chrom}}.g.vcf.gz",
+			sample=config["subspecies"][wildcards.population],
+			genome=[wildcards.genome], chrom=[wildcards.chrom])
 	output:
 		v = "vcf/{population}.{genome}.{chrom}.vcf.gz"
 	params:
