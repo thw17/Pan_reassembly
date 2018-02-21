@@ -41,7 +41,7 @@ rule all:
 			sample=config["sample_names"], genome=["pantro4"],
 			chrom=config["chromosomes_to_analyze"]["pantro4"]),
 		expand(
-			"vcf/{population}.{genome}.{chrom}.vcf.gz",
+			"vcf_joint/{population}.{genome}.{chrom}.vcf.gz",
 			population=["pan_troglogytes_schweinfurthii"],
 			genome=["pantro4"],
 			chrom=config["chromosomes_to_analyze"]["pantro4"])
@@ -302,7 +302,7 @@ rule genotype_gvcfs_per_chrom:
 			sample=config["subspecies"][wildcards.population],
 			genome=[wildcards.genome], chrom=[wildcards.chrom])
 	output:
-		v = "vcf/{population}.{genome}.{chrom}.vcf.gz"
+		v = "vcf_joint/{population}.{genome}.{chrom}.vcf.gz"
 	params:
 		temp_dir = temp_directory,
 		gatk = gatk_path
