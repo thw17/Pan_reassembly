@@ -28,5 +28,9 @@
 
 	"gatk_gvcf_per_chrom" : {
 		"n": 4
+	},
+
+	"genotype_gvcfs_per_chrom" : {
+		"n": 4
 	}
 }
