@@ -39,6 +39,11 @@ rule all:
 		expand(
 			"vcf/{sample}.{genome}.{chrom}.g.vcf.gz",
 			sample=config["sample_names"], genome=["pantro4"],
+			chrom=config["chromosomes_to_analyze"]["pantro4"]),
+		expand(
+			"vcf/{population}.{genome}.{chrom}.g.vcf.gz",
+			population=["pan_troglogytes_schweinfurthii"],
+			genome=["pantro4"],
 			chrom=config["chromosomes_to_analyze"]["pantro4"])
 
 rule prepare_reference:
@@ -288,3 +293,23 @@ rule gatk_gvcf_per_chrom:
 		"java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk} "
 		"-T HaplotypeCaller -R {input.ref} -I {input.bam} -L {wildcards.chrom} "
 		"-contamination 0.05 --emitRefConfidence GVCF -o {output}"
+
+rule genotype_gvcfs_per_chrom:
+	input:
+		ref = "reference/{genome}.fasta",
+		gvcfs = lambda wildcards: expand(
+			"vcf/{sample}.{{genome}}.{{chrom}}.g.vcf.gz",
+			sample=config["subspecies"][wildcards.population])
+	output:
+		v = "vcf/{population}.{genome}.{chrom}.g.vcf.gz"
+	params:
+		temp_dir = temp_directory,
+		gatk = gatk_path
+	threads:
+		4
+	run:
+		variant_files = []
+		for i in input.gvcfs:
+			variant_files.append("--variant " + i)
+		variant_files = " ".join(variant_files)
+		shell("java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk_path} -T GenotypeGVCFs -R {input.ref} {variant_files} -o {output.v} --includeNonVariantSites")
