@@ -41,7 +41,7 @@ rule all:
 			sample=config["sample_names"], genome=["pantro4"],
 			chrom=config["chromosomes_to_analyze"]["pantro4"]),
 		expand(
-			"vcf/{population}.{genome}.{chrom}.g.vcf.gz",
+			"vcf/{population}.{genome}.{chrom}.vcf.gz",
 			population=["pan_troglogytes_schweinfurthii"],
 			genome=["pantro4"],
 			chrom=config["chromosomes_to_analyze"]["pantro4"])
