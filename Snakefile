@@ -313,4 +313,4 @@ rule genotype_gvcfs_per_chrom:
 		for i in input.gvcfs:
 			variant_files.append("--variant " + i)
 		variant_files = " ".join(variant_files)
-		shell("java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk_path} -T GenotypeGVCFs -R {input.ref} {variant_files} -o {output.v} --includeNonVariantSites")
+		shell("java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk} -T GenotypeGVCFs -R {input.ref} {variant_files} -o {output.v} --includeNonVariantSites")
