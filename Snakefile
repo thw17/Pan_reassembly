@@ -301,7 +301,7 @@ rule genotype_gvcfs_per_chrom:
 			"vcf/{sample}.{{genome}}.{{chrom}}.g.vcf.gz",
 			sample=config["subspecies"][wildcards.population])
 	output:
-		v = "vcf/{population}.{genome}.{chrom}.g.vcf.gz"
+		v = "vcf/{population}.{genome}.{chrom}.vcf.gz"
 	params:
 		temp_dir = temp_directory,
 		gatk = gatk_path
