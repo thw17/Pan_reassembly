@@ -10,12 +10,15 @@ gatk_path = "/home/thwebste/Tools/GenomeAnalysisTK_37.jar"
 
 bbduksh_path = "bbduk.sh"
 bbmerge_sh_path = "bbmerge.sh"
+bcftools_path = "bcftools"
+bgzip_path = "bgzip"
 bwa_path = "bwa"
 fastqc_path = "fastqc"
 multiqc_path = "multiqc"
 picard_path = "picard"
 sambamba_path = "sambamba"
 samtools_path = "samtools"
+tabix_path = "tabix"
 
 fastq_prefixes = [
 	config[x]["fq1"][:-9] for x in config["sras"]] + [
@@ -313,4 +316,7 @@ rule genotype_gvcfs_per_chrom:
 		for i in input.gvcfs:
 			variant_files.append("--variant " + i)
 		variant_files = " ".join(variant_files)
-		shell("java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk} -T GenotypeGVCFs -R {input.ref} {variant_files} -o {output.v} --includeNonVariantSites")
+		shell(
+			"java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk} "
+			"-T GenotypeGVCFs -R {input.ref} {variant_files} "
+			"-o {output.v} --includeNonVariantSites")
