@@ -44,7 +44,7 @@ rule all:
 			sample=config["sample_names"], genome=["pantro4"],
 			chrom=config["chromosomes_to_analyze"]["pantro4"]),
 		expand(
-			"vcf_joint/{population}.{genome}.{chrom}.vcf.gz",
+			"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz.tbi",
 			population=["pan_troglogytes_schweinfurthii"],
 			genome=["pantro4"],
 			chrom=config["chromosomes_to_analyze"]["pantro4"])
@@ -319,4 +319,29 @@ rule genotype_gvcfs_per_chrom:
 		shell(
 			"java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk} "
 			"-T GenotypeGVCFs -R {input.ref} {variant_files} "
-			"-o {output.v} --includeNonVariantSites")
+			"-o {output.v}")
+
+rule filter_vcfs:
+	input:
+		"vcf_joint/{population}.{genome}.{chrom}.vcf.gz"
+	output:
+		"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz"
+	params:
+		bgzip = bgzip_path,
+		bcftools = bcftools_path
+	shell:
+		"{params.bcftools} filter -i "
+		"'QUAL >= 30 && MQ >= 30 && AF > 0 && AF < 1.0 && QD > 2 & "
+		"FMT/DP >= 10 & FMT/GQ >= 30' {input} | "
+		"{params.bcftools} filter -i 'FMT/DP >= 10 & FMT/GQ >= 30' -S . - | "
+		"{params.bgzip} > {output}"
+
+rule index_filtered_vcf:
+	input:
+		"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz"
+	output:
+		"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz.tbi"
+	params:
+		tabix = tabix_path
+	shell:
+		"{params.tabix} -p vcf {input}"
