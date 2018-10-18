@@ -380,12 +380,12 @@ rule concatenate_split_vcfs:
 			"vcf_joint/{population}.{gen}.{chrom}.filtered_{type}.vcf.gz",
 			pop=wildcards.population,
 			gen=wildcards.genome,
-			chrom=chrom=config["chromosomes_to_analyze"][wildcards.genome]),
+			chrom=config["chromosomes_to_analyze"][wildcards.genome]),
 		idx = lambda wildcards: expand(
 			"vcf_joint/{population}.{gen}.{chrom}.filtered_{type}.vcf.gz.tbi",
 			pop=wildcards.population,
 			gen=wildcards.genome,
-			chrom=chrom=config["chromosomes_to_analyze"][wildcards.genome])
+			chrom=config["chromosomes_to_analyze"][wildcards.genome])
 	output:
 		"vcf_combined/{population}.{gen}.combined.filtered_{type}.vcf.gz"
 	params:
