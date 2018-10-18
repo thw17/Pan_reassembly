@@ -49,7 +49,7 @@ rule all:
 			genome=["pantro4"],
 			chrom=config["chromosomes_to_analyze"]["pantro4"]),
 		expand(
-			"vcf_combined/{population}.{gen}.combined.filtered_{type}.vcf.gz.tbi",
+			"vcf_combined/{population}.{genome}.combined.filtered_{type}.vcf.gz.tbi",
 			population=["pan_troglogytes_schweinfurthii"],
 			genome=["pantro4"],
 			type=["allvariant", "polymorphic"])
