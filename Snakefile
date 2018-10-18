@@ -47,7 +47,12 @@ rule all:
 			"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz.tbi",
 			population=["pan_troglogytes_schweinfurthii"],
 			genome=["pantro4"],
-			chrom=config["chromosomes_to_analyze"]["pantro4"])
+			chrom=config["chromosomes_to_analyze"]["pantro4"]),
+		expand(
+			"vcf_combined/{population}.{gen}.combined.filtered_{type}.vcf.gz.tbi",
+			population=["pan_troglogytes_schweinfurthii"],
+			genome=["pantro4"],
+			type=["allvariant", "polymorphic"])
 
 rule prepare_reference:
 	input:
@@ -321,27 +326,104 @@ rule genotype_gvcfs_per_chrom:
 			"-T GenotypeGVCFs -R {input.ref} {variant_files} "
 			"-o {output.v}")
 
-rule filter_vcfs:
+rule filter_vcfs_polymorphic_only:
 	input:
 		"vcf_joint/{population}.{genome}.{chrom}.vcf.gz"
 	output:
-		"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz"
+		"vcf_joint/{population}.{genome}.{chrom}.filtered_polymorphic.vcf.gz"
 	params:
 		bgzip = bgzip_path,
 		bcftools = bcftools_path
 	shell:
 		"{params.bcftools} filter -i "
-		"'QUAL >= 30 && MQ >= 30 && AF > 0 && AF < 1.0 && QD > 2 & "
-		"FMT/DP >= 10 & FMT/GQ >= 30' {input} | "
+		"'QUAL >= 30 && MQ >= 30 && AF > 0 && AF < 1.0 && QD > 2' {input} | "
 		"{params.bcftools} filter -i 'FMT/DP >= 10 & FMT/GQ >= 30' -S . - | "
 		"{params.bgzip} > {output}"
 
-rule index_filtered_vcf:
+rule index_filtered_vcf_polymorphic:
 	input:
-		"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz"
+		"vcf_joint/{population}.{genome}.{chrom}.filtered_polymorphic.vcf.gz"
 	output:
-		"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz.tbi"
+		"vcf_joint/{population}.{genome}.{chrom}.filtered_polymorphic.vcf.gz.tbi"
 	params:
 		tabix = tabix_path
 	shell:
 		"{params.tabix} -p vcf {input}"
+
+rule filter_vcfs_allvariant:
+	input:
+		"vcf_joint/{population}.{genome}.{chrom}.vcf.gz"
+	output:
+		"vcf_joint/{population}.{genome}.{chrom}.filtered_allvariant.vcf.gz"
+	params:
+		bgzip = bgzip_path,
+		bcftools = bcftools_path
+	shell:
+		"{params.bcftools} filter -i "
+		"'QUAL >= 30 && MQ >= 30 && AF > 0 && AF < 1.0 && QD > 2' {input} | "
+		"{params.bcftools} filter -i 'FMT/DP >= 10 & FMT/GQ >= 30' -S . - | "
+		"{params.bgzip} > {output}"
+
+rule index_filtered_vcf_allvariant:
+	input:
+		"vcf_joint/{population}.{genome}.{chrom}.filtered_allvariant.vcf.gz"
+	output:
+		"vcf_joint/{population}.{genome}.{chrom}.filtered_allvariant.vcf.gz.tbi"
+	params:
+		tabix = tabix_path
+	shell:
+		"{params.tabix} -p vcf {input}"
+
+rule concatenate_split_vcfs:
+	input:
+		vcf = lamnda wildcards: expand(
+			"vcf_joint/{population}.{gen}.{chrom}.filtered_{type}.vcf.gz",
+			pop=wildcards.population,
+			gen=wildcards.genome,
+			chrom=chrom=config["chromosomes_to_analyze"][wildcards.genome])
+		idx = lamnda wildcards: expand(
+			"vcf_joint/{population}.{gen}.{chrom}.filtered_{type}.vcf.gz.tbi",
+			pop=wildcards.population,
+			gen=wildcards.genome,
+			chrom=chrom=config["chromosomes_to_analyze"][wildcards.genome])
+	output:
+		"vcf_combined/{population}.{gen}.combined.filtered_{type}.vcf.gz"
+	params:
+		bcftools = bcftools_path
+	shell:
+		"{params.bcftools} concat -O z -o {output} {input.vcf}"
+
+rule index_concatenated_vcf:
+	input:
+		"vcf_combined/{population}.{gen}.combined.filtered_{type}.vcf.gz"
+	output:
+		"vcf_combined/{population}.{gen}.combined.filtered_{type}.vcf.gz.tbi"
+	params:
+		tabix = tabix_path
+	shell:
+		"{params.tabix} -p vcf {input}"
+
+# rule filter_vcfs:
+# 	input:
+# 		"vcf_joint/{population}.{genome}.{chrom}.vcf.gz"
+# 	output:
+# 		"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz"
+# 	params:
+# 		bgzip = bgzip_path,
+# 		bcftools = bcftools_path
+# 	shell:
+# 		"{params.bcftools} filter -i "
+# 		"'QUAL >= 30 && MQ >= 30 && AF > 0 && AF < 1.0 && QD > 2 & "
+# 		"FMT/DP >= 10 & FMT/GQ >= 30' {input} | "
+# 		"{params.bcftools} filter -i 'FMT/DP >= 10 & FMT/GQ >= 30' -S . - | "
+# 		"{params.bgzip} > {output}"
+#
+# rule index_filtered_vcf:
+# 	input:
+# 		"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz"
+# 	output:
+# 		"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz.tbi"
+# 	params:
+# 		tabix = tabix_path
+# 	shell:
+# 		"{params.tabix} -p vcf {input}"
