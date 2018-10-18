@@ -376,12 +376,12 @@ rule index_filtered_vcf_allvariant:
 
 rule concatenate_split_vcfs:
 	input:
-		vcf = lamnda wildcards: expand(
+		vcf = lambda wildcards: expand(
 			"vcf_joint/{population}.{gen}.{chrom}.filtered_{type}.vcf.gz",
 			pop=wildcards.population,
 			gen=wildcards.genome,
 			chrom=chrom=config["chromosomes_to_analyze"][wildcards.genome]),
-		idx = lamnda wildcards: expand(
+		idx = lambda wildcards: expand(
 			"vcf_joint/{population}.{gen}.{chrom}.filtered_{type}.vcf.gz.tbi",
 			pop=wildcards.population,
 			gen=wildcards.genome,
