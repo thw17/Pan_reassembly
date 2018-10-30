@@ -24,6 +24,8 @@ paired = [x for x in config["sras"] if x not in config["single_end"]]
 
 exclude_list = ["SRR740818", "SRR740831"]
 
+allpan = config["sample_names"]
+
 fastq_prefixes = [
 	config[x]["fq1"][:-9] for x in config["sras"]] + [
 		config[x]["fq2"][:-9] for x in paired]
@@ -94,7 +96,7 @@ rule all:
 			sample=config["sample_names"], genome=["pantro4"]),
 		expand(
 			"vcf_combined/{population}.{genome}.combined.filtered_{type}.vcf.gz.tbi",
-			population=config["sample_names"],
+			population=["allpan"],
 			genome=["pantro4"],
 			type=["allvariant"])
 
