@@ -21,6 +21,13 @@
 		"Hortense", "LB502"],
 
 	"subspecies": {
+		"allpan": [
+			"Nakuu", "Kidongo", "Bwamble", "Harriet", "Andromeda", "Vincent",
+			"Mgbadolite", "Washu", "Athanga", "Coco_chimp", "Maya", "Frederike",
+			"Trixie", "Bihati", "Cleo", "Tongo", "Ikuru", "Cindy_schwein", "Padda",
+			"Kumbuka", "Salonga", "Natalie", "Bono", "Chipita", "Kombote",
+			"Catherine", "Desmond", "Hermien", "Dzeeta", "Kosana",
+			"Hortense", "LB502"],
 		"pan_troglogytes_schweinfurthii": [
 			"Nakuu", "Kidongo", "Bwamble", "Harriet", "Andromeda", "Vincent",
 			"Mgbadolite", "Washu", "Athanga", "Coco_chimp", "Maya", "Frederike",

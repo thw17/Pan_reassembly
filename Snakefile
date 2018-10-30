@@ -24,8 +24,6 @@ paired = [x for x in config["sras"] if x not in config["single_end"]]
 
 exclude_list = ["SRR740818", "SRR740831"]
 
-allpan = config["sample_names"]
-
 fastq_prefixes = [
 	config[x]["fq1"][:-9] for x in config["sras"]] + [
 		config[x]["fq2"][:-9] for x in paired]
