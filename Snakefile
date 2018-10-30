@@ -76,11 +76,13 @@ def gather_bai_input_for_merging(wildcards):
 	return singles_list + paired_list
 
 
+assemblies = ["pantro6"]
+
 rule all:
 	input:
 		expand(
 			"reference/{assembly}.fasta.fai",
-			assembly=["pantro4"]),
+			assembly=assemblies),
 		expand(
 			"adapters/{sample}.adapters.fa",
 			sample=paired),
@@ -88,14 +90,14 @@ rule all:
 		"multiqc_trimmed/multiqc_report.html",
 		expand(
 			"stats/{sample}.{genome}.sorted.mkdup.bam.stats",
-			sample=config["sample_names"], genome=["pantro4"]),
+			sample=config["sample_names"], genome=assemblies),
 		expand(
 			"callable_sites/{sample}.{genome}.ONLYcallablesites.bed",
-			sample=config["sample_names"], genome=["pantro4"]),
+			sample=config["sample_names"], genome=assemblies),
 		expand(
 			"vcf_combined/{population}.{genome}.combined.filtered_{type}.vcf.gz.tbi",
 			population=["allpan"],
-			genome=["pantro4"],
+			genome=assemblies,
 			type=["allvariant"])
 
 rule prepare_reference:
