@@ -365,7 +365,7 @@ rule generate_callable_sites:
 		"callable_sites/{sample}.{genome}.callablesites"
 	params:
 		temp_dir = temp_directory,
-		gatk = gatk3_path,
+		gatk = gatk_path,
 		summary = "stats/{sample}.{genome}.callable.summary"
 	shell:
 		"java -Xmx12g -Djava.io.tmpdir={params.temp_dir} "
