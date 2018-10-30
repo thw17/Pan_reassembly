@@ -1,6 +1,7 @@
 {
 	"genome_paths": {
-		"pantro4": "reference/panTro4.fa"
+		"pantro4": "reference/panTro4.fa",
+		"pantro6": "reference/panTro6.fa"
 	},
 
 	"chromosomes_to_analyze": {
@@ -14,14 +15,20 @@
 	"sample_names": [
 		"Nakuu", "Kidongo", "Bwamble", "Harriet", "Andromeda", "Vincent",
 		"Mgbadolite", "Washu", "Athanga", "Coco_chimp", "Maya", "Frederike",
-		"Trixie", "Bihati", "Cleo", "Tongo", "Ikuru", "Cindy_schwein", "Padda"],
-
+		"Trixie", "Bihati", "Cleo", "Tongo", "Ikuru", "Cindy_schwein", "Padda",
+		"Kumbuka", "Salonga", "Natalie", "Bono", "Chipita", "Kombote",
+		"Catherine", "Desmond", "Hermien", "Dzeeta", "Kosana",
+		"Hortense", "LB502"],
 
 	"subspecies": {
 		"pan_troglogytes_schweinfurthii": [
 			"Nakuu", "Kidongo", "Bwamble", "Harriet", "Andromeda", "Vincent",
 			"Mgbadolite", "Washu", "Athanga", "Coco_chimp", "Maya", "Frederike",
-			"Trixie", "Bihati", "Cleo", "Tongo", "Ikuru", "Cindy_schwein", "Padda"]
+			"Trixie", "Bihati", "Cleo", "Tongo", "Ikuru", "Cindy_schwein", "Padda"],
+		"pan_paniscus": [
+			"Kumbuka", "Salonga", "Natalie", "Bono", "Chipita", "Kombote",
+			"Catherine", "Desmond", "Hermien", "Dzeeta", "Kosana",
+			"Hortense", "LB502"]
 	},
 
 	"sras": [
@@ -42,7 +49,26 @@
 			"ERR1710098", "ERR1710097", "ERR1710096", "ERR1710095", "ERR1710152",
 			"ERR1710151", "ERR1710150", "ERR1710149", "ERR1710088", "ERR1710087",
 			"ERR1710086","ERR1710085", "ERR1709993","ERR1709992","ERR1709991",
-			"ERR1709990"],
+			"ERR1709990",
+			"SRR747650", "SRR747649", "SRR747646", "SRR747647", "SRR747648",
+			"SRR747643", "SRR747644", "SRR747645", "SRR741813", "SRR741824",
+			"SRR741768", "SRR741770", "SRR741785", "SRR741494", "SRR741444",
+			"SRR741390", "SRR741327", "SRR741254", "SRR741276", "SRR741194",
+			"SRR741205", "SRR741062", "SRR741002", "SRR740980", "SRR740941",
+			"SRR740905", "SRR740911", "SRR740853", "SRR740857", "SRR740833",
+			"SRR740834", "SRR740831", "SRR740832", "SRR740835", "SRR740830",
+			"SRR740829", "SRR740828", "SRR740827", "SRR740824", "SRR740825",
+			"SRR740822", "SRR740823", "SRR740819", "SRR740820", "SRR740821",
+			"SRR740816", "SRR740817", "SRR740818", "SRR740806", "SRR740807",
+			"SRR740808", "SRR740809", "SRR740802", "SRR740803", "SRR740804",
+			"SRR740805", "SRR740798", "SRR740799", "SRR740800", "SRR740801",
+			"SRR740794", "SRR740795", "SRR740796", "SRR740797", "SRR740787",
+			"SRR740790", "SRR740792", "SRR740793", "SRR740781", "SRR740782",
+			"SRR740783", "SRR740784", "SRR740772", "SRR740773", "SRR740774",
+			"SRR740775", "SRR740768", "SRR740769", "SRR740770", "SRR740771",
+			"SRR726612", "SRR726613", "SRR726614", "SRR726615", "SRR726607",
+			"SRR726608", "SRR726609", "SRR726610", "SRR747929", "SRR747930",
+			"SRR747927", "SRR747928"],
 
 	"samples": {
 		"Nakuu": [
@@ -85,8 +111,38 @@
 		"Cindy_schwein": [
 			"ERR1710088","ERR1710087","ERR1710086","ERR1710085"],
 		"Padda": [
-			"ERR1709993","ERR1709992","ERR1709991","ERR1709990"]
+			"ERR1709993","ERR1709992","ERR1709991","ERR1709990"],
+		"Kumbuka": [
+			"SRR747650","SRR747649","SRR747646","SRR747647","SRR747648","SRR747643","SRR747644","SRR747645"],
+		"Salonga": [
+			"SRR741813","SRR741824","SRR741768","SRR741770","SRR741785"],
+		"Natalie": [
+			"SRR741494","SRR741444","SRR741390","SRR741327","SRR741254","SRR741276","SRR741194","SRR741205"],
+		"Bono": [
+			"SRR741062","SRR741002","SRR740980","SRR740941","SRR740905","SRR740911","SRR740853","SRR740857"],
+		"Chipita": [
+			"SRR740833","SRR740834","SRR740831","SRR740832","SRR740835"],
+		"Kombote": [
+			"SRR740830","SRR740829","SRR740828","SRR740827","SRR740824","SRR740825","SRR740822","SRR740823"],
+		"Catherine": [
+			"SRR740819","SRR740820","SRR740821","SRR740816","SRR740817","SRR740818"],
+		"Desmond": [
+			"SRR740806","SRR740807","SRR740808","SRR740809","SRR740802","SRR740803","SRR740804","SRR740805"],
+		"Hermien": [
+			"SRR740798","SRR740799","SRR740800","SRR740801","SRR740794","SRR740795","SRR740796","SRR740797"],
+		"Dzeeta": [
+			"SRR740787","SRR740790","SRR740792","SRR740793","SRR740781","SRR740782","SRR740783","SRR740784"],
+		"Kosana": [
+			"SRR740772","SRR740773","SRR740774","SRR740775","SRR740768","SRR740769","SRR740770","SRR740771"],
+		"Hortense": [
+			"SRR726612","SRR726613","SRR726614","SRR726615","SRR726607","SRR726608","SRR726609","SRR726610"],
+		"LB502": [
+			"SRR747929","SRR747930","SRR747927","SRR747928"]
 	},
+
+	"single_end" : [
+		"SRR747650", "SRR747649", "SRR741494", "SRR741444",
+		"SRR741062", "SRR741002", "SRR740830","SRR740829"],
 
 	"SRR726412":{
 		"fq1": "SRR726412_1.fastq.gz",
@@ -945,6 +1001,918 @@
 		"SM": "Mgbadolite",
 		"LB": "1286248",
 		"PU": "C6DUUANXX.4",
+		"PL": "Illumina"
+	},
+
+	"SRR747650":{
+		"fq1": "SRR747650_1.fastq.gz",
+		"ID": "SRR747650",
+		"SM": "Kumbuka",
+		"LB": "242684",
+		"PU": "HWI-ST700660_66.1",
+		"PL": "Illumina"
+	},
+
+	"SRR747649":{
+		"fq1": "SRR747649_1.fastq.gz",
+		"ID": "SRR747649",
+		"SM": "Kumbuka",
+		"LB": "242683",
+		"PU": "HWI-ST700660_66.2",
+		"PL": "Illumina"
+	},
+
+	"SRR747646":{
+		"fq1": "SRR747646_1.fastq.gz",
+		"fq2": "SRR747646_2.fastq.gz",
+		"ID": "SRR747646",
+		"SM": "Kumbuka",
+		"LB": "242682",
+		"PU": "HWI-ST537_59.1",
+		"PL": "Illumina"
+	},
+
+	"SRR747647":{
+		"fq1": "SRR747647_1.fastq.gz",
+		"fq2": "SRR747647_2.fastq.gz",
+		"ID": "SRR747647",
+		"SM": "Kumbuka",
+		"LB": "242682",
+		"PU": "HWI-ST459_73.1",
+		"PL": "Illumina"
+	},
+
+	"SRR747648":{
+		"fq1": "SRR747648_1.fastq.gz",
+		"fq2": "SRR747648_2.fastq.gz",
+		"ID": "SRR747648",
+		"SM": "Kumbuka",
+		"LB": "242682",
+		"PU": "HWI-ST700660_69.1",
+		"PL": "Illumina"
+	},
+
+	"SRR747643":{
+		"fq1": "SRR747643_1.fastq.gz",
+		"fq2": "SRR747643_2.fastq.gz",
+		"ID": "SRR",
+		"SM": "Kumbuka",
+		"LB": "242681",
+		"PU": "HWI-ST537_59.2",
+		"PL": "Illumina"
+	},
+
+	"SRR747644":{
+		"fq1": "SRR747644_1.fastq.gz",
+		"fq2": "SRR747644_2.fastq.gz",
+		"ID": "SRR747644",
+		"SM": "Kumbuka",
+		"LB": "242681",
+		"PU": "HWI-ST459_73.2",
+		"PL": "Illumina"
+	},
+
+	"SRR747645":{
+		"fq1": "SRR747645_1.fastq.gz",
+		"fq2": "SRR747645_2.fastq.gz",
+		"ID": "SRR747645",
+		"SM": "Kumbuka",
+		"LB": "242681",
+		"PU": "HWI-ST700660_69.2",
+		"PL": "Illumina"
+	},
+
+	"SRR741813":{
+		"fq1": "SRR741813_1.fastq.gz",
+		"fq2": "SRR741813_2.fastq.gz",
+		"ID": "SRR741813",
+		"SM": "Salonga",
+		"LB": "241545",
+		"PU": "HWI-ST537_62.4",
+		"PL": "Illumina"
+	},
+
+	"SRR741824":{
+		"fq1": "SRR741824_1.fastq.gz",
+		"fq2": "SRR741824_2.fastq.gz",
+		"ID": "SRR741824",
+		"SM": "Salonga",
+		"LB": "241545",
+		"PU": "HWI-ST700660_72.4",
+		"PL": "Illumina"
+	},
+
+	"SRR741768":{
+		"fq1": "SRR741768_1.fastq.gz",
+		"fq2": "SRR741768_2.fastq.gz",
+		"ID": "SRR741768",
+		"SM": "Salonga",
+		"LB": "241544",
+		"PU": "HWI-ST537_62.3",
+		"PL": "Illumina"
+	},
+
+	"SRR741770":{
+		"fq1": "SRR741770_1.fastq.gz",
+		"fq2": "SRR741770_2.fastq.gz",
+		"ID": "SRR741770",
+		"SM": "Salonga",
+		"LB": "241544",
+		"PU": "HWI-ST700660_72.3",
+		"PL": "Illumina"
+	},
+
+	"SRR741785":{
+		"fq1": "SRR741785_1.fastq.gz",
+		"fq2": "SRR741785_2.fastq.gz",
+		"ID": "SRR741785",
+		"SM": "Salonga",
+		"LB": "241544",
+		"PU": "HWI-ST0857_56.2",
+		"PL": "Illumina"
+	},
+
+	"SRR741494":{
+		"fq1": "SRR741494_1.fastq.gz",
+		"ID": "SRR741494",
+		"SM": "Natalie",
+		"LB": "241541",
+		"PU": "HWI-ST537_60.7",
+		"PL": "Illumina"
+	},
+
+	"SRR741444":{
+		"fq1": "SRR741444_1.fastq.gz",
+		"ID": "SRR741444",
+		"SM": "Natalie",
+		"LB": "241528",
+		"PU": "HWI-ST537_60.8",
+		"PL": "Illumina"
+	},
+
+	"SRR741390":{
+		"fq1": "SRR741390_1.fastq.gz",
+		"fq2": "SRR741390_2.fastq.gz",
+		"ID": "SRR741390",
+		"SM": "Natalie",
+		"LB": "241481",
+		"PU": "HWUSI-EAS1695_31.7",
+		"PL": "Illumina"
+	},
+
+	"SRR741327":{
+		"fq1": "SRR741327_1.fastq.gz",
+		"fq2": "SRR741327_2.fastq.gz",
+		"ID": "SRR741327",
+		"SM": "Natalie",
+		"LB": "241477",
+		"PU": "HWUSI-EAS1695_31.8",
+		"PL": "Illumina"
+	},
+
+	"SRR741254":{
+		"fq1": "SRR741254_1.fastq.gz",
+		"fq2": "SRR741254_2.fastq.gz",
+		"ID": "SRR741254",
+		"SM": "Natalie",
+		"LB": "241461",
+		"PU": "HWI-ST539_54.7",
+		"PL": "Illumina"
+	},
+
+	"SRR741276":{
+		"fq1": "SRR741276_1.fastq.gz",
+		"fq2": "SRR741276_2.fastq.gz",
+		"ID": "SRR741276",
+		"SM": "Natalie",
+		"LB": "241461",
+		"PU": "HWI-ST700660_69.7",
+		"PL": "Illumina"
+	},
+
+	"SRR741194":{
+		"fq1": "SRR741194_1.fastq.gz",
+		"fq2": "SRR741194_2.fastq.gz",
+		"ID": "SRR741194",
+		"SM": "Natalie",
+		"LB": "241441",
+		"PU": "HWI-ST539_54.8",
+		"PL": "Illumina"
+	},
+
+	"SRR741205":{
+		"fq1": "SRR741205_1.fastq.gz",
+		"fq2": "SRR741205_2.fastq.gz",
+		"ID": "SRR741205",
+		"SM": "Natalie",
+		"LB": "241441",
+		"PU": "HWI-ST700660_69.8",
+		"PL": "Illumina"
+	},
+
+	"SRR741062":{
+		"fq1": "SRR741062_1.fastq.gz",
+		"ID": "SRR741062",
+		"SM": "Bono",
+		"LB": "241416",
+		"PU": "HWI-ST537_60.5",
+		"PL": "Illumina"
+	},
+
+	"SRR741002":{
+		"fq1": "SRR741002_1.fastq.gz",
+		"ID": "SRR741002",
+		"SM": "Bono",
+		"LB": "241399",
+		"PU": "HWI-ST537_60.6",
+		"PL": "Illumina"
+	},
+
+	"SRR740980":{
+		"fq1": "SRR740980_1.fastq.gz",
+		"fq2": "SRR740980_2.fastq.gz",
+		"ID": "SRR740980",
+		"SM": "Bono",
+		"LB": "241378",
+		"PU": "HWUSI-EAS1695_31.5",
+		"PL": "Illumina"
+	},
+
+	"SRR740941":{
+		"fq1": "SRR740941_1.fastq.gz",
+		"fq2": "SRR740941_2.fastq.gz",
+		"ID": "SRR740941",
+		"SM": "Bono",
+		"LB": "241367",
+		"PU": "HWUSI-EAS1695_31.6",
+		"PL": "Illumina"
+	},
+
+	"SRR740905":{
+		"fq1": "SRR740905_1.fastq.gz",
+		"fq2": "SRR740905_2.fastq.gz",
+		"ID": "SRR740905",
+		"SM": "Bono",
+		"LB": "241358",
+		"PU": "HWI-ST539_54.5",
+		"PL": "Illumina"
+	},
+
+	"SRR740911":{
+		"fq1": "SRR740911_1.fastq.gz",
+		"fq2": "SRR740911_2.fastq.gz",
+		"ID": "SRR740911",
+		"SM": "Bono",
+		"LB": "241358",
+		"PU": "HWI-ST700660_69.5",
+		"PL": "Illumina"
+	},
+
+	"SRR740853":{
+		"fq1": "SRR740853_1.fastq.gz",
+		"fq2": "SRR740853_2.fastq.gz",
+		"ID": "SRR740853",
+		"SM": "Bono",
+		"LB": "241352",
+		"PU": "HWI-ST539_54.6",
+		"PL": "Illumina"
+	},
+
+	"SRR740857":{
+		"fq1": "SRR740857_1.fastq.gz",
+		"fq2": "SRR740857_2.fastq.gz",
+		"ID": "SRR740857",
+		"SM": "Bono",
+		"LB": "241352",
+		"PU": "HWI-ST700660_69.6",
+		"PL": "Illumina"
+	},
+
+	"SRR740833":{
+		"fq1": "SRR740833_1.fastq.gz",
+		"fq2": "SRR740833_2.fastq.gz",
+		"ID": "SRR740833",
+		"SM": "Chipita",
+		"LB": "241312",
+		"PU": "HWI-ST537_62.1",
+		"PL": "Illumina"
+	},
+
+	"SRR740834":{
+		"fq1": "SRR740834_1.fastq.gz",
+		"fq2": "SRR740834_2.fastq.gz",
+		"ID": "SRR740834",
+		"SM": "Chipita",
+		"LB": "241312",
+		"PU": "HWI-ST700660_72.1",
+		"PL": "Illumina"
+	},
+
+	"SRR740831":{
+		"fq1": "SRR740831_1.fastq.gz",
+		"fq2": "SRR740831_2.fastq.gz",
+		"ID": "SRR740831",
+		"SM": "Chipita",
+		"LB": "241311",
+		"PU": "HWI-ST537_62.2",
+		"PL": "Illumina"
+	},
+
+	"SRR740832":{
+		"fq1": "SRR740832_1.fastq.gz",
+		"fq2": "SRR740832_2.fastq.gz",
+		"ID": "SRR740832",
+		"SM": "Chipita",
+		"LB": "241311",
+		"PU": "HWI-ST700660_72.2",
+		"PL": "Illumina"
+	},
+
+	"SRR740835":{
+		"fq1": "SRR740835_1.fastq.gz",
+		"fq2": "SRR740835_2.fastq.gz",
+		"ID": "SRR740835",
+		"SM": "Chipita",
+		"LB": "241311",
+		"PU": "HWI-ST0857_56.1",
+		"PL": "Illumina"
+	},
+
+	"SRR740830":{
+		"fq1": "SRR740830_1.fastq.gz",
+		"ID": "SRR740830",
+		"SM": "Kombote",
+		"LB": "241310",
+		"PU": "HWI-ST537_60.3",
+		"PL": "Illumina"
+	},
+
+	"SRR740829":{
+		"fq1": "SRR740829_1.fastq.gz",
+		"ID": "SRR740829",
+		"SM": "Kombote",
+		"LB": "241309",
+		"PU": "HWI-ST537_60.4",
+		"PL": "Illumina"
+	},
+
+	"SRR740828":{
+		"fq1": "SRR740828_1.fastq.gz",
+		"fq2": "SRR740828_2.fastq.gz",
+		"ID": "SRR740828",
+		"SM": "Kombote",
+		"LB": "241308",
+		"PU": "HWUSI-EAS1695_31.3",
+		"PL": "Illumina"
+	},
+
+	"SRR740827":{
+		"fq1": "SRR740827_1.fastq.gz",
+		"fq2": "SRR740827_2.fastq.gz",
+		"ID": "SRR740827",
+		"SM": "Kombote",
+		"LB": "241307",
+		"PU": "HWUSI-EAS1695_31.4",
+		"PL": "Illumina"
+	},
+
+	"SRR740824":{
+		"fq1": "SRR740824_1.fastq.gz",
+		"fq2": "SRR740824_2.fastq.gz",
+		"ID": "SRR740824",
+		"SM": "Kombote",
+		"LB": "241305",
+		"PU": "HWI-ST539_54.3",
+		"PL": "Illumina"
+	},
+
+	"SRR740825":{
+		"fq1": "SRR740825_1.fastq.gz",
+		"fq2": "SRR740825_2.fastq.gz",
+		"ID": "SRR740825",
+		"SM": "Kombote",
+		"LB": "241305",
+		"PU": "HWI-ST700660_69.3",
+		"PL": "Illumina"
+	},
+
+	"SRR740822":{
+		"fq1": "SRR740822_1.fastq.gz",
+		"fq2": "SRR740822_2.fastq.gz",
+		"ID": "SRR740822",
+		"SM": "Kombote",
+		"LB": "241304",
+		"PU": "HWI-ST539_54.4",
+		"PL": "Illumina"
+	},
+
+	"SRR740823":{
+		"fq1": "SRR740823_1.fastq.gz",
+		"fq2": "SRR740823_2.fastq.gz",
+		"ID": "SRR740823",
+		"SM": "Kombote",
+		"LB": "241304",
+		"PU": "HWI-ST700660_69.4",
+		"PL": "Illumina"
+	},
+
+	"SRR740819":{
+		"fq1": "SRR740819_1.fastq.gz",
+		"fq2": "SRR740819_2.fastq.gz",
+		"ID": "SRR740819",
+		"SM": "Catherine",
+		"LB": "241303",
+		"PU": "HWI-ST537_61.7",
+		"PL": "Illumina"
+	},
+
+	"SRR740820":{
+		"fq1": "SRR740820_1.fastq.gz",
+		"fq2": "SRR740820_2.fastq.gz",
+		"ID": "SRR740820",
+		"SM": "Catherine",
+		"LB": "241303",
+		"PU": "HWI-ST459_76.7",
+		"PL": "Illumina"
+	},
+
+	"SRR740821":{
+		"fq1": "SRR740821_1.fastq.gz",
+		"fq2": "SRR740821_2.fastq.gz",
+		"ID": "SRR740821",
+		"SM": "Catherine",
+		"LB": "241303",
+		"PU": "HWI-ST0757_56.7",
+		"PL": "Illumina"
+	},
+
+	"SRR740816":{
+		"fq1": "SRR740816_1.fastq.gz",
+		"fq2": "SRR740816_2.fastq.gz",
+		"ID": "SRR740816",
+		"SM": "Catherine",
+		"LB": "241302",
+		"PU": "HWI-ST537_61.8",
+		"PL": "Illumina"
+	},
+
+	"SRR740817":{
+		"fq1": "SRR740817_1.fastq.gz",
+		"fq2": "SRR740817_2.fastq.gz",
+		"ID": "SRR740817",
+		"SM": "Catherine",
+		"LB": "241302",
+		"PU": "HWI-ST459_76.8",
+		"PL": "Illumina"
+	},
+
+	"SRR740818":{
+		"fq1": "SRR740818_1.fastq.gz",
+		"fq2": "SRR740818_2.fastq.gz",
+		"ID": "SRR740818",
+		"SM": "Catherine",
+		"LB": "241302",
+		"PU": "HWI-ST0757_56.8",
+		"PL": "Illumina"
+	},
+
+	"SRR740806":{
+		"fq1": "SRR740806_1.fastq.gz",
+		"fq2": "SRR740806_2.fastq.gz",
+		"ID": "SRR740806",
+		"SM": "Desmond",
+		"LB": "241295",
+		"PU": "HWI-ST539_51.7",
+		"PL": "Illumina"
+	},
+
+	"SRR740807":{
+		"fq1": "SRR740807_1.fastq.gz",
+		"fq2": "SRR740807_2.fastq.gz",
+		"ID": "SRR740807",
+		"SM": "Desmond",
+		"LB": "241295",
+		"PU": "HWI-ST457_154.7",
+		"PL": "Illumina"
+	},
+
+	"SRR740808":{
+		"fq1": "SRR740808_1.fastq.gz",
+		"fq2": "SRR740808_2.fastq.gz",
+		"ID": "SRR740808",
+		"SM": "Desmond",
+		"LB": "241295",
+		"PU": "HWI-ST459_72.7",
+		"PL": "Illumina"
+	},
+
+	"SRR740809":{
+		"fq1": "SRR740809_1.fastq.gz",
+		"fq2": "SRR740809_2.fastq.gz",
+		"ID": "SRR740809",
+		"SM": "Desmond",
+		"LB": "241295",
+		"PU": "HWI-ST457_153.7",
+		"PL": "Illumina"
+	},
+
+	"SRR740802":{
+		"fq1": "SRR740802_1.fastq.gz",
+		"fq2": "SRR740802_2.fastq.gz",
+		"ID": "SRR740802",
+		"SM": "Desmond",
+		"LB": "241294",
+		"PU": "HWI-ST539_51.8",
+		"PL": "Illumina"
+	},
+
+	"SRR740803":{
+		"fq1": "SRR740803_1.fastq.gz",
+		"fq2": "SRR740803_2.fastq.gz",
+		"ID": "SRR740803",
+		"SM": "Desmond",
+		"LB": "241294",
+		"PU": "HWI-ST457_154.8",
+		"PL": "Illumina"
+	},
+
+	"SRR740804":{
+		"fq1": "SRR740804_1.fastq.gz",
+		"fq2": "SRR740804_2.fastq.gz",
+		"ID": "SRR740804",
+		"SM": "Desmond",
+		"LB": "241294",
+		"PU": "HWI-ST459_72.8",
+		"PL": "Illumina"
+	},
+
+	"SRR740805":{
+		"fq1": "SRR740805_1.fastq.gz",
+		"fq2": "SRR740805_2.fastq.gz",
+		"ID": "SRR740805",
+		"SM": "Desmond",
+		"LB": "241294",
+		"PU": "HWI-ST457_153.8",
+		"PL": "Illumina"
+	},
+
+	"SRR740798":{
+		"fq1": "SRR740798_1.fastq.gz",
+		"fq2": "SRR740798_2.fastq.gz",
+		"ID": "SRR740798",
+		"SM": "Hermien",
+		"LB": "241293",
+		"PU": "HWI-ST539_51.5",
+		"PL": "Illumina"
+	},
+
+	"SRR740799":{
+		"fq1": "SRR740799_1.fastq.gz",
+		"fq2": "SRR740799_2.fastq.gz",
+		"ID": "SRR740799",
+		"SM": "Hermien",
+		"LB": "241293",
+		"PU": "HWI-ST457_154.5",
+		"PL": "Illumina"
+	},
+
+	"SRR740800":{
+		"fq1": "SRR740800_1.fastq.gz",
+		"fq2": "SRR740800_2.fastq.gz",
+		"ID": "SRR740800",
+		"SM": "Hermien",
+		"LB": "241293",
+		"PU": "HWI-ST459_72.5",
+		"PL": "Illumina"
+	},
+
+	"SRR740801":{
+		"fq1": "SRR740801_1.fastq.gz",
+		"fq2": "SRR740801_2.fastq.gz",
+		"ID": "SRR740801",
+		"SM": "Hermien",
+		"LB": "241293",
+		"PU": "HWI-ST457_153.5",
+		"PL": "Illumina"
+	},
+
+	"SRR740794":{
+		"fq1": "SRR740794_1.fastq.gz",
+		"fq2": "SRR740794_2.fastq.gz",
+		"ID": "SRR740794",
+		"SM": "Hermien",
+		"LB": "241292",
+		"PU": "HWI-ST539_51.6",
+		"PL": "Illumina"
+	},
+
+	"SRR740795":{
+		"fq1": "SRR740795_1.fastq.gz",
+		"fq2": "SRR740795_2.fastq.gz",
+		"ID": "SRR740795",
+		"SM": "Hermien",
+		"LB": "241292",
+		"PU": "HWI-ST457_154.6",
+		"PL": "Illumina"
+	},
+
+	"SRR740796":{
+		"fq1": "SRR740796_1.fastq.gz",
+		"fq2": "SRR740796_2.fastq.gz",
+		"ID": "SRR740796",
+		"SM": "Hermien",
+		"LB": "241292",
+		"PU": "HWI-ST459_72.6",
+		"PL": "Illumina"
+	},
+
+	"SRR740797":{
+		"fq1": "SRR740797_1.fastq.gz",
+		"fq2": "SRR740797_2.fastq.gz",
+		"ID": "SRR740797",
+		"SM": "Hermien",
+		"LB": "241292",
+		"PU": "HWI-ST457_153.6",
+		"PL": "Illumina"
+	},
+
+	"SRR740787":{
+		"fq1": "SRR740787_1.fastq.gz",
+		"fq2": "SRR740787_2.fastq.gz",
+		"ID": "SRR740787",
+		"SM": "Dzeeta",
+		"LB": "241291",
+		"PU": "HWI-ST539_51.3",
+		"PL": "Illumina"
+	},
+
+	"SRR740790":{
+		"fq1": "SRR740790_1.fastq.gz",
+		"fq2": "SRR740790_2.fastq.gz",
+		"ID": "SRR740790",
+		"SM": "Dzeeta",
+		"LB": "241291",
+		"PU": "HWI-ST457_154.3",
+		"PL": "Illumina"
+	},
+
+	"SRR740792":{
+		"fq1": "SRR740792_1.fastq.gz",
+		"fq2": "SRR740792_2.fastq.gz",
+		"ID": "SRR740792",
+		"SM": "Dzeeta",
+		"LB": "241291",
+		"PU": "HWI-ST459_72.3",
+		"PL": "Illumina"
+	},
+
+	"SRR740793":{
+		"fq1": "SRR740793_1.fastq.gz",
+		"fq2": "SRR740793_2.fastq.gz",
+		"ID": "SRR740793",
+		"SM": "Dzeeta",
+		"LB": "241291",
+		"PU": "HWI-ST457_153.3",
+		"PL": "Illumina"
+	},
+
+	"SRR740781":{
+		"fq1": "SRR740781_1.fastq.gz",
+		"fq2": "SRR740781_2.fastq.gz",
+		"ID": "SRR740781",
+		"SM": "Dzeeta",
+		"LB": "241290",
+		"PU": "HWI-ST539_51.4",
+		"PL": "Illumina"
+	},
+
+	"SRR740782":{
+		"fq1": "SRR740782_1.fastq.gz",
+		"fq2": "SRR740782_2.fastq.gz",
+		"ID": "SRR740782",
+		"SM": "Dzeeta",
+		"LB": "241290",
+		"PU": "HWI-ST457_154.4",
+		"PL": "Illumina"
+	},
+
+	"SRR740783":{
+		"fq1": "SRR740783_1.fastq.gz",
+		"fq2": "SRR740783_2.fastq.gz",
+		"ID": "SRR740783",
+		"SM": "Dzeeta",
+		"LB": "241290",
+		"PU": "HWI-ST459_72.4",
+		"PL": "Illumina"
+	},
+
+	"SRR740784":{
+		"fq1": "SRR740784_1.fastq.gz",
+		"fq2": "SRR740784_2.fastq.gz",
+		"ID": "SRR740784",
+		"SM": "Dzeeta",
+		"LB": "241290",
+		"PU": "HWI-ST457_153.4",
+		"PL": "Illumina"
+	},
+
+	"SRR740772":{
+		"fq1": "SRR740772_1.fastq.gz",
+		"fq2": "SRR740772_2.fastq.gz",
+		"ID": "SRR740772",
+		"SM": "Kosana",
+		"LB": "241289",
+		"PU": "HWI-ST539_51.1",
+		"PL": "Illumina"
+	},
+
+	"SRR740773":{
+		"fq1": "SRR740773_1.fastq.gz",
+		"fq2": "SRR740773_2.fastq.gz",
+		"ID": "SRR740773",
+		"SM": "Kosana",
+		"LB": "241289",
+		"PU": "HWI-ST457_154.1",
+		"PL": "Illumina"
+	},
+
+	"SRR740774":{
+		"fq1": "SRR740774_1.fastq.gz",
+		"fq2": "SRR740774_2.fastq.gz",
+		"ID": "SRR740774",
+		"SM": "Kosana",
+		"LB": "241289",
+		"PU": "HWI-ST459_72.1",
+		"PL": "Illumina"
+	},
+
+	"SRR740775":{
+		"fq1": "SRR740775_1.fastq.gz",
+		"fq2": "SRR740775_2.fastq.gz",
+		"ID": "SRR740775",
+		"SM": "Kosana",
+		"LB": "241289",
+		"PU": "HWI-ST457_153.1",
+		"PL": "Illumina"
+	},
+
+	"SRR740768":{
+		"fq1": "SRR740768_1.fastq.gz",
+		"fq2": "SRR740768_2.fastq.gz",
+		"ID": "SRR740768",
+		"SM": "Kosana",
+		"LB": "241288",
+		"PU": "HWI-ST539_51.2",
+		"PL": "Illumina"
+	},
+
+	"SRR740769":{
+		"fq1": "SRR740769_1.fastq.gz",
+		"fq2": "SRR740769_2.fastq.gz",
+		"ID": "SRR740769",
+		"SM": "Kosana",
+		"LB": "241288",
+		"PU": "HWI-ST457_154.2",
+		"PL": "Illumina"
+	},
+
+	"SRR740770":{
+		"fq1": "SRR740770_1.fastq.gz",
+		"fq2": "SRR740770_2.fastq.gz",
+		"ID": "SRR740770",
+		"SM": "Kosana",
+		"LB": "241288",
+		"PU": "HWI-ST459_72.2",
+		"PL": "Illumina"
+	},
+
+	"SRR740771":{
+		"fq1": "SRR740771_1.fastq.gz",
+		"fq2": "SRR740771_2.fastq.gz",
+		"ID": "SRR740771",
+		"SM": "Kosana",
+		"LB": "241288",
+		"PU": "HWI-ST457_153.2",
+		"PL": "Illumina"
+	},
+
+	"SRR726612":{
+		"fq1": "SRR726612_1.fastq.gz",
+		"fq2": "SRR726612_2.fastq.gz",
+		"ID": "SRR726612",
+		"SM": "Hortense",
+		"LB": "237623",
+		"PU": "HWI-ST459_71.7",
+		"PL": "Illumina"
+	},
+
+	"SRR726613":{
+		"fq1": "SRR726613_1.fastq.gz",
+		"fq2": "SRR726613_2.fastq.gz",
+		"ID": "SRR726613",
+		"SM": "Hortense",
+		"LB": "237623",
+		"PU": "HWI-ST537_58.7",
+		"PL": "Illumina"
+	},
+
+	"SRR726614":{
+		"fq1": "SRR726614_1.fastq.gz",
+		"fq2": "SRR726614_2.fastq.gz",
+		"ID": "SRR726614",
+		"SM": "Hortense",
+		"LB": "237623",
+		"PU": "HWI-ST539_52.7",
+		"PL": "Illumina"
+	},
+
+	"SRR726615":{
+		"fq1": "SRR726615_1.fastq.gz",
+		"fq2": "SRR726615_2.fastq.gz",
+		"ID": "SRR726615",
+		"SM": "Hortense",
+		"LB": "237623",
+		"PU": "HWI-ST537_57.7",
+		"PL": "Illumina"
+	},
+
+	"SRR726607":{
+		"fq1": "SRR726607_1.fastq.gz",
+		"fq2": "SRR726607_2.fastq.gz",
+		"ID": "SRR726607",
+		"SM": "Hortense",
+		"LB": "237602",
+		"PU": "HWI-ST459_71.8",
+		"PL": "Illumina"
+	},
+
+	"SRR726608":{
+		"fq1": "SRR726608_1.fastq.gz",
+		"fq2": "SRR726608_2.fastq.gz",
+		"ID": "SRR726608",
+		"SM": "Hortense",
+		"LB": "237602",
+		"PU": "HWI-ST537_58.8",
+		"PL": "Illumina"
+	},
+
+	"SRR726609":{
+		"fq1": "SRR726609_1.fastq.gz",
+		"fq2": "SRR726609_2.fastq.gz",
+		"ID": "SRR726609",
+		"SM": "Hortense",
+		"LB": "237602",
+		"PU": "HWI-ST539_52.8",
+		"PL": "Illumina"
+	},
+
+	"SRR726610":{
+		"fq1": "SRR726610_1.fastq.gz",
+		"fq2": "SRR726610_2.fastq.gz",
+		"ID": "SRR726610",
+		"SM": "Hortense",
+		"LB": "237602",
+		"PU": "HWI-ST537_57.8",
+		"PL": "Illumina"
+	},
+
+	"SRR747929":{
+		"fq1": "SRR747929_1.fastq.gz",
+		"fq2": "SRR747929_2.fastq.gz",
+		"ID": "SRR747929",
+		"SM": "LB502",
+		"LB": "243437",
+		"PU": "HWI-ST449_106341471.7",
+		"PL": "Illumina"
+	},
+
+	"SRR747930":{
+		"fq1": "SRR747930_1.fastq.gz",
+		"fq2": "SRR747930_2.fastq.gz",
+		"ID": "SRR747930",
+		"SM": "LB502",
+		"LB": "243437",
+		"PU": "HWI-ST449_106341471.8",
+		"PL": "Illumina"
+	},
+
+	"SRR747927":{
+		"fq1": "SRR747927_1.fastq.gz",
+		"fq2": "SRR747927_2.fastq.gz",
+		"ID": "SRR747927",
+		"SM": "LB502",
+		"LB": "243436",
+		"PU": "HWI-ST449_106341471.5",
+		"PL": "Illumina"
+	},
+
+	"SRR747928":{
+		"fq1": "SRR747928_1.fastq.gz",
+		"fq2": "SRR747928_2.fastq.gz",
+		"ID": "SRR747928",
+		"SM": "LB502",
+		"LB": "243436",
+		"PU": "HWI-ST449_106341471.6",
 		"PL": "Illumina"
 	}
 }
