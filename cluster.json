@@ -2,35 +2,5 @@
 	"__default__" :
 	{
 		"n": 4
-	},
-
-	"map_and_process_trimmed_reads" :
-	{
-		"n": 4
-	},
-
-	"merge_bams" :
-	{
-		"n": 4
-	},
-
-	"sambamba_mark_dups_only_analysis_chroms" : {
-		"n": 4
-	},
-
-	"picard_mkdups" : {
-		"n": 4
-	},
-
-	"gatk_gvcf" : {
-		"n": 4
-	},
-
-	"gatk_gvcf_per_chrom" : {
-		"n": 4
-	},
-
-	"genotype_gvcfs_per_chrom" : {
-		"n": 4
 	}
 }
