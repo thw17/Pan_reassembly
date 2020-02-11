@@ -18,6 +18,13 @@
 	},
 
 	"sample_names": [
+		"Tobi", "Taweh", "Paquita", "Koto", "Kopongo", "Julie_LWC21",
+		"Damian", "Basho", "Banyo", "Akwaya-Jean",
+		"Clint", "Koby", "Jimmie", "Bosco",
+		"Clara", "Julie_A959", "Doris", "Vaillant", "Alfred", "Brigitta",
+		"Gamin", "Luky", "Lara", "Ula", "Mirinda", "Cindy_troglodytes",
+		"Noemie", "Yogui", "Tibe", "Blanquita", "Negrita", "Marlin", "Alice",
+		"Cindy_verus", "Linda", "SeppToni", "Mike", "Annie", "Berta",
 		"Nakuu", "Kidongo", "Bwamble", "Harriet", "Andromeda", "Vincent",
 		"Mgbadolite", "Washu", "Athanga", "Coco_chimp", "Maya", "Frederike",
 		"Trixie", "Bihati", "Cleo", "Tongo", "Ikuru", "Cindy_schwein", "Padda",
@@ -27,9 +34,20 @@
 
 	"subspecies": {
 		"allpan": [
+			"Tobi", "Taweh", "Paquita", "Koto", "Kopongo", "Julie_LWC21",
+			"Damian", "Basho", "Banyo", "Akwaya-Jean",
+			"Clint", "Koby", "Jimmie", "Bosco",
+			"Clara", "Julie_A959", "Doris", "Vaillant", "Alfred", "Brigitta",
+			"Gamin", "Luky", "Lara", "Ula", "Mirinda", "Cindy_troglodytes",
+			"Noemie", "Yogui", "Tibe", "Blanquita", "Negrita", "Marlin", "Alice",
+			"Cindy_verus", "Linda", "SeppToni", "Mike", "Annie", "Berta",
 			"Nakuu", "Kidongo", "Bwamble", "Harriet", "Andromeda", "Vincent",
 			"Mgbadolite", "Washu", "Athanga", "Coco_chimp", "Maya", "Frederike",
 			"Trixie", "Bihati", "Cleo", "Tongo", "Ikuru", "Cindy_schwein", "Padda",
+			"Kumbuka", "Salonga", "Natalie", "Bono", "Chipita", "Kombote",
+			"Catherine", "Desmond", "Hermien", "Dzeeta", "Kosana",
+			"Hortense", "LB502"],
+		"pan_paniscus": [
 			"Kumbuka", "Salonga", "Natalie", "Bono", "Chipita", "Kombote",
 			"Catherine", "Desmond", "Hermien", "Dzeeta", "Kosana",
 			"Hortense", "LB502"],
@@ -37,10 +55,16 @@
 			"Nakuu", "Kidongo", "Bwamble", "Harriet", "Andromeda", "Vincent",
 			"Mgbadolite", "Washu", "Athanga", "Coco_chimp", "Maya", "Frederike",
 			"Trixie", "Bihati", "Cleo", "Tongo", "Ikuru", "Cindy_schwein", "Padda"],
-		"pan_paniscus": [
-			"Kumbuka", "Salonga", "Natalie", "Bono", "Chipita", "Kombote",
-			"Catherine", "Desmond", "Hermien", "Dzeeta", "Kosana",
-			"Hortense", "LB502"]
+		"pan_troglodytes_verus": [
+			"Clint", "Koby", "Jimmie", "Bosco","Alice",
+			"Cindy_verus", "Linda", "SeppToni", "Mike", "Annie", "Berta"],
+		"pan_troglodytes_troglodytes": [
+			"Clara", "Julie_A959", "Doris", "Vaillant", "Alfred", "Brigitta",
+			"Gamin", "Luky", "Lara", "Ula", "Mirinda", "Cindy_troglodytes",
+			"Noemie", "Yogui", "Tibe", "Blanquita", "Negrita", "Marlin"],
+		"ellioti": [
+			"Tobi", "Taweh", "Paquita", "Koto", "Kopongo", "Julie_LWC21",
+			"Damian", "Basho", "Banyo", "Akwaya-Jean"],
 	},
 
 	"sras": [
@@ -80,7 +104,62 @@
 			"SRR740775", "SRR740768", "SRR740769", "SRR740770", "SRR740771",
 			"SRR726612", "SRR726613", "SRR726614", "SRR726615", "SRR726607",
 			"SRR726608", "SRR726609", "SRR726610", "SRR747929", "SRR747930",
-			"SRR747927", "SRR747928"],
+			"SRR747927", "SRR747928"
+			"SRR748179","SRR748180","SRR748181","SRR748182","SRR748183","SRR748184","SRR748185","SRR748186",
+			"SRR748081","SRR748082","SRR748083","SRR748084",
+			"SRR748053","SRR748054","SRR748055","SRR748051","SRR748052",
+			"SRR747953","SRR747954","SRR747951","SRR747952",
+			"SRR748161","SRR748162","SRR748163","SRR748164",
+			"SRR748156","SRR748157","SRR748158","SRR748159","SRR748160",
+			"SRR748152","SRR748153","SRR748154","SRR748155",
+			"SRR748147","SRR748148","SRR748149","SRR748150","SRR748151",
+			"SRR748143","SRR748144","SRR748145","SRR748146",
+			"SRR748138","SRR748139","SRR748140","SRR748141","SRR748142",
+			"SRR748133","SRR748134","SRR748135","SRR748136","SRR748137",
+			"SRR748129","SRR748130","SRR748131","SRR748132",
+			"SRR748125","SRR748126","SRR748127","SRR748128",
+			"SRR748121","SRR748122","SRR748123","SRR748124",
+			"SRR748073","SRR748074","SRR748075","SRR748071","SRR748072",
+			"SRR748069","SRR748070","SRR748066","SRR748067","SRR748068",
+			"SRR748063","SRR748064","SRR748065","SRR748061","SRR748062",
+			"SRR748059","SRR748060","SRR748056","SRR748057","SRR748058",
+			"ERR1710084","ERR1710083","ERR1710082","ERR1710081","ERR1710080","ERR1710079","ERR1710078","ERR1710077",
+			"ERR1710076","ERR1710075","ERR1710074","ERR1710073","ERR1710072","ERR1710071","ERR1710070","ERR1710069","ERR1710068",
+			"ERR1710067","ERR1710066","ERR1710065","ERR1710064","ERR1710063","ERR1710062","ERR1716001",
+			"ERR1709959","ERR1709958","ERR1709957","ERR1709956","ERR1709955","ERR1709954","ERR1709953","ERR1709952",
+			"ERR1709951","ERR1709950","ERR1709949","ERR1709948","ERR1709947","ERR1709946","ERR1709945","ERR1709944","ERR1709943",
+			"ERR1709942","ERR1709941","ERR1709940","ERR1709939","ERR1709938","ERR1709937","ERR1709936",
+			"ERR1709989","ERR1709988","ERR1709987","ERR1709986","ERR1709985","ERR1709984","ERR1709983","ERR1709982",
+			"ERR1709981","ERR1709980","ERR1709979","ERR1709978","ERR1709977","ERR1709976","ERR1709975","ERR1709974","ERR1709973",
+			"ERR1709972","ERR1709971","ERR1709970","ERR1709969","ERR1709968","ERR1709967","ERR1709966",
+			"ERR1709935","ERR1709934","ERR1709933","ERR1709932","ERR1709931","ERR1709930","ERR1709929","ERR1709928",
+			"ERR1709927","ERR1709926","ERR1709925","ERR1709924","ERR1709923","ERR1709922","ERR1709921","ERR1709920","ERR1709919",
+			"ERR1709918","ERR1709917","ERR1709916","ERR1709915","ERR1709914","ERR1709913","ERR1709912",
+			"ERR1710148","ERR1710147","ERR1710146","ERR1710145","ERR1710144","ERR1710143","ERR1710142","ERR1710141",
+			"ERR1710140","ERR1710139","ERR1710138","ERR1710137","ERR1710136","ERR1710135","ERR1710134","ERR1710133","ERR1710132",
+			"ERR1710131","ERR1710130","ERR1710129","ERR1710128","ERR1710127","ERR1710126","ERR1710125",
+			"ERR1709908","ERR1709907","ERR1709906","ERR1709905","ERR1709904","ERR1709903","ERR1709902","ERR1709901",
+			"ERR1709900","ERR1709899","ERR1709898","ERR1709897","ERR1709896","ERR1709895","ERR1709894","ERR1709893","ERR1709892",
+			"ERR1709891","ERR1709890","ERR1709889","ERR1709888","ERR1709887","ERR1709886","ERR1709885",
+			"ERR1710017","ERR1710016","ERR1710015","ERR1710014","ERR1710013","ERR1710012","ERR1710011","ERR1710010",
+			"ERR1710009","ERR1710008","ERR1710007","ERR1710006","ERR1710005","ERR1710004","ERR1710003","ERR1710002","ERR1710001",
+			"ERR1710000","ERR1709999","ERR1709998","ERR1709997","ERR1709996","ERR1709995","ERR1709994",
+			"ERR1710060","ERR1710059","ERR1710058","ERR1710057","ERR1710056","ERR1710055","ERR1710054",
+			"ERR1710053","ERR1710052","ERR1710051","ERR1710050","ERR1710049","ERR1710048","ERR1710047","ERR1710046","ERR1710045",
+			"ERR1710044","ERR1710043","ERR1710042","ERR1710041","ERR1710040","ERR1710039","ERR1710038",
+			"ERR1709911","ERR1709910","ERR1709909",
+			"ERR1710104","ERR1710103",
+		 	"ERR1709872","ERR1709871",
+			"ERR1709961","ERR1709960",
+			"ERR1710094","ERR1710093",
+			"ERR1710019","ERR1710018",
+			"ERR1710037","ERR1710036","ERR1710035","ERR1710034",
+			"ERR1710124","ERR1710123","ERR1710122","ERR1710121",
+			"ERR1710023","ERR1710022","ERR1710021","ERR1710020",
+		 	"ERR1709882","ERR1709881","ERR1709880","ERR1709879",
+			"ERR1710033","ERR1710032","ERR1710031","ERR1710030",
+			"ERR1710092","ERR1710091","ERR1710090","ERR1710089",
+			"ERR1709965","ERR1709964","ERR1709963","ERR1709962"],
 
 	"samples": {
 		"Nakuu": [
@@ -149,10 +228,79 @@
 		"Hortense": [
 			"SRR726612","SRR726613","SRR726614","SRR726615","SRR726607","SRR726608","SRR726609","SRR726610"],
 		"LB502": [
-			"SRR747929","SRR747930","SRR747927","SRR747928"]
+			"SRR747929","SRR747930","SRR747927","SRR747928"],
+		"Clint": [
+			"SRR748179","SRR748180","SRR748181","SRR748182","SRR748183","SRR748184","SRR748185","SRR748186"],
+		"Koby": [
+			"SRR748081","SRR748082","SRR748083","SRR748084"],
+		"Jimmie": [
+			"SRR748053","SRR748054","SRR748055","SRR748051","SRR748052"],
+		"Bosco": [
+			"SRR747953","SRR747954","SRR747951","SRR747952"],
+		"Tobi": [
+			"SRR748161","SRR748162","SRR748163","SRR748164"],
+		"Taweh": [
+			"SRR748156","SRR748157","SRR748158","SRR748159","SRR748160"],
+		"Paquita": [
+			"SRR748152","SRR748153","SRR748154","SRR748155"],
+		"Koto": [
+			"SRR748147","SRR748148","SRR748149","SRR748150","SRR748151"],
+		"Kopongo": [
+			"SRR748143","SRR748144","SRR748145","SRR748146"],
+		"Julie_LWC21": [
+			"SRR748138","SRR748139","SRR748140","SRR748141","SRR748142"],
+		"Damian": [
+			"SRR748133","SRR748134","SRR748135","SRR748136","SRR748137"],
+		"Basho": [
+			"SRR748129","SRR748130","SRR748131","SRR748132"],
+		"Banyo": [
+			"SRR748125","SRR748126","SRR748127","SRR748128"],
+		"Akwaya-Jean": [
+			"SRR748121","SRR748122","SRR748123","SRR748124"],
+		"Clara": ["SRR748073","SRR748074","SRR748075","SRR748071","SRR748072"],
+		"Julie_A959": ["SRR748069","SRR748070","SRR748066","SRR748067","SRR748068"],
+		"Doris": ["SRR748063","SRR748064","SRR748065","SRR748061","SRR748062"],
+		"Vaillant": ["SRR748059","SRR748060","SRR748056","SRR748057","SRR748058"],
+		"Alfred": ["ERR1710084","ERR1710083","ERR1710082","ERR1710081","ERR1710080","ERR1710079","ERR1710078","ERR1710077",
+		"ERR1710076","ERR1710075","ERR1710074","ERR1710073","ERR1710072","ERR1710071","ERR1710070","ERR1710069","ERR1710068",
+		"ERR1710067","ERR1710066","ERR1710065","ERR1710064","ERR1710063","ERR1710062","ERR1716001"],
+		"Brigitta": ["ERR1709959","ERR1709958","ERR1709957","ERR1709956","ERR1709955","ERR1709954","ERR1709953","ERR1709952",
+		"ERR1709951","ERR1709950","ERR1709949","ERR1709948","ERR1709947","ERR1709946","ERR1709945","ERR1709944","ERR1709943",
+		"ERR1709942","ERR1709941","ERR1709940","ERR1709939","ERR1709938","ERR1709937","ERR1709936"],
+		"Gamin": ["ERR1709989","ERR1709988","ERR1709987","ERR1709986","ERR1709985","ERR1709984","ERR1709983","ERR1709982",
+		"ERR1709981","ERR1709980","ERR1709979","ERR1709978","ERR1709977","ERR1709976","ERR1709975","ERR1709974","ERR1709973",
+		"ERR1709972","ERR1709971","ERR1709970","ERR1709969","ERR1709968","ERR1709967","ERR1709966"],
+		"Luky": ["ERR1709935","ERR1709934","ERR1709933","ERR1709932","ERR1709931","ERR1709930","ERR1709929","ERR1709928",
+		"ERR1709927","ERR1709926","ERR1709925","ERR1709924","ERR1709923","ERR1709922","ERR1709921","ERR1709920","ERR1709919",
+		"ERR1709918","ERR1709917","ERR1709916","ERR1709915","ERR1709914","ERR1709913","ERR1709912"],
+		"Lara": ["ERR1710148","ERR1710147","ERR1710146","ERR1710145","ERR1710144","ERR1710143","ERR1710142","ERR1710141",
+		"ERR1710140","ERR1710139","ERR1710138","ERR1710137","ERR1710136","ERR1710135","ERR1710134","ERR1710133","ERR1710132",
+		"ERR1710131","ERR1710130","ERR1710129","ERR1710128","ERR1710127","ERR1710126","ERR1710125"],
+		"Ula": ["ERR1709908","ERR1709907","ERR1709906","ERR1709905","ERR1709904","ERR1709903","ERR1709902","ERR1709901",
+		"ERR1709900","ERR1709899","ERR1709898","ERR1709897","ERR1709896","ERR1709895","ERR1709894","ERR1709893","ERR1709892",
+		"ERR1709891","ERR1709890","ERR1709889","ERR1709888","ERR1709887","ERR1709886","ERR1709885"],
+		"Mirinda": ["ERR1710017","ERR1710016","ERR1710015","ERR1710014","ERR1710013","ERR1710012","ERR1710011","ERR1710010",
+		"ERR1710009","ERR1710008","ERR1710007","ERR1710006","ERR1710005","ERR1710004","ERR1710003","ERR1710002","ERR1710001",
+		"ERR1710000","ERR1709999","ERR1709998","ERR1709997","ERR1709996","ERR1709995","ERR1709994"],
+		"Cindy_troglodytes": ["ERR1710060","ERR1710059","ERR1710058","ERR1710057","ERR1710056","ERR1710055","ERR1710054",
+		"ERR1710053","ERR1710052","ERR1710051","ERR1710050","ERR1710049","ERR1710048","ERR1710047","ERR1710046","ERR1710045",
+		"ERR1710044","ERR1710043","ERR1710042","ERR1710041","ERR1710040","ERR1710039","ERR1710038"],
+		"Noemie": ["ERR1709911","ERR1709910","ERR1709909"],
+		"Yogui": ["ERR1710104","ERR1710103"],
+	 	"Tibe": ["ERR1709872","ERR1709871"],
+		"Blanquita": ["ERR1709961","ERR1709960"],
+		"Negrita": ["ERR1710094","ERR1710093"],
+		"Marlin": ["ERR1710019","ERR1710018"],
+		"Alice": ["ERR1710037","ERR1710036","ERR1710035","ERR1710034"],
+		"Cindy_verus": ["ERR1710124","ERR1710123","ERR1710122","ERR1710121"],
+		"Linda": ["ERR1710023","ERR1710022","ERR1710021","ERR1710020"],
+	 	"SeppToni": ["ERR1709882","ERR1709881","ERR1709880","ERR1709879"],
+		"Mike": ["ERR1710033","ERR1710032","ERR1710031","ERR1710030"],
+		"Annie": ["ERR1710092","ERR1710091","ERR1710090","ERR1710089"],
+		"Berta": ["ERR1709965","ERR1709964","ERR1709963","ERR1709962"]
 	},
 
-	"single_end" : [
+	"single_end": [
 		"SRR747650", "SRR747649", "SRR741494", "SRR741444",
 		"SRR741062", "SRR741002", "SRR740830","SRR740829"],
 
@@ -1925,6 +2073,1131 @@
 		"SM": "LB502",
 		"LB": "243436",
 		"PU": "HWI-ST449_106341471.6",
+		"PL": "Illumina"
+	},
+	"SRR748179":{
+		"fq1": "SRR748179_1.fastq.gz",
+		"fq2": "SRR748179_2.fastq.gz",
+		"ID": "SRR748179",
+		"SM": "Clint",
+		"LB": "243527",
+		"PU": "HWI-ST151_106137860.1",
+		"PL": "Illumina"
+	},
+	"SRR748180":{
+		"fq1": "SRR748180_1.fastq.gz",
+		"fq2": "SRR748180_2.fastq.gz",
+		"ID": "SRR748180",
+		"SM": "Clint",
+		"LB": "243527",
+		"PU": "HWI-ST151_106137860.2",
+		"PL": "Illumina"
+	},
+	"SRR748181":{
+		"fq1": "SRR748181_1.fastq.gz",
+		"fq2": "SRR748181_2.fastq.gz",
+		"ID": "SRR748181",
+		"SM": "Clint",
+		"LB": "243527",
+		"PU": "HWI-ST151_106137860.3",
+		"PL": "Illumina"
+	},
+	"SRR748182":{
+		"fq1": "SRR748182_1.fastq.gz",
+		"fq2": "SRR748182_2.fastq.gz",
+		"ID": "SRR748182",
+		"SM": "Clint",
+		"LB": "243527",
+		"PU": "HWI-ST151_106137860.4",
+		"PL": "Illumina"
+	},
+	"SRR748183":{
+		"fq1": "SRR748183_1.fastq.gz",
+		"fq2": "SRR748183_2.fastq.gz",
+		"ID": "SRR748183",
+		"SM": "Clint",
+		"LB": "243527",
+		"PU": "HWI-ST151_106137860.5",
+		"PL": "Illumina"
+	},
+	"SRR748184":{
+		"fq1": "SRR748184_1.fastq.gz",
+		"fq2": "SRR748184_2.fastq.gz",
+		"ID": "SRR748184",
+		"SM": "Clint",
+		"LB": "243527",
+		"PU": "HWI-ST151_106137860.6",
+		"PL": "Illumina"
+	},
+	"SRR748185":{
+		"fq1": "SRR748185_1.fastq.gz",
+		"fq2": "SRR748185_2.fastq.gz",
+		"ID": "SRR748185",
+		"SM": "Clint",
+		"LB": "243527",
+		"PU": "HWI-ST151_106137860.7",
+		"PL": "Illumina"
+	},
+	"SRR748186":{
+		"fq1": "SRR748186_1.fastq.gz",
+		"fq2": "SRR748186_2.fastq.gz",
+		"ID": "SRR748186",
+		"SM": "Clint",
+		"LB": "243527",
+		"PU": "HWI-ST151_106137860.8",
+		"PL": "Illumina"
+	},
+	"SRR748081":{
+		"fq1": "SRR748081_1.fastq.gz",
+		"fq2": "SRR748081_2.fastq.gz",
+		"ID": "SRR748081",
+		"SM": "Koby",
+		"LB": "243499",
+		"PU": "HWI-ST457_149.5",
+		"PL": "Illumina"
+	},
+	"SRR748082":{
+		"fq1": "SRR748082_1.fastq.gz",
+		"fq2": "SRR748082_2.fastq.gz",
+		"ID": "SRR748082",
+		"SM": "Koby",
+		"LB": "243499",
+		"PU": "HWI-ST457_150.5",
+		"PL": "Illumina"
+	},
+	"SRR748083":{
+		"fq1": "SRR748083_1.fastq.gz",
+		"fq2": "SRR748083_2.fastq.gz",
+		"ID": "SRR748083",
+		"SM": "Koby",
+		"LB": "243499",
+		"PU": "HWI-ST539_47.5",
+		"PL": "Illumina"
+	},
+	"SRR748084":{
+		"fq1": "SRR748084_1.fastq.gz",
+		"fq2": "SRR748084_2.fastq.gz",
+		"ID": "SRR748084",
+		"SM": "Koby",
+		"LB": "243499",
+		"PU": "HWI-ST539_48.5",
+		"PL": "Illumina"
+	},
+	"SRR748053":{
+		"fq1": "SRR748053_1.fastq.gz",
+		"fq2": "SRR748053_2.fastq.gz",
+		"ID": "SRR748053",
+		"SM": "Jimmie",
+		"LB": "243488",
+		"PU": "HWI-ST457_161.7",
+		"PL": "Illumina"
+	},
+	"SRR748054":{
+		"fq1": "SRR748054_1.fastq.gz",
+		"fq2": "SRR748054_2.fastq.gz",
+		"ID": "SRR748054",
+		"SM": "Jimmie",
+		"LB": "243488",
+		"PU": "HWI-ST457_160.7",
+		"PL": "Illumina"
+	},
+	"SRR748055":{
+		"fq1": "SRR748055_1.fastq.gz",
+		"fq2": "SRR748055_2.fastq.gz",
+		"ID": "SRR748055",
+		"SM": "Jimmie",
+		"LB": "243488",
+		"PU": "HWI-ST0757_60.4",
+		"PL": "Illumina"
+	},
+	"SRR748051":{
+		"fq1": "SRR748051_1.fastq.gz",
+		"fq2": "SRR748051_2.fastq.gz",
+		"ID": "SRR748051",
+		"SM": "Jimmie",
+		"LB": "243487",
+		"PU": "HWI-ST457_161.8",
+		"PL": "Illumina"
+	},
+	"SRR748052":{
+		"fq1": "SRR748052_1.fastq.gz",
+		"fq2": "SRR748052_2.fastq.gz",
+		"ID": "SRR748052",
+		"SM": "Jimmie",
+		"LB": "243487",
+		"PU": "HWI-ST457_160.8",
+		"PL": "Illumina"
+	},
+	"SRR747953":{
+		"fq1": "SRR747953_1.fastq.gz",
+		"fq2": "SRR747953_2.fastq.gz",
+		"ID": "SRR747953",
+		"SM": "Bosco",
+		"LB": "243449",
+		"PU": "HWI-ST118_106315641.7",
+		"PL": "Illumina"
+	},
+	"SRR747954":{
+		"fq1": "SRR747954_1.fastq.gz",
+		"fq2": "SRR747954_2.fastq.gz",
+		"ID": "SRR747954",
+		"SM": "Bosco",
+		"LB": "243449",
+		"PU": "HWI-ST118_106315641.8",
+		"PL": "Illumina"
+	},
+	"SRR747951":{
+		"fq1": "SRR747951_1.fastq.gz",
+		"fq2": "SRR747951_2.fastq.gz",
+		"ID": "SRR747951",
+		"SM": "Bosco",
+		"LB": "243448",
+		"PU": "HWI-ST118_106315641.5",
+		"PL": "Illumina"
+	},
+	"SRR747952":{
+		"fq1": "SRR747952_1.fastq.gz",
+		"fq2": "SRR747952_2.fastq.gz",
+		"ID": "SRR747952",
+		"SM": "Bosco",
+		"LB": "243448",
+		"PU": "HWI-ST118_106315641.6",
+		"PL": "Illumina"
+	},
+	"SRR748161":{
+		"fq1": "SRR748161_1.fastq.gz",
+		"fq2": "SRR748161_2.fastq.gz",
+		"ID": "SRR748161",
+		"SM": "Tobi",
+		"LB": "243519",
+		"PU": "HWI-ST743.8",
+		"PL": "Illumina"
+	},
+	"SRR748162":{
+		"fq1": "SRR748162_1.fastq.gz",
+		"fq2": "SRR748162_2.fastq.gz",
+		"ID": "SRR748162",
+		"SM": "Tobi",
+		"LB": "243519",
+		"PU": "HWI-ST743.6",
+		"PL": "Illumina"
+	},
+	"SRR748163":{
+		"fq1": "SRR748163_1.fastq.gz",
+		"fq2": "SRR748163_2.fastq.gz",
+		"ID": "SRR748163",
+		"SM": "Tobi",
+		"LB": "243519",
+		"PU": "HWI-ST743.7",
+		"PL": "Illumina"
+	},
+	"SRR748164":{
+		"fq1": "SRR748164_1.fastq.gz",
+		"fq2": "SRR748164_2.fastq.gz",
+		"ID": "SRR748164",
+		"SM": "Tobi",
+		"LB": "243519",
+		"PU": "HISEQ1.5",
+		"PL": "Illumina"
+	},
+	"SRR748156":{
+		"fq1": "SRR748156_1.fastq.gz",
+		"fq2": "SRR748156_2.fastq.gz",
+		"ID": "SRR748156",
+		"SM": "Taweh",
+		"LB": "360479",
+		"PU": "110812_SN743_0121_AC040WABXX.7",
+		"PL": "Illumina"
+	},
+	"SRR748157":{
+		"fq1": "SRR748157_1.fastq.gz",
+		"fq2": "SRR748157_2.fastq.gz",
+		"ID": "SRR748157",
+		"SM": "Taweh",
+		"LB": "360479",
+		"PU": "110812_SN743_0121_AC040WABXX.8",
+		"PL": "Illumina"
+	},
+	"SRR748158":{
+		"fq1": "SRR748158_1.fastq.gz",
+		"fq2": "SRR748158_2.fastq.gz",
+		"ID": "SRR748158",
+		"SM": "Taweh",
+		"LB": "360479",
+		"PU": "110818_SN711_0114_AC010AABXX.7",
+		"PL": "Illumina"
+	},
+	"SRR748159":{
+		"fq1": "SRR748159_1.fastq.gz",
+		"fq2": "SRR748159_2.fastq.gz",
+		"ID": "SRR748159",
+		"SM": "Taweh",
+		"LB": "360479",
+		"PU": "110818_SN711_0114_AC010AABXX.8",
+		"PL": "Illumina"
+	},
+	"SRR748160":{
+		"fq1": "SRR748160_1.fastq.gz",
+		"fq2": "SRR748160_2.fastq.gz",
+		"ID": "SRR748160",
+		"SM": "Taweh",
+		"LB": "243518",
+		"PU": "HWI-ST731_133.5",
+		"PL": "Illumina"
+	},
+	"SRR748152":{
+		"fq1": "SRR748152_1.fastq.gz",
+		"fq2": "SRR748152_2.fastq.gz",
+		"ID": "SRR748152",
+		"SM": "Paquita",
+		"LB": "243517",
+		"PU": "HWI-ST743.5",
+		"PL": "Illumina"
+	},
+	"SRR748153":{
+		"fq1": "SRR748153_1.fastq.gz",
+		"fq2": "SRR748153_2.fastq.gz",
+		"ID": "SRR748153",
+		"SM": "Paquita",
+		"LB": "243517",
+		"PU": "HWI-ST743.6",
+		"PL": "Illumina"
+	},
+	"SRR748154":{
+		"fq1": "SRR748154_1.fastq.gz",
+		"fq2": "SRR748154_2.fastq.gz",
+		"ID": "SRR748154",
+		"SM": "Paquita",
+		"LB": "243517",
+		"PU": "HWI-ST743.3",
+		"PL": "Illumina"
+	},
+	"SRR748155":{
+		"fq1": "SRR748155_1.fastq.gz",
+		"fq2": "SRR748155_2.fastq.gz",
+		"ID": "SRR748155",
+		"SM": "Paquita",
+		"LB": "243517",
+		"PU": "HISEQ1.3",
+		"PL": "Illumina"
+	},
+	"SRR748147":{
+		"fq1": "SRR748147_1.fastq.gz",
+		"fq2": "SRR748147_2.fastq.gz",
+		"ID": "SRR748147",
+		"SM": "Koto",
+		"LB": "360478",
+		"PU": "110812_SN743_0121_AC040WABXX.5",
+		"PL": "Illumina"
+	},
+	"SRR748148":{
+		"fq1": "SRR748148_1.fastq.gz",
+		"fq2": "SRR748148_2.fastq.gz",
+		"ID": "SRR748148",
+		"SM": "Koto",
+		"LB": "360478",
+		"PU": "110812_SN743_0121_AC040WABXX.6",
+		"PL": "Illumina"
+	},
+	"SRR748149":{
+		"fq1": "SRR748149_1.fastq.gz",
+		"fq2": "SRR748149_2.fastq.gz",
+		"ID": "SRR748149",
+		"SM": "Koto",
+		"LB": "360478",
+		"PU": "110818_SN711_0114_AC010AABXX.5",
+		"PL": "Illumina"
+	},
+	"SRR748150":{
+		"fq1": "SRR748150_1.fastq.gz",
+		"fq2": "SRR748150_2.fastq.gz",
+		"ID": "SRR748150",
+		"SM": "Koto",
+		"LB": "360478",
+		"PU": "110818_SN711_0114_AC010AABXX.6",
+		"PL": "Illumina"
+	},
+	"SRR748151":{
+		"fq1": "SRR748151_1.fastq.gz",
+		"fq2": "SRR748151_2.fastq.gz",
+		"ID": "SRR748151",
+		"SM": "Koto",
+		"LB": "243516",
+		"PU": "HWI-ST731_133.4",
+		"PL": "Illumina"
+	},
+	"SRR748143":{
+		"fq1": "SRR748143_1.fastq.gz",
+		"fq2": "SRR748143_2.fastq.gz",
+		"ID": "SRR748143",
+		"SM": "Kopongo",
+		"LB": "243515",
+		"PU": "HWI-ST743.7",
+		"PL": "Illumina"
+	},
+	"SRR748144":{
+		"fq1": "SRR748144_1.fastq.gz",
+		"fq2": "SRR748144_2.fastq.gz",
+		"ID": "SRR748144",
+		"SM": "Kopongo",
+		"LB": "243515",
+		"PU": "HWI-ST743.4",
+		"PL": "Illumina"
+	},
+	"SRR748145":{
+		"fq1": "SRR748145_1.fastq.gz",
+		"fq2": "SRR748145_2.fastq.gz",
+		"ID": "SRR748145",
+		"SM": "Kopongo",
+		"LB": "243515",
+		"PU": "HWI-ST743.5",
+		"PL": "Illumina"
+	},
+	"SRR748146":{
+		"fq1": "SRR748146_1.fastq.gz",
+		"fq2": "SRR748146_2.fastq.gz",
+		"ID": "SRR748146",
+		"SM": "Kopongo",
+		"LB": "243515",
+		"PU": "HISEQ1.4",
+		"PL": "Illumina"
+	},
+	"SRR748138":{
+		"fq1": "SRR748138_1.fastq.gz",
+		"fq2": "SRR748138_2.fastq.gz",
+		"ID": "SRR748138",
+		"SM": "Julie_LWC21",
+		"LB": "360477",
+		"PU": "110812_SN743_0121_AC040WABXX.3",
+		"PL": "Illumina"
+	},
+	"SRR748139":{
+		"fq1": "SRR748139_1.fastq.gz",
+		"fq2": "SRR748139_2.fastq.gz",
+		"ID": "SRR748139",
+		"SM": "Julie_LWC21",
+		"LB": "360477",
+		"PU": "110812_SN743_0121_AC040WABXX.4",
+		"PL": "Illumina"
+	},
+	"SRR748140":{
+		"fq1": "SRR748140_1.fastq.gz",
+		"fq2": "SRR748140_2.fastq.gz",
+		"ID": "SRR748140",
+		"SM": "Julie_LWC21",
+		"LB": "360477",
+		"PU": "110818_SN711_0114_AC010AABXX.3",
+		"PL": "Illumina"
+	},
+	"SRR748141":{
+		"fq1": "SRR748141_1.fastq.gz",
+		"fq2": "SRR748141_2.fastq.gz",
+		"ID": "SRR748141",
+		"SM": "Julie_LWC21",
+		"LB": "360477",
+		"PU": "110818_SN711_0114_AC010AABXX.4",
+		"PL": "Illumina"
+	},
+	"SRR748142":{
+		"fq1": "SRR748142_1.fastq.gz",
+		"fq2": "SRR748142_2.fastq.gz",
+		"ID": "SRR748142",
+		"SM": "Julie_LWC21",
+		"LB": "243514",
+		"PU": "HWI-ST731_133.3",
+		"PL": "Illumina"
+	},
+	"SRR748133":{
+		"fq1": "SRR748133_1.fastq.gz",
+		"fq2": "SRR748133_2.fastq.gz",
+		"ID": "SRR748133",
+		"SM": "Damian",
+		"LB": "360476",
+		"PU": "110812_SN743_0121_AC040WABXX.1",
+		"PL": "Illumina"
+	},
+	"SRR748134":{
+		"fq1": "SRR748134_1.fastq.gz",
+		"fq2": "SRR748134_2.fastq.gz",
+		"ID": "SRR748134",
+		"SM": "Damian",
+		"LB": "360476",
+		"PU": "110812_SN743_0121_AC040WABXX.2",
+		"PL": "Illumina"
+	},
+	"SRR748135":{
+		"fq1": "SRR748135_1.fastq.gz",
+		"fq2": "SRR748135_2.fastq.gz",
+		"ID": "SRR748135",
+		"SM": "Damian",
+		"LB": "360476",
+		"PU": "110818_SN711_0114_AC010AABXX.1",
+		"PL": "Illumina"
+	},
+	"SRR748136":{
+		"fq1": "SRR748136_1.fastq.gz",
+		"fq2": "SRR748136_2.fastq.gz",
+		"ID": "SRR748136",
+		"SM": "Damian",
+		"LB": "360476",
+		"PU": "110818_SN711_0114_AC010AABXX.2",
+		"PL": "Illumina"
+	},
+	"SRR748137":{
+		"fq1": "SRR748137_1.fastq.gz",
+		"fq2": "SRR748137_2.fastq.gz",
+		"ID": "SRR748137",
+		"SM": "Damian",
+		"LB": "243513",
+		"PU": "HWI-ST731_133.2",
+		"PL": "Illumina"
+	},
+	"SRR748129":{
+		"fq1": "SRR748129_1.fastq.gz",
+		"fq2": "SRR748129_2.fastq.gz",
+		"ID": "SRR748129",
+		"SM": "Basho",
+		"LB": "243512",
+		"PU": "HWI-ST743.3",
+		"PL": "Illumina"
+	},
+	"SRR748130":{
+		"fq1": "SRR748130_1.fastq.gz",
+		"fq2": "SRR748130_2.fastq.gz",
+		"ID": "SRR748130",
+		"SM": "Basho",
+		"LB": "243512",
+		"PU": "HWI-ST743.4",
+		"PL": "Illumina"
+	},
+	"SRR748131":{
+		"fq1": "SRR748131_1.fastq.gz",
+		"fq2": "SRR748131_2.fastq.gz",
+		"ID": "SRR748131",
+		"SM": "Basho",
+		"LB": "243512",
+		"PU": "HWI-ST743.2",
+		"PL": "Illumina"
+	},
+	"SRR748132":{
+		"fq1": "SRR748132_1.fastq.gz",
+		"fq2": "SRR748132_2.fastq.gz",
+		"ID": "SRR748132",
+		"SM": "Basho",
+		"LB": "243512",
+		"PU": "HISEQ1.2",
+		"PL": "Illumina"
+	},
+	"SRR748125":{
+		"fq1": "SRR748125_1.fastq.gz",
+		"fq2": "SRR748125_2.fastq.gz",
+		"ID": "SRR748125",
+		"SM": "Banyo",
+		"LB": "243511",
+		"PU": "HWI-ST743.1",
+		"PL": "Illumina"
+	},
+	"SRR748126":{
+		"fq1": "SRR748126_1.fastq.gz",
+		"fq2": "SRR748126_2.fastq.gz",
+		"ID": "SRR748126",
+		"SM": "Banyo",
+		"LB": "243511",
+		"PU": "HWI-ST743.2",
+		"PL": "Illumina"
+	},
+	"SRR748127":{
+		"fq1": "SRR748127_1.fastq.gz",
+		"fq2": "SRR748127_2.fastq.gz",
+		"ID": "SRR748127",
+		"SM": "Banyo",
+		"LB": "243511",
+		"PU": "HWI-ST743.1",
+		"PL": "Illumina"
+	},
+	"SRR748128":{
+		"fq1": "SRR748128_1.fastq.gz",
+		"fq2": "SRR748128_2.fastq.gz",
+		"ID": "SRR748128",
+		"SM": "Banyo",
+		"LB": "243511",
+		"PU": "HISEQ1.1",
+		"PL": "Illumina"
+	},
+	"SRR748121":{
+		"fq1": "SRR748121_1.fastq.gz",
+		"fq2": "SRR748121_2.fastq.gz",
+		"ID": "SRR748121",
+		"SM": "Akwaya-Jean",
+		"LB": "360475",
+		"PU": "HISEQ1.6",
+		"PL": "Illumina"
+	},
+	"SRR748122":{
+		"fq1": "SRR748122_1.fastq.gz",
+		"fq2": "SRR748122_2.fastq.gz",
+		"ID": "SRR748122",
+		"SM": "Akwaya-Jean",
+		"LB": "360475",
+		"PU": "HISEQ1.7",
+		"PL": "Illumina"
+	},
+	"SRR748123":{
+		"fq1": "SRR748123_1.fastq.gz",
+		"fq2": "SRR748123_2.fastq.gz",
+		"ID": "SRR748123",
+		"SM": "Akwaya-Jean",
+		"LB": "360475",
+		"PU": "HISEQ1.8",
+		"PL": "Illumina"
+	},
+	"SRR748124":{
+		"fq1": "SRR748124_1.fastq.gz",
+		"fq2": "SRR748124_2.fastq.gz",
+		"ID": "SRR748124",
+		"SM": "Akwaya-Jean",
+		"LB": "243510",
+		"PU": "HWI-ST731_133.1",
+		"PL": "Illumina"
+	},
+	"SRR748073":{
+		"fq1": "SRR748073_1.fastq.gz",
+		"fq2": "SRR748073_2.fastq.gz",
+		"ID": "SRR748073",
+		"SM": "Clara",
+		"LB": "243496",
+		"PU": "HWI-ST700660_83.8",
+		"PL": "Illumina"
+	},
+	"SRR748074":{
+		"fq1": "SRR748074_1.fastq.gz",
+		"fq2": "SRR748074_2.fastq.gz",
+		"ID": "SRR748074",
+		"SM": "Clara",
+		"LB": "243496",
+		"PU": "HWI-ST0757_60.8",
+		"PL": "Illumina"
+	},
+	"SRR748075":{
+		"fq1": "SRR748075_1.fastq.gz",
+		"fq2": "SRR748075_2.fastq.gz",
+		"ID": "SRR748075",
+		"SM": "Clara",
+		"LB": "243496",
+		"PU": "HWI-ST0757_59.8",
+		"PL": "Illumina"
+	},
+	"SRR748071":{
+		"fq1": "SRR748071_1.fastq.gz",
+		"fq2": "SRR748071_2.fastq.gz",
+		"ID": "SRR748071",
+		"SM": "Clara",
+		"LB": "243495",
+		"PU": "HWI-ST700660_83.7748072",
+		"PL": "Illumina"
+	},
+	"SRR748072":{
+		"fq1": "SRR748072_1.fastq.gz",
+		"fq2": "SRR748072_2.fastq.gz",
+		"ID": "SRR748072",
+		"SM": "Clara",
+		"LB": "243495",
+		"PU": "HWI-ST0757_59.7",
+		"PL": "Illumina"
+	},
+	"SRR748069":{
+		"fq1": "SRR748069_1.fastq.gz",
+		"fq2": "SRR748069_2.fastq.gz",
+		"ID": "SRR748069",
+		"SM": "Julie_A959",
+		"LB": "243494",
+		"PU": "HWI-ST700660_83.5",
+		"PL": "Illumina"
+	},
+	"SRR748070":{
+		"fq1": "SRR748070_1.fastq.gz",
+		"fq2": "SRR748070_2.fastq.gz",
+		"ID": "SRR748070",
+		"SM": "Julie_A959",
+		"LB": "243494",
+		"PU": "HWI-ST0757_59.5",
+		"PL": "Illumina"
+	},
+	"SRR748066":{
+		"fq1": "SRR748066_1.fastq.gz",
+		"fq2": "SRR748066_2.fastq.gz",
+		"ID": "SRR748066",
+		"SM": "Julie_A959",
+		"LB": "243493",
+		"PU": "HWI-ST700660_83.6",
+		"PL": "Illumina"
+	},
+	"SRR748067":{
+		"fq1": "SRR748067_1.fastq.gz",
+		"fq2": "SRR748067_2.fastq.gz",
+		"ID": "SRR748067",
+		"SM": "Julie_A959",
+		"LB": "243493",
+		"PU": "HWI-ST0757_60.7",
+		"PL": "Illumina"
+	},
+	"SRR748068":{
+		"fq1": "SRR748068_1.fastq.gz",
+		"fq2": "SRR748068_2.fastq.gz",
+		"ID": "SRR748068",
+		"SM": "Julie_A959",
+		"LB": "243493",
+		"PU": "HWI-ST0757_59.6",
+		"PL": "Illumina"
+	},
+	"SRR748063":{
+		"fq1": "SRR748063_1.fastq.gz",
+		"fq2": "SRR748063_2.fastq.gz",
+		"ID": "SRR748063",
+		"SM": "Doris",
+		"LB": "243492",
+		"PU": "HWI-ST700660_83.4",
+		"PL": "Illumina"
+	},
+	"SRR748064":{
+		"fq1": "SRR748064_1.fastq.gz",
+		"fq2": "SRR748064_2.fastq.gz",
+		"ID": "SRR748064",
+		"SM": "Doris",
+		"LB": "243492",
+		"PU": "HWI-ST0757_60.6",
+		"PL": "Illumina"
+	},
+	"SRR748065":{
+		"fq1": "SRR748065_1.fastq.gz",
+		"fq2": "SRR748065_2.fastq.gz",
+		"ID": "SRR748065",
+		"SM": "Doris",
+		"LB": "243492",
+		"PU": "HWI-ST0757_59.4",
+		"PL": "Illumina"
+	},
+	"SRR748061":{
+		"fq1": "SRR748061_1.fastq.gz",
+		"fq2": "SRR748061_2.fastq.gz",
+		"ID": "SRR748061",
+		"SM": "Doris",
+		"LB": "243491",
+		"PU": "HWI-ST700660_83.3",
+		"PL": "Illumina"
+	},
+	"SRR748062":{
+		"fq1": "SRR748062_1.fastq.gz",
+		"fq2": "SRR748062_2.fastq.gz",
+		"ID": "SRR748062",
+		"SM": "Doris",
+		"LB": "243491",
+		"PU": "HWI-ST0757_59.3",
+		"PL": "Illumina"
+	},
+	"SRR748059":{
+		"fq1": "SRR748059_1.fastq.gz",
+		"fq2": "SRR748059_2.fastq.gz",
+		"ID": "SRR748059",
+		"SM": "Vaillant",
+		"LB": "243490",
+		"PU": "HWI-ST700660_83.2",
+		"PL": "Illumina"
+	},
+	"SRR748060":{
+		"fq1": "SRR748060_1.fastq.gz",
+		"fq2": "SRR748060_2.fastq.gz",
+		"ID": "SRR748060",
+		"SM": "Vaillant",
+		"LB": "243490",
+		"PU": "HWI-ST0757_59.2",
+		"PL": "Illumina"
+	},
+	"SRR748056":{
+		"fq1": "SRR748056_1.fastq.gz",
+		"fq2": "SRR748056_2.fastq.gz",
+		"ID": "SRR748056",
+		"SM": "Vaillant",
+		"LB": "243489",
+		"PU": "HWI-ST700660_83.1",
+		"PL": "Illumina"
+	},
+	"SRR748057":{
+		"fq1": "SRR748057_1.fastq.gz",
+		"fq2": "SRR748057_2.fastq.gz",
+		"ID": "SRR748057",
+		"SM": "Vaillant",
+		"LB": "243489",
+		"PU": "HWI-ST0757_60.5",
+		"PL": "Illumina"
+	},
+	"SRR748058":{
+		"fq1": "SRR748058_1.fastq.gz",
+		"fq2": "SRR748058_2.fastq.gz",
+		"ID": "SRR748058",
+		"SM": "Vaillant",
+		"LB": "243489",
+		"PU": "HWI-ST0757_59.1",
+		"PL": "Illumina"
+	},
+	"SRR748073":{
+		"fq1": "SRR748073_1.fastq.gz",
+		"fq2": "SRR748073_2.fastq.gz",
+		"ID": "SRR748073",
+		"SM": "Clara",
+		"LB": "243496",
+		"PU": "HWI-ST700660_83.8",
+		"PL": "Illumina"
+	},
+	"SRR748074":{
+		"fq1": "SRR748074_1.fastq.gz",
+		"fq2": "SRR748074_2.fastq.gz",
+		"ID": "SRR748074",
+		"SM": "Clara",
+		"LB": "243496",
+		"PU": "HWI-ST0757_60.8",
+		"PL": "Illumina"
+	},
+	"SRR748075":{
+		"fq1": "SRR748075_1.fastq.gz",
+		"fq2": "SRR748075_2.fastq.gz",
+		"ID": "SRR748075",
+		"SM": "Clara",
+		"LB": "243496",
+		"PU": "HWI-ST0757_59.8",
+		"PL": "Illumina"
+	},
+	"SRR748071":{
+		"fq1": "SRR748071_1.fastq.gz",
+		"fq2": "SRR748071_2.fastq.gz",
+		"ID": "SRR748071",
+		"SM": "Clara",
+		"LB": "243495",
+		"PU": "HWI-ST700660_83.7748072",
+		"PL": "Illumina"
+	},
+	"SRR748072":{
+		"fq1": "SRR748072_1.fastq.gz",
+		"fq2": "SRR748072_2.fastq.gz",
+		"ID": "SRR748072",
+		"SM": "Clara",
+		"LB": "243495",
+		"PU": "HWI-ST0757_59.7",
+		"PL": "Illumina"
+	},
+	"SRR748069":{
+		"fq1": "SRR748069_1.fastq.gz",
+		"fq2": "SRR748069_2.fastq.gz",
+		"ID": "SRR748069",
+		"SM": "Julie_A959",
+		"LB": "243494",
+		"PU": "HWI-ST700660_83.5",
+		"PL": "Illumina"
+	},
+	"SRR748070":{
+		"fq1": "SRR748070_1.fastq.gz",
+		"fq2": "SRR748070_2.fastq.gz",
+		"ID": "SRR748070",
+		"SM": "Julie_A959",
+		"LB": "243494",
+		"PU": "HWI-ST0757_59.5",
+		"PL": "Illumina"
+	},
+	"SRR748066":{
+		"fq1": "SRR748066_1.fastq.gz",
+		"fq2": "SRR748066_2.fastq.gz",
+		"ID": "SRR748066",
+		"SM": "Julie_A959",
+		"LB": "243493",
+		"PU": "HWI-ST700660_83.6",
+		"PL": "Illumina"
+	},
+	"SRR748067":{
+		"fq1": "SRR748067_1.fastq.gz",
+		"fq2": "SRR748067_2.fastq.gz",
+		"ID": "SRR748067",
+		"SM": "Julie_A959",
+		"LB": "243493",
+		"PU": "HWI-ST0757_60.7",
+		"PL": "Illumina"
+	},
+	"SRR748068":{
+		"fq1": "SRR748068_1.fastq.gz",
+		"fq2": "SRR748068_2.fastq.gz",
+		"ID": "SRR748068",
+		"SM": "Julie_A959",
+		"LB": "243493",
+		"PU": "HWI-ST0757_59.6",
+		"PL": "Illumina"
+	},
+	"SRR748063":{
+		"fq1": "SRR748063_1.fastq.gz",
+		"fq2": "SRR748063_2.fastq.gz",
+		"ID": "SRR748063",
+		"SM": "Doris",
+		"LB": "243492",
+		"PU": "HWI-ST700660_83.4",
+		"PL": "Illumina"
+	},
+	"SRR748064":{
+		"fq1": "SRR748064_1.fastq.gz",
+		"fq2": "SRR748064_2.fastq.gz",
+		"ID": "SRR748064",
+		"SM": "Doris",
+		"LB": "243492",
+		"PU": "HWI-ST0757_60.6",
+		"PL": "Illumina"
+	},
+	"SRR748065":{
+		"fq1": "SRR748065_1.fastq.gz",
+		"fq2": "SRR748065_2.fastq.gz",
+		"ID": "SRR748065",
+		"SM": "Doris",
+		"LB": "243492",
+		"PU": "HWI-ST0757_59.4",
+		"PL": "Illumina"
+	},
+	"SRR748061":{
+		"fq1": "SRR748061_1.fastq.gz",
+		"fq2": "SRR748061_2.fastq.gz",
+		"ID": "SRR748061",
+		"SM": "Doris",
+		"LB": "243491",
+		"PU": "HWI-ST700660_83.3",
+		"PL": "Illumina"
+	},
+	"SRR748062":{
+		"fq1": "SRR748062_1.fastq.gz",
+		"fq2": "SRR748062_2.fastq.gz",
+		"ID": "SRR748062",
+		"SM": "Doris",
+		"LB": "243491",
+		"PU": "HWI-ST0757_59.3",
+		"PL": "Illumina"
+	},
+	"SRR748059":{
+		"fq1": "SRR748059_1.fastq.gz",
+		"fq2": "SRR748059_2.fastq.gz",
+		"ID": "SRR748059",
+		"SM": "Vaillant",
+		"LB": "243490",
+		"PU": "HWI-ST700660_83.2",
+		"PL": "Illumina"
+	},
+	"SRR748060":{
+		"fq1": "SRR748060_1.fastq.gz",
+		"fq2": "SRR748060_2.fastq.gz",
+		"ID": "SRR748060",
+		"SM": "Vaillant",
+		"LB": "243490",
+		"PU": "HWI-ST0757_59.2",
+		"PL": "Illumina"
+	},
+	"SRR748056":{
+		"fq1": "SRR748056_1.fastq.gz",
+		"fq2": "SRR748056_2.fastq.gz",
+		"ID": "SRR748056",
+		"SM": "Vaillant",
+		"LB": "243489",
+		"PU": "HWI-ST700660_83.1",
+		"PL": "Illumina"
+	},
+	"SRR748057":{
+		"fq1": "SRR748057_1.fastq.gz",
+		"fq2": "SRR748057_2.fastq.gz",
+		"ID": "SRR748057",
+		"SM": "Vaillant",
+		"LB": "243489",
+		"PU": "HWI-ST0757_60.5",
+		"PL": "Illumina"
+	},
+	"SRR748058":{
+		"fq1": "SRR748058_1.fastq.gz",
+		"fq2": "SRR748058_2.fastq.gz",
+		"ID": "SRR748058",
+		"SM": "Vaillant",
+		"LB": "243489",
+		"PU": "HWI-ST0757_59.1",
+		"PL": "Illumina"
+	},
+	"ERR1710023":{
+		"fq1": "ERR1710023_1.fastq.gz",
+		"fq2": "ERR1710023_2.fastq.gz",
+		"ID": "ERR1710023",
+		"SM": "Linda",
+		"LB": "1780257",
+		"PU": "HWI-ST0857_183",
+		"PL": "Illumina"
+	},
+	"ERR1710022":{
+		"fq1": "ERR1710022_1.fastq.gz",
+		"fq2": "ERR1710022_2.fastq.gz",
+		"ID": "ERR1710022",
+		"SM": "Linda",
+		"LB": "1780256",
+		"PU": "HWI-ST539_170",
+		"PL": "Illumina"
+	},
+	"ERR1710021":{
+		"fq1": "ERR1710021_1.fastq.gz",
+		"fq2": "ERR1710021_2.fastq.gz",
+		"ID": "ERR1710021",
+		"SM": "Linda",
+		"LB": "1780255",
+		"PU": "HWI-ST858_147",
+		"PL": "Illumina"
+	},
+	"ERR1710020":{
+		"fq1": "ERR1710020_1.fastq.gz",
+		"fq2": "ERR1710020_2.fastq.gz",
+		"ID": "ERR1710020",
+		"SM": "Linda",
+		"LB": "1780254",
+		"PU": "HWI-ST700660_220",
+		"PL": "Illumina"
+	},
+	"ERR1709882":{
+		"fq1": "ERR1709882_1.fastq.gz",
+		"fq2": "ERR1709882_2.fastq.gz",
+		"ID": "ERR1709882",
+		"SM": "SeppToni",
+		"LB": "1780116",
+		"PU": "HWI-ST858_147",
+		"PL": "Illumina"
+	},
+	"ERR1709881":{
+		"fq1": "ERR1709881_1.fastq.gz",
+		"fq2": "ERR1709881_2.fastq.gz",
+		"ID": "ERR1709881",
+		"SM": "SeppToni",
+		"LB": "1780115",
+		"PU": "HWI-ST539_170",
+		"PL": "Illumina"
+	},
+	"ERR1709880":{
+		"fq1": "ERR1709880_1.fastq.gz",
+		"fq2": "ERR1709880_2.fastq.gz",
+		"ID": "ERR1709880",
+		"SM": "SeppToni",
+		"LB": "1780114",
+		"PU": "HWI-ST700660_220",
+		"PL": "Illumina"
+	},
+	"ERR1709879":{
+		"fq1": "ERR1709879_1.fastq.gz",
+		"fq2": "ERR1709879_2.fastq.gz",
+		"ID": "ERR1709879",
+		"SM": "SeppToni",
+		"LB": "1780113",
+		"PU": "HWI-ST0857_183",
+		"PL": "Illumina"
+	},
+	"ERR1710033":{
+		"fq1": "ERR1710033_1.fastq.gz",
+		"fq2": "ERR1710033_2.fastq.gz",
+		"ID": "ERR1710033",
+		"SM": "Mike",
+		"LB": "1780267",
+		"PU": "HWI-ST539_170",
+		"PL": "Illumina"
+	},
+	"ERR1710032":{
+		"fq1": "ERR1710032_1.fastq.gz",
+		"fq2": "ERR1710032_2.fastq.gz",
+		"ID": "ERR1710032",
+		"SM": "Mike",
+		"LB": "1780266",
+		"PU": "HWI-ST700660_220",
+		"PL": "Illumina"
+	},
+	"ERR1710031":{
+		"fq1": "ERR1710031_1.fastq.gz",
+		"fq2": "ERR1710031_2.fastq.gz",
+		"ID": "ERR1710031",
+		"SM": "Mike",
+		"LB": "1780265",
+		"PU": "HWI-ST0857_183",
+		"PL": "Illumina"
+	},
+	"ERR1710030":{
+		"fq1": "ERR1710030_1.fastq.gz",
+		"fq2": "ERR1710030_2.fastq.gz",
+		"ID": "ERR1710030",
+		"SM": "Mike",
+		"LB": "1780264",
+		"PU": "HWI-ST858_147",
+		"PL": "Illumina"
+	},
+	"ERR1710092":{
+		"fq1": "ERR1710092_1.fastq.gz",
+		"fq2": "ERR1710092_2.fastq.gz",
+		"ID": "ERR1710092",
+		"SM": "Annie",
+		"LB": "1780326",
+		"PU": "HWI-ST858_148",
+		"PL": "Illumina"
+	},
+	"ERR1710091":{
+		"fq1": "ERR1710091_1.fastq.gz",
+		"fq2": "ERR1710091_2.fastq.gz",
+		"ID": "ERR1710091",
+		"SM": "Annie",
+		"LB": "1780325",
+		"PU": "HWI-ST459_170",
+		"PL": "Illumina"
+	},
+	"ERR1710090":{
+		"fq1": "ERR1710090_1.fastq.gz",
+		"fq2": "ERR1710090_2.fastq.gz",
+		"ID": "ERR1710090",
+		"SM": "Annie",
+		"LB": "1780324",
+		"PU": "HWI-ST699_202",
+		"PL": "Illumina"
+	},
+	"ERR1710089":{
+		"fq1": "ERR1710089_1.fastq.gz",
+		"fq2": "ERR1710089_2.fastq.gz",
+		"ID": "ERR1710089",
+		"SM": "Annie",
+		"LB": "1780323",
+		"PU": "HWI-ST539_170",
+		"PL": "Illumina"
+	},
+	"ERR1709965":{
+		"fq1": "ERR1709965_1.fastq.gz",
+		"fq2": "ERR1709965_2.fastq.gz",
+		"ID": "ERR1709965",
+		"SM": "Berta",
+		"LB": "1780199",
+		"PU": "HWI-ST858_148",
+		"PL": "Illumina"
+	},
+	"ERR1709964":{
+		"fq1": "ERR1709964_1.fastq.gz",
+		"fq2": "ERR1709964_2.fastq.gz",
+		"ID": "ERR1709964",
+		"SM": "Berta",
+		"LB": "1780198",
+		"PU": "HWI-ST539_170",
+		"PL": "Illumina"
+	},
+	"ERR1709963":{
+		"fq1": "ERR1709963_1.fastq.gz",
+		"fq2": "ERR1709963_2.fastq.gz",
+		"ID": "ERR1709963",
+		"SM": "Berta",
+		"LB": "1780197",
+		"PU": "HWI-ST459_170",
+		"PL": "Illumina"
+	},
+	"ERR1709962":{
+		"fq1": "ERR1709962_1.fastq.gz",
+		"fq2": "ERR1709962_2.fastq.gz",
+		"ID": "ERR1709962",
+		"SM": "Berta",
+		"LB": "1780196",
+		"PU": "HWI-ST699_202",
 		"PL": "Illumina"
 	}
 }
