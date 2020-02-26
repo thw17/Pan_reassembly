@@ -19,7 +19,7 @@
 
 	"chrx": {
 		"pantro4": ["chrX"],
-		"pantro46": ["chrX"] 
+		"pantro46": ["chrX"]
 	},
 
 	"chry": {
@@ -3244,57 +3244,57 @@
 		"PL": "Illumina"
 	},
 	"HG00513_wgs_run1":{
-		"fq1": ["ERR894727_1.fastq.gz"],
-		"fq2": ["ERR894727_2.fastq.gz"],
-		"ID": ["HG00513_wgs_run1"],
-		"SM": ["HG00513_wgs"],
-		"LB": ["HG00513_wgs"],
-		"PU": ["C6L9WANXX.3"],
-		"PL": ["Illumina"]
+		"fq1": "ERR894727_1.fastq.gz",
+		"fq2": "ERR894727_2.fastq.gz",
+		"ID": "HG00513_wgs_run1",
+		"SM": "HG00513",
+		"LB": "HG00513",
+		"PU": "C6L9WANXX.3",
+		"PL": "Illumina"
 	},
 	"HG00513_wgs_run2":{
-		"fq1": ["ERR894728_1.fastq.gz"],
-		"fq2": ["ERR894728_2.fastq.gz"],
-		"ID": ["HG00513_wgs_run2"],
-		"SM": ["HG00513_wgs"],
-		"LB": ["HG00513_wgs"],
-		"PU": ["C6L9WANXX.4"],
-		"PL": ["Illumina"]
+		"fq1": "ERR894728_1.fastq.gz",
+		"fq2": "ERR894728_2.fastq.gz",
+		"ID": "HG00513_wgs_run2",
+		"SM": "HG00513",
+		"LB": "HG00513",
+		"PU": "C6L9WANXX.4",
+		"PL": "Illumina"
 	},
 	"HG00513_wgs_run3":{
-		"fq1": ["ERR899714_1.fastq.gz"],
-		"fq2": ["ERR899714_2.fastq.gz"],
-		"ID": ["HG00513_wgs_run3"],
-		"SM": ["HG00513_wgs"],
-		"LB": ["HG00513_wgs"],
-		"PU": ["C6A74ANXX.4"],
-		"PL": ["Illumina"]
+		"fq1": "ERR899714_1.fastq.gz",
+		"fq2": "ERR899714_2.fastq.gz",
+		"ID": "HG00513_wgs_run3",
+		"SM": "HG00513",
+		"LB": "HG00513",
+		"PU": "C6A74ANXX.4",
+		"PL": "Illumina"
 	},
 	"HG00513_wgs_run4":{
-		"fq1": ["ERR899715_1.fastq.gz"],
-		"fq2": ["ERR899715_2.fastq.gz"],
-		"ID": ["HG00513_wgs_run4"],
-		"SM": ["HG00513_wgs"],
-		"LB": ["HG00513_wgs"],
-		"PU": ["C6A74ANXX.7"],
-		"PL": ["Illumina"]
+		"fq1": "ERR899715_1.fastq.gz",
+		"fq2": "ERR899715_2.fastq.gz",
+		"ID": "HG00513_wgs_run4",
+		"SM": "HG00513",
+		"LB": "HG00513",
+		"PU": "C6A74ANXX.7",
+		"PL": "Illumina"
 	},
 	"HG00513_wgs_run5":{
-		"fq1": ["ERR899716_1.fastq.gz"],
-		"fq2": ["ERR899716_2.fastq.gz"],
-		"ID": ["HG00513_wgs_run5"],
-		"SM": ["HG00513_wgs"],
-		"LB": ["HG00513_wgs"],
-		"PU": ["C6A74ANXX.8"],
-		"PL": ["Illumina"]
+		"fq1": "ERR899716_1.fastq.gz",
+		"fq2": "ERR899716_2.fastq.gz",
+		"ID": "HG00513_wgs_run5",
+		"SM": "HG00513",
+		"LB": "HG00513",
+		"PU": "C6A74ANXX.8",
+		"PL": "Illumina"
 	},
 	"HG00513_wgs_run6":{
-		"fq1": ["ERR903027_1.fastq.gz"],
-		"fq2": ["ERR903027_2.fastq.gz"],
-		"ID": ["HG00513_wgs_run6"],
-		"SM": ["HG00513_wgs"],
-		"LB": ["HG00513_wgs"],
-		"PU": ["C6L01ANXX.2"],
-		"PL": ["Illumina"]
+		"fq1": "ERR903027_1.fastq.gz",
+		"fq2": "ERR903027_2.fastq.gz",
+		"ID": "HG00513_wgs_run6",
+		"SM": "HG00513",
+		"LB": "HG00513",
+		"PU": "C6L01ANXX.2",
+		"PL": "Illumina"
 	}
 }
