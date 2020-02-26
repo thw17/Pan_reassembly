@@ -24,7 +24,7 @@ tabix_path = "tabix"
 
 paired = [x for x in config["sras"] if x not in config["single_end"]]
 
-exclude_list = ["SRR740818", "SRR740831"]
+# exclude_list = ["SRR740818", "SRR740831"]
 
 fastq_prefixes_paired = [
 	config[x]["fq1"][:-9] for x in paired] + [
@@ -185,7 +185,7 @@ rule fastqc_analysis_single:
 rule multiqc_analysis:
 	input:
 		paired = expand("fastqc/{fq_prefix}_fastqc.html", fq_prefix=fastq_prefixes_paired),
-		single = expand("fastqc/{fq_prefix}_fastqc.html", fq_prefix=fastq_prefixes_single),
+		single = expand("fastqc/{fq_prefix}_fastqc.html", fq_prefix=fastq_prefixes_single)
 	output:
 		"multiqc/multiqc_report.html"
 	params:
@@ -193,19 +193,6 @@ rule multiqc_analysis:
 	shell:
 		"export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && "
 		"{params.multiqc} -o multiqc fastqc"
-
-rule adapter_discovery:
-	input:
-		fq1 = lambda wildcards: os.path.join(
-			fastq_directory, config[wildcards.sample]["fq1"]),
-		fq2 = lambda wildcards: os.path.join(
-			fastq_directory, config[wildcards.sample]["fq2"])
-	output:
-		"adapters/{sample}.adapters.fa"
-	params:
-		bbmerge_sh = bbmerge_sh_path
-	shell:
-		"{params.bbmerge_sh} in1={input.fq1} in2={input.fq2} outa={output} reads=1m"
 
 rule trim_adapters_paired_bbduk:
 	input:
