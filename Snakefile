@@ -89,9 +89,6 @@ rule all:
 		expand(
 			"reference/{assembly}.fasta.fai",
 			assembly=assemblies),
-		expand(
-			"adapters/{sample}.adapters.fa",
-			sample=paired),
 		"multiqc/multiqc_report.html",
 		"multiqc_trimmed/multiqc_report.html",
 		# expand(
