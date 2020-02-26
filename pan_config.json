@@ -116,7 +116,7 @@
 			"SRR740775", "SRR740768", "SRR740769", "SRR740770", "SRR740771",
 			"SRR726612", "SRR726613", "SRR726614", "SRR726615", "SRR726607",
 			"SRR726608", "SRR726609", "SRR726610", "SRR747929", "SRR747930",
-			"SRR747927", "SRR747928"
+			"SRR747927", "SRR747928",
 			"SRR748179","SRR748180","SRR748181","SRR748182","SRR748183","SRR748184","SRR748185","SRR748186",
 			"SRR748081","SRR748082","SRR748083","SRR748084",
 			"SRR748053","SRR748054","SRR748055","SRR748051","SRR748052",
@@ -340,7 +340,6 @@
 		"HG00513": [
 			"HG00513_wgs_run1", "HG00513_wgs_run2", "HG00513_wgs_run3",
 			"HG00513_wgs_run4", "HG00513_wgs_run5", "HG00513_wgs_run6"]
-		]
 	},
 
 	"single_end": [
@@ -2883,186 +2882,6 @@
 		"PU": "HWI-ST0757_59.1",
 		"PL": "Illumina"
 	},
-	"SRR748073":{
-		"fq1": "SRR748073_1.fastq.gz",
-		"fq2": "SRR748073_2.fastq.gz",
-		"ID": "SRR748073",
-		"SM": "Clara",
-		"LB": "243496",
-		"PU": "HWI-ST700660_83.8",
-		"PL": "Illumina"
-	},
-	"SRR748074":{
-		"fq1": "SRR748074_1.fastq.gz",
-		"fq2": "SRR748074_2.fastq.gz",
-		"ID": "SRR748074",
-		"SM": "Clara",
-		"LB": "243496",
-		"PU": "HWI-ST0757_60.8",
-		"PL": "Illumina"
-	},
-	"SRR748075":{
-		"fq1": "SRR748075_1.fastq.gz",
-		"fq2": "SRR748075_2.fastq.gz",
-		"ID": "SRR748075",
-		"SM": "Clara",
-		"LB": "243496",
-		"PU": "HWI-ST0757_59.8",
-		"PL": "Illumina"
-	},
-	"SRR748071":{
-		"fq1": "SRR748071_1.fastq.gz",
-		"fq2": "SRR748071_2.fastq.gz",
-		"ID": "SRR748071",
-		"SM": "Clara",
-		"LB": "243495",
-		"PU": "HWI-ST700660_83.7748072",
-		"PL": "Illumina"
-	},
-	"SRR748072":{
-		"fq1": "SRR748072_1.fastq.gz",
-		"fq2": "SRR748072_2.fastq.gz",
-		"ID": "SRR748072",
-		"SM": "Clara",
-		"LB": "243495",
-		"PU": "HWI-ST0757_59.7",
-		"PL": "Illumina"
-	},
-	"SRR748069":{
-		"fq1": "SRR748069_1.fastq.gz",
-		"fq2": "SRR748069_2.fastq.gz",
-		"ID": "SRR748069",
-		"SM": "Julie_A959",
-		"LB": "243494",
-		"PU": "HWI-ST700660_83.5",
-		"PL": "Illumina"
-	},
-	"SRR748070":{
-		"fq1": "SRR748070_1.fastq.gz",
-		"fq2": "SRR748070_2.fastq.gz",
-		"ID": "SRR748070",
-		"SM": "Julie_A959",
-		"LB": "243494",
-		"PU": "HWI-ST0757_59.5",
-		"PL": "Illumina"
-	},
-	"SRR748066":{
-		"fq1": "SRR748066_1.fastq.gz",
-		"fq2": "SRR748066_2.fastq.gz",
-		"ID": "SRR748066",
-		"SM": "Julie_A959",
-		"LB": "243493",
-		"PU": "HWI-ST700660_83.6",
-		"PL": "Illumina"
-	},
-	"SRR748067":{
-		"fq1": "SRR748067_1.fastq.gz",
-		"fq2": "SRR748067_2.fastq.gz",
-		"ID": "SRR748067",
-		"SM": "Julie_A959",
-		"LB": "243493",
-		"PU": "HWI-ST0757_60.7",
-		"PL": "Illumina"
-	},
-	"SRR748068":{
-		"fq1": "SRR748068_1.fastq.gz",
-		"fq2": "SRR748068_2.fastq.gz",
-		"ID": "SRR748068",
-		"SM": "Julie_A959",
-		"LB": "243493",
-		"PU": "HWI-ST0757_59.6",
-		"PL": "Illumina"
-	},
-	"SRR748063":{
-		"fq1": "SRR748063_1.fastq.gz",
-		"fq2": "SRR748063_2.fastq.gz",
-		"ID": "SRR748063",
-		"SM": "Doris",
-		"LB": "243492",
-		"PU": "HWI-ST700660_83.4",
-		"PL": "Illumina"
-	},
-	"SRR748064":{
-		"fq1": "SRR748064_1.fastq.gz",
-		"fq2": "SRR748064_2.fastq.gz",
-		"ID": "SRR748064",
-		"SM": "Doris",
-		"LB": "243492",
-		"PU": "HWI-ST0757_60.6",
-		"PL": "Illumina"
-	},
-	"SRR748065":{
-		"fq1": "SRR748065_1.fastq.gz",
-		"fq2": "SRR748065_2.fastq.gz",
-		"ID": "SRR748065",
-		"SM": "Doris",
-		"LB": "243492",
-		"PU": "HWI-ST0757_59.4",
-		"PL": "Illumina"
-	},
-	"SRR748061":{
-		"fq1": "SRR748061_1.fastq.gz",
-		"fq2": "SRR748061_2.fastq.gz",
-		"ID": "SRR748061",
-		"SM": "Doris",
-		"LB": "243491",
-		"PU": "HWI-ST700660_83.3",
-		"PL": "Illumina"
-	},
-	"SRR748062":{
-		"fq1": "SRR748062_1.fastq.gz",
-		"fq2": "SRR748062_2.fastq.gz",
-		"ID": "SRR748062",
-		"SM": "Doris",
-		"LB": "243491",
-		"PU": "HWI-ST0757_59.3",
-		"PL": "Illumina"
-	},
-	"SRR748059":{
-		"fq1": "SRR748059_1.fastq.gz",
-		"fq2": "SRR748059_2.fastq.gz",
-		"ID": "SRR748059",
-		"SM": "Vaillant",
-		"LB": "243490",
-		"PU": "HWI-ST700660_83.2",
-		"PL": "Illumina"
-	},
-	"SRR748060":{
-		"fq1": "SRR748060_1.fastq.gz",
-		"fq2": "SRR748060_2.fastq.gz",
-		"ID": "SRR748060",
-		"SM": "Vaillant",
-		"LB": "243490",
-		"PU": "HWI-ST0757_59.2",
-		"PL": "Illumina"
-	},
-	"SRR748056":{
-		"fq1": "SRR748056_1.fastq.gz",
-		"fq2": "SRR748056_2.fastq.gz",
-		"ID": "SRR748056",
-		"SM": "Vaillant",
-		"LB": "243489",
-		"PU": "HWI-ST700660_83.1",
-		"PL": "Illumina"
-	},
-	"SRR748057":{
-		"fq1": "SRR748057_1.fastq.gz",
-		"fq2": "SRR748057_2.fastq.gz",
-		"ID": "SRR748057",
-		"SM": "Vaillant",
-		"LB": "243489",
-		"PU": "HWI-ST0757_60.5",
-		"PL": "Illumina"
-	},
-	"SRR748058":{
-		"fq1": "SRR748058_1.fastq.gz",
-		"fq2": "SRR748058_2.fastq.gz",
-		"ID": "SRR748058",
-		"SM": "Vaillant",
-		"LB": "243489",
-		"PU": "HWI-ST0757_59.1",
-		"PL": "Illumina"
-	},
 	"ERR1710023":{
 		"fq1": "ERR1710023_1.fastq.gz",
 		"fq2": "ERR1710023_2.fastq.gz",
@@ -3296,5 +3115,1913 @@
 		"LB": "HG00513",
 		"PU": "C6L01ANXX.2",
 		"PL": "Illumina"
-	}
+	},
+	"ERR1710084":{
+		"fq1": "ERR1710084_1.fastq.gz",
+		"fq2": "ERR1710084_2.fastq.gz",
+		"ID": "ERR1710084",
+		"SM": "Alfred",
+		"LB": "1780318",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1710083":{
+		"fq1": "ERR1710083_1.fastq.gz",
+		"fq2": "ERR1710083_2.fastq.gz",
+		"ID": "ERR1710083",
+		"SM": "Alfred",
+		"LB": "1780317",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1710082":{
+		"fq1": "ERR1710082_1.fastq.gz",
+		"fq2": "ERR1710082_2.fastq.gz",
+		"ID": "ERR1710082",
+		"SM": "Alfred",
+		"LB": "1780316",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1710081":{
+		"fq1": "ERR1710081_1.fastq.gz",
+		"fq2": "ERR1710081_2.fastq.gz",
+		"ID": "ERR1710081",
+		"SM": "Alfred",
+		"LB": "1780315",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1710080":{
+		"fq1": "ERR1710080_1.fastq.gz",
+		"fq2": "ERR1710080_2.fastq.gz",
+		"ID": "ERR1710080",
+		"SM": "Alfred",
+		"LB": "1780314",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1710079":{
+		"fq1": "ERR1710079_1.fastq.gz",
+		"fq2": "ERR1710079_2.fastq.gz",
+		"ID": "ERR1710079",
+		"SM": "Alfred",
+		"LB": "1780313",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1710078":{
+		"fq1": "ERR1710078_1.fastq.gz",
+		"fq2": "ERR1710078_2.fastq.gz",
+		"ID": "ERR1710078",
+		"SM": "Alfred",
+		"LB": "1780312",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1710077":{
+		"fq1": "ERR1710077_1.fastq.gz",
+		"fq2": "ERR1710077_2.fastq.gz",
+		"ID": "ERR1710077",
+		"SM": "Alfred",
+		"LB": "1780311",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1710076":{
+		"fq1": "ERR1710076_1.fastq.gz",
+		"fq2": "ERR1710076_2.fastq.gz",
+		"ID": "ERR1710076",
+		"SM": "Alfred",
+		"LB": "1780310",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1710075":{
+		"fq1": "ERR1710075_1.fastq.gz",
+		"fq2": "ERR1710075_2.fastq.gz",
+		"ID": "ERR1710075",
+		"SM": "Alfred",
+		"LB": "1780309",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1710074":{
+		"fq1": "ERR1710074_1.fastq.gz",
+		"fq2": "ERR1710074_2.fastq.gz",
+		"ID": "ERR1710074",
+		"SM": "Alfred",
+		"LB": "1780308",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1710073":{
+		"fq1": "ERR1710073_1.fastq.gz",
+		"fq2": "ERR1710073_2.fastq.gz",
+		"ID": "ERR1710073",
+		"SM": "Alfred",
+		"LB": "1780307",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1710072":{
+		"fq1": "ERR1710072_1.fastq.gz",
+		"fq2": "ERR1710072_2.fastq.gz",
+		"ID": "ERR1710072",
+		"SM": "Alfred",
+		"LB": "1780306",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1710071":{
+		"fq1": "ERR1710071_1.fastq.gz",
+		"fq2": "ERR1710071_2.fastq.gz",
+		"ID": "ERR1710071",
+		"SM": "Alfred",
+		"LB": "1780305",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1710070":{
+		"fq1": "ERR1710070_1.fastq.gz",
+		"fq2": "ERR1710070_2.fastq.gz",
+		"ID": "ERR1710070",
+		"SM": "Alfred",
+		"LB": "1780304",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1710069":{
+		"fq1": "ERR1710069_1.fastq.gz",
+		"fq2": "ERR1710069_2.fastq.gz",
+		"ID": "ERR1710069",
+		"SM": "Alfred",
+		"LB": "1780303",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1710068":{
+		"fq1": "ERR1710068_1.fastq.gz",
+		"fq2": "ERR1710068_2.fastq.gz",
+		"ID": "ERR1710068",
+		"SM": "Alfred",
+		"LB": "1780302",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1710067":{
+		"fq1": "ERR1710067_1.fastq.gz",
+		"fq2": "ERR1710067_2.fastq.gz",
+		"ID": "ERR1710067",
+		"SM": "Alfred",
+		"LB": "1780301",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1710066":{
+		"fq1": "ERR1710066_1.fastq.gz",
+		"fq2": "ERR1710066_2.fastq.gz",
+		"ID": "ERR1710066",
+		"SM": "Alfred",
+		"LB": "1780300",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1710065":{
+		"fq1": "ERR1710065_1.fastq.gz",
+		"fq2": "ERR1710065_2.fastq.gz",
+		"ID": "ERR1710065",
+		"SM": "Alfred",
+		"LB": "1780299",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1710064":{
+		"fq1": "ERR1710064_1.fastq.gz",
+		"fq2": "ERR1710064_2.fastq.gz",
+		"ID": "ERR1710064",
+		"SM": "Alfred",
+		"LB": "1780298",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1710063":{
+		"fq1": "ERR1710063_1.fastq.gz",
+		"fq2": "ERR1710063_2.fastq.gz",
+		"ID": "ERR1710063",
+		"SM": "Alfred",
+		"LB": "1780297",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1710062":{
+		"fq1": "ERR1710062_1.fastq.gz",
+		"fq2": "ERR1710062_2.fastq.gz",
+		"ID": "ERR1710062",
+		"SM": "Alfred",
+		"LB": "1780296",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1710061":{
+		"fq1": "ERR1710061_1.fastq.gz",
+		"fq2": "ERR1710061_2.fastq.gz",
+		"ID": "ERR1710061",
+		"SM": "Alfred",
+		"LB": "1780295",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1709959":{
+		"fq1": "ERR1709959_1.fastq.gz",
+		"fq2": "ERR1709959_2.fastq.gz",
+		"ID": "ERR1709959",
+		"SM": "Brigitta",
+		"LB": "1780193",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1709958":{
+		"fq1": "ERR1709958_1.fastq.gz",
+		"fq2": "ERR1709958_2.fastq.gz",
+		"ID": "ERR1709958",
+		"SM": "Brigitta",
+		"LB": "1780192",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1709957":{
+		"fq1": "ERR1709957_1.fastq.gz",
+		"fq2": "ERR1709957_2.fastq.gz",
+		"ID": "ERR1709957",
+		"SM": "Brigitta",
+		"LB": "1780191",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1709956":{
+		"fq1": "ERR1709956_1.fastq.gz",
+		"fq2": "ERR1709956_2.fastq.gz",
+		"ID": "ERR1709956",
+		"SM": "Brigitta",
+		"LB": "1780190",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1709955":{
+		"fq1": "ERR1709955_1.fastq.gz",
+		"fq2": "ERR1709955_2.fastq.gz",
+		"ID": "ERR1709955",
+		"SM": "Brigitta",
+		"LB": "1780189",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1709954":{
+		"fq1": "ERR1709954_1.fastq.gz",
+		"fq2": "ERR1709954_2.fastq.gz",
+		"ID": "ERR1709954",
+		"SM": "Brigitta",
+		"LB": "1780188",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1709953":{
+		"fq1": "ERR1709953_1.fastq.gz",
+		"fq2": "ERR1709953_2.fastq.gz",
+		"ID": "ERR1709953",
+		"SM": "Brigitta",
+		"LB": "1780187",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1709952":{
+		"fq1": "ERR1709952_1.fastq.gz",
+		"fq2": "ERR1709952_2.fastq.gz",
+		"ID": "ERR1709952",
+		"SM": "Brigitta",
+		"LB": "1780186",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1709951":{
+		"fq1": "ERR1709951_1.fastq.gz",
+		"fq2": "ERR1709951_2.fastq.gz",
+		"ID": "ERR1709951",
+		"SM": "Brigitta",
+		"LB": "1780185",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1709950":{
+		"fq1": "ERR1709950_1.fastq.gz",
+		"fq2": "ERR1709950_2.fastq.gz",
+		"ID": "ERR1709950",
+		"SM": "Brigitta",
+		"LB": "1780184",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1709949":{
+		"fq1": "ERR1709949_1.fastq.gz",
+		"fq2": "ERR1709949_2.fastq.gz",
+		"ID": "ERR1709949",
+		"SM": "Brigitta",
+		"LB": "1780183",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1709948":{
+		"fq1": "ERR1709948_1.fastq.gz",
+		"fq2": "ERR1709948_2.fastq.gz",
+		"ID": "ERR1709948",
+		"SM": "Brigitta",
+		"LB": "1780182",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1709947":{
+		"fq1": "ERR1709947_1.fastq.gz",
+		"fq2": "ERR1709947_2.fastq.gz",
+		"ID": "ERR1709947",
+		"SM": "Brigitta",
+		"LB": "1780181",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1709946":{
+		"fq1": "ERR1709946_1.fastq.gz",
+		"fq2": "ERR1709946_2.fastq.gz",
+		"ID": "ERR1709946",
+		"SM": "Brigitta",
+		"LB": "1780180",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1709945":{
+		"fq1": "ERR1709945_1.fastq.gz",
+		"fq2": "ERR1709945_2.fastq.gz",
+		"ID": "ERR1709945",
+		"SM": "Brigitta",
+		"LB": "1780179",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1709944":{
+		"fq1": "ERR1709944_1.fastq.gz",
+		"fq2": "ERR1709944_2.fastq.gz",
+		"ID": "ERR1709944",
+		"SM": "Brigitta",
+		"LB": "1780178",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1709943":{
+		"fq1": "ERR1709943_1.fastq.gz",
+		"fq2": "ERR1709943_2.fastq.gz",
+		"ID": "ERR1709943",
+		"SM": "Brigitta",
+		"LB": "1780177",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1709942":{
+		"fq1": "ERR1709942_1.fastq.gz",
+		"fq2": "ERR1709942_2.fastq.gz",
+		"ID": "ERR1709942",
+		"SM": "Brigitta",
+		"LB": "1780176",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1709941":{
+		"fq1": "ERR1709941_1.fastq.gz",
+		"fq2": "ERR1709941_2.fastq.gz",
+		"ID": "ERR1709941",
+		"SM": "Brigitta",
+		"LB": "1780175",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1709940":{
+		"fq1": "ERR1709940_1.fastq.gz",
+		"fq2": "ERR1709940_2.fastq.gz",
+		"ID": "ERR1709940",
+		"SM": "Brigitta",
+		"LB": "1780174",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1709939":{
+		"fq1": "ERR1709939_1.fastq.gz",
+		"fq2": "ERR1709939_2.fastq.gz",
+		"ID": "ERR1709939",
+		"SM": "Brigitta",
+		"LB": "1780173",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1709938":{
+		"fq1": "ERR1709938_1.fastq.gz",
+		"fq2": "ERR1709938_2.fastq.gz",
+		"ID": "ERR1709938",
+		"SM": "Brigitta",
+		"LB": "1780172",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1709937":{
+		"fq1": "ERR1709937_1.fastq.gz",
+		"fq2": "ERR1709937_2.fastq.gz",
+		"ID": "ERR1709937",
+		"SM": "Brigitta",
+		"LB": "1780171",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1709936":{
+		"fq1": "ERR1709936_1.fastq.gz",
+		"fq2": "ERR1709936_2.fastq.gz",
+		"ID": "ERR1709936",
+		"SM": "Brigitta",
+		"LB": "1780170",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1709989":{
+		"fq1": "ERR1709989_1.fastq.gz",
+		"fq2": "ERR1709989_2.fastq.gz",
+		"ID": "ERR1709989",
+		"SM": "Gamin",
+		"LB": "1780223",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1709988":{
+		"fq1": "ERR1709988_1.fastq.gz",
+		"fq2": "ERR1709988_2.fastq.gz",
+		"ID": "ERR1709988",
+		"SM": "Gamin",
+		"LB": "1780222",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1709987":{
+		"fq1": "ERR1709987_1.fastq.gz",
+		"fq2": "ERR1709987_2.fastq.gz",
+		"ID": "ERR1709987",
+		"SM": "Gamin",
+		"LB": "1780221",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1709986":{
+		"fq1": "ERR1709986_1.fastq.gz",
+		"fq2": "ERR1709986_2.fastq.gz",
+		"ID": "ERR1709986",
+		"SM": "Gamin",
+		"LB": "1780220",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1709985":{
+		"fq1": "ERR1709985_1.fastq.gz",
+		"fq2": "ERR1709985_2.fastq.gz",
+		"ID": "ERR1709985",
+		"SM": "Gamin",
+		"LB": "1780219",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1709984":{
+		"fq1": "ERR1709984_1.fastq.gz",
+		"fq2": "ERR1709984_2.fastq.gz",
+		"ID": "ERR1709984",
+		"SM": "Gamin",
+		"LB": "1780218",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1709983":{
+		"fq1": "ERR1709983_1.fastq.gz",
+		"fq2": "ERR1709983_2.fastq.gz",
+		"ID": "ERR1709983",
+		"SM": "Gamin",
+		"LB": "1780217",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1709982":{
+		"fq1": "ERR1709982_1.fastq.gz",
+		"fq2": "ERR1709982_2.fastq.gz",
+		"ID": "ERR1709982",
+		"SM": "Gamin",
+		"LB": "1780216",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1709981":{
+		"fq1": "ERR1709981_1.fastq.gz",
+		"fq2": "ERR1709981_2.fastq.gz",
+		"ID": "ERR1709981",
+		"SM": "Gamin",
+		"LB": "1780215",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1709980":{
+		"fq1": "ERR1709980_1.fastq.gz",
+		"fq2": "ERR1709980_2.fastq.gz",
+		"ID": "ERR1709980",
+		"SM": "Gamin",
+		"LB": "1780214",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1709979":{
+		"fq1": "ERR1709979_1.fastq.gz",
+		"fq2": "ERR1709979_2.fastq.gz",
+		"ID": "ERR1709979",
+		"SM": "Gamin",
+		"LB": "1780213",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1709978":{
+		"fq1": "ERR1709978_1.fastq.gz",
+		"fq2": "ERR1709978_2.fastq.gz",
+		"ID": "ERR1709978",
+		"SM": "Gamin",
+		"LB": "1780212",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1709977":{
+		"fq1": "ERR1709977_1.fastq.gz",
+		"fq2": "ERR1709977_2.fastq.gz",
+		"ID": "ERR1709977",
+		"SM": "Gamin",
+		"LB": "1780211",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1709976":{
+		"fq1": "ERR1709976_1.fastq.gz",
+		"fq2": "ERR1709976_2.fastq.gz",
+		"ID": "ERR1709976",
+		"SM": "Gamin",
+		"LB": "1780210",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1709975":{
+		"fq1": "ERR1709975_1.fastq.gz",
+		"fq2": "ERR1709975_2.fastq.gz",
+		"ID": "ERR1709975",
+		"SM": "Gamin",
+		"LB": "1780209",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1709974":{
+		"fq1": "ERR1709974_1.fastq.gz",
+		"fq2": "ERR1709974_2.fastq.gz",
+		"ID": "ERR1709974",
+		"SM": "Gamin",
+		"LB": "1780208",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1709973":{
+		"fq1": "ERR1709973_1.fastq.gz",
+		"fq2": "ERR1709973_2.fastq.gz",
+		"ID": "ERR1709973",
+		"SM": "Gamin",
+		"LB": "1780207",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1709972":{
+		"fq1": "ERR1709972_1.fastq.gz",
+		"fq2": "ERR1709972_2.fastq.gz",
+		"ID": "ERR1709972",
+		"SM": "Gamin",
+		"LB": "1780206",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1709971":{
+		"fq1": "ERR1709971_1.fastq.gz",
+		"fq2": "ERR1709971_2.fastq.gz",
+		"ID": "ERR1709971",
+		"SM": "Gamin",
+		"LB": "1780205",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1709970":{
+		"fq1": "ERR1709970_1.fastq.gz",
+		"fq2": "ERR1709970_2.fastq.gz",
+		"ID": "ERR1709970",
+		"SM": "Gamin",
+		"LB": "1780204",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1709969":{
+		"fq1": "ERR1709969_1.fastq.gz",
+		"fq2": "ERR1709969_2.fastq.gz",
+		"ID": "ERR1709969",
+		"SM": "Gamin",
+		"LB": "1780203",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1709968":{
+		"fq1": "ERR1709968_1.fastq.gz",
+		"fq2": "ERR1709968_2.fastq.gz",
+		"ID": "ERR1709968",
+		"SM": "Gamin",
+		"LB": "1780202",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1709967":{
+		"fq1": "ERR1709967_1.fastq.gz",
+		"fq2": "ERR1709967_2.fastq.gz",
+		"ID": "ERR1709967",
+		"SM": "Gamin",
+		"LB": "1780201",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1709966":{
+		"fq1": "ERR1709966_1.fastq.gz",
+		"fq2": "ERR1709966_2.fastq.gz",
+		"ID": "ERR1709966",
+		"SM": "Gamin",
+		"LB": "1780200",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1709935":{
+		"fq1": "ERR1709935_1.fastq.gz",
+		"fq2": "ERR1709935_2.fastq.gz",
+		"ID": "ERR1709935",
+		"SM": "Luky",
+		"LB": "1780169",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1709934":{
+		"fq1": "ERR1709934_1.fastq.gz",
+		"fq2": "ERR1709934_2.fastq.gz",
+		"ID": "ERR1709934",
+		"SM": "Luky",
+		"LB": "1780168",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1709933":{
+		"fq1": "ERR1709933_1.fastq.gz",
+		"fq2": "ERR1709933_2.fastq.gz",
+		"ID": "ERR1709933",
+		"SM": "Luky",
+		"LB": "1780167",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1709932":{
+		"fq1": "ERR1709932_1.fastq.gz",
+		"fq2": "ERR1709932_2.fastq.gz",
+		"ID": "ERR1709932",
+		"SM": "Luky",
+		"LB": "1780166",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1709931":{
+		"fq1": "ERR1709931_1.fastq.gz",
+		"fq2": "ERR1709931_2.fastq.gz",
+		"ID": "ERR1709931",
+		"SM": "Luky",
+		"LB": "1780165",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1709930":{
+		"fq1": "ERR1709930_1.fastq.gz",
+		"fq2": "ERR1709930_2.fastq.gz",
+		"ID": "ERR1709930",
+		"SM": "Luky",
+		"LB": "1780164",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1709929":{
+		"fq1": "ERR1709929_1.fastq.gz",
+		"fq2": "ERR1709929_2.fastq.gz",
+		"ID": "ERR1709929",
+		"SM": "Luky",
+		"LB": "1780163",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1709928":{
+		"fq1": "ERR1709928_1.fastq.gz",
+		"fq2": "ERR1709928_2.fastq.gz",
+		"ID": "ERR1709928",
+		"SM": "Luky",
+		"LB": "1780162",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1709927":{
+		"fq1": "ERR1709927_1.fastq.gz",
+		"fq2": "ERR1709927_2.fastq.gz",
+		"ID": "ERR1709927",
+		"SM": "Luky",
+		"LB": "1780161",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1709926":{
+		"fq1": "ERR1709926_1.fastq.gz",
+		"fq2": "ERR1709926_2.fastq.gz",
+		"ID": "ERR1709926",
+		"SM": "Luky",
+		"LB": "1780160",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1709925":{
+		"fq1": "ERR1709925_1.fastq.gz",
+		"fq2": "ERR1709925_2.fastq.gz",
+		"ID": "ERR1709925",
+		"SM": "Luky",
+		"LB": "1780159",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1709924":{
+		"fq1": "ERR1709924_1.fastq.gz",
+		"fq2": "ERR1709924_2.fastq.gz",
+		"ID": "ERR1709924",
+		"SM": "Luky",
+		"LB": "1780158",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1709923":{
+		"fq1": "ERR1709923_1.fastq.gz",
+		"fq2": "ERR1709923_2.fastq.gz",
+		"ID": "ERR1709923",
+		"SM": "Luky",
+		"LB": "1780157",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1709922":{
+		"fq1": "ERR1709922_1.fastq.gz",
+		"fq2": "ERR1709922_2.fastq.gz",
+		"ID": "ERR1709922",
+		"SM": "Luky",
+		"LB": "1780156",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1709921":{
+		"fq1": "ERR1709921_1.fastq.gz",
+		"fq2": "ERR1709921_2.fastq.gz",
+		"ID": "ERR1709921",
+		"SM": "Luky",
+		"LB": "1780155",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1709920":{
+		"fq1": "ERR1709920_1.fastq.gz",
+		"fq2": "ERR1709920_2.fastq.gz",
+		"ID": "ERR1709920",
+		"SM": "Luky",
+		"LB": "1780154",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1709919":{
+		"fq1": "ERR1709919_1.fastq.gz",
+		"fq2": "ERR1709919_2.fastq.gz",
+		"ID": "ERR1709919",
+		"SM": "Luky",
+		"LB": "1780153",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1709918":{
+		"fq1": "ERR1709918_1.fastq.gz",
+		"fq2": "ERR1709918_2.fastq.gz",
+		"ID": "ERR1709918",
+		"SM": "Luky",
+		"LB": "1780152",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1709917":{
+		"fq1": "ERR1709917_1.fastq.gz",
+		"fq2": "ERR1709917_2.fastq.gz",
+		"ID": "ERR1709917",
+		"SM": "Luky",
+		"LB": "1780151",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1709916":{
+		"fq1": "ERR1709916_1.fastq.gz",
+		"fq2": "ERR1709916_2.fastq.gz",
+		"ID": "ERR1709916",
+		"SM": "Luky",
+		"LB": "1780150",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1709915":{
+		"fq1": "ERR1709915_1.fastq.gz",
+		"fq2": "ERR1709915_2.fastq.gz",
+		"ID": "ERR1709915",
+		"SM": "Luky",
+		"LB": "1780149",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1709914":{
+		"fq1": "ERR1709914_1.fastq.gz",
+		"fq2": "ERR1709914_2.fastq.gz",
+		"ID": "ERR1709914",
+		"SM": "Luky",
+		"LB": "1780148",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1709913":{
+		"fq1": "ERR1709913_1.fastq.gz",
+		"fq2": "ERR1709913_2.fastq.gz",
+		"ID": "ERR1709913",
+		"SM": "Luky",
+		"LB": "1780147",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1709912":{
+		"fq1": "ERR1709912_1.fastq.gz",
+		"fq2": "ERR1709912_2.fastq.gz",
+		"ID": "ERR1709912",
+		"SM": "Luky",
+		"LB": "1780146",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1710148":{
+		"fq1": "ERR1710148_1.fastq.gz",
+		"fq2": "ERR1710148_2.fastq.gz",
+		"ID": "ERR1710148",
+		"SM": "Lara",
+		"LB": "1780382",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1710147":{
+		"fq1": "ERR1710147_1.fastq.gz",
+		"fq2": "ERR1710147_2.fastq.gz",
+		"ID": "ERR1710147",
+		"SM": "Lara",
+		"LB": "1780381",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1710146":{
+		"fq1": "ERR1710146_1.fastq.gz",
+		"fq2": "ERR1710146_2.fastq.gz",
+		"ID": "ERR1710146",
+		"SM": "Lara",
+		"LB": "1780380",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1710145":{
+		"fq1": "ERR1710145_1.fastq.gz",
+		"fq2": "ERR1710145_2.fastq.gz",
+		"ID": "ERR1710145",
+		"SM": "Lara",
+		"LB": "1780379",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1710144":{
+		"fq1": "ERR1710144_1.fastq.gz",
+		"fq2": "ERR1710144_2.fastq.gz",
+		"ID": "ERR1710144",
+		"SM": "Lara",
+		"LB": "1780378",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1710143":{
+		"fq1": "ERR1710143_1.fastq.gz",
+		"fq2": "ERR1710143_2.fastq.gz",
+		"ID": "ERR1710143",
+		"SM": "Lara",
+		"LB": "1780377",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1710142":{
+		"fq1": "ERR1710142_1.fastq.gz",
+		"fq2": "ERR1710142_2.fastq.gz",
+		"ID": "ERR1710142",
+		"SM": "Lara",
+		"LB": "1780376",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1710141":{
+		"fq1": "ERR1710141_1.fastq.gz",
+		"fq2": "ERR1710141_2.fastq.gz",
+		"ID": "ERR1710141",
+		"SM": "Lara",
+		"LB": "1780375",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1710140":{
+		"fq1": "ERR1710140_1.fastq.gz",
+		"fq2": "ERR1710140_2.fastq.gz",
+		"ID": "ERR1710140",
+		"SM": "Lara",
+		"LB": "1780374",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1710139":{
+		"fq1": "ERR1710139_1.fastq.gz",
+		"fq2": "ERR1710139_2.fastq.gz",
+		"ID": "ERR1710139",
+		"SM": "Lara",
+		"LB": "1780373",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1710138":{
+		"fq1": "ERR1710138_1.fastq.gz",
+		"fq2": "ERR1710138_2.fastq.gz",
+		"ID": "ERR1710138",
+		"SM": "Lara",
+		"LB": "1780372",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1710137":{
+		"fq1": "ERR1710137_1.fastq.gz",
+		"fq2": "ERR1710137_2.fastq.gz",
+		"ID": "ERR1710137",
+		"SM": "Lara",
+		"LB": "1780371",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1710136":{
+		"fq1": "ERR1710136_1.fastq.gz",
+		"fq2": "ERR1710136_2.fastq.gz",
+		"ID": "ERR1710136",
+		"SM": "Lara",
+		"LB": "1780370",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1710135":{
+		"fq1": "ERR1710135_1.fastq.gz",
+		"fq2": "ERR1710135_2.fastq.gz",
+		"ID": "ERR1710135",
+		"SM": "Lara",
+		"LB": "1780369",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1710134":{
+		"fq1": "ERR1710134_1.fastq.gz",
+		"fq2": "ERR1710134_2.fastq.gz",
+		"ID": "ERR1710134",
+		"SM": "Lara",
+		"LB": "1780368",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1710133":{
+		"fq1": "ERR1710133_1.fastq.gz",
+		"fq2": "ERR1710133_2.fastq.gz",
+		"ID": "ERR1710133",
+		"SM": "Lara",
+		"LB": "1780367",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1710132":{
+		"fq1": "ERR1710132_1.fastq.gz",
+		"fq2": "ERR1710132_2.fastq.gz",
+		"ID": "ERR1710132",
+		"SM": "Lara",
+		"LB": "1780366",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1710131":{
+		"fq1": "ERR1710131_1.fastq.gz",
+		"fq2": "ERR1710131_2.fastq.gz",
+		"ID": "ERR1710131",
+		"SM": "Lara",
+		"LB": "1780365",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1710130":{
+		"fq1": "ERR1710130_1.fastq.gz",
+		"fq2": "ERR1710130_2.fastq.gz",
+		"ID": "ERR1710130",
+		"SM": "Lara",
+		"LB": "1780364",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1710129":{
+		"fq1": "ERR1710129_1.fastq.gz",
+		"fq2": "ERR1710129_2.fastq.gz",
+		"ID": "ERR1710129",
+		"SM": "Lara",
+		"LB": "1780363",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1710128":{
+		"fq1": "ERR1710128_1.fastq.gz",
+		"fq2": "ERR1710128_2.fastq.gz",
+		"ID": "ERR1710128",
+		"SM": "Lara",
+		"LB": "1780362",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1710127":{
+		"fq1": "ERR1710127_1.fastq.gz",
+		"fq2": "ERR1710127_2.fastq.gz",
+		"ID": "ERR1710127",
+		"SM": "Lara",
+		"LB": "1780361",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1710126":{
+		"fq1": "ERR1710126_1.fastq.gz",
+		"fq2": "ERR1710126_2.fastq.gz",
+		"ID": "ERR1710126",
+		"SM": "Lara",
+		"LB": "1780360",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1710125":{
+		"fq1": "ERR1710125_1.fastq.gz",
+		"fq2": "ERR1710125_2.fastq.gz",
+		"ID": "ERR1710125",
+		"SM": "Lara",
+		"LB": "1780359",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1709908":{
+		"fq1": "ERR1709908_1.fastq.gz",
+		"fq2": "ERR1709908_2.fastq.gz",
+		"ID": "ERR1709908",
+		"SM": "Ula",
+		"LB": "1780142",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1709907":{
+		"fq1": "ERR1709907_1.fastq.gz",
+		"fq2": "ERR1709907_2.fastq.gz",
+		"ID": "ERR1709907",
+		"SM": "Ula",
+		"LB": "1780141",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1709906":{
+		"fq1": "ERR1709906_1.fastq.gz",
+		"fq2": "ERR1709906_2.fastq.gz",
+		"ID": "ERR1709906",
+		"SM": "Ula",
+		"LB": "1780140",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1709905":{
+		"fq1": "ERR1709905_1.fastq.gz",
+		"fq2": "ERR1709905_2.fastq.gz",
+		"ID": "ERR1709905",
+		"SM": "Ula",
+		"LB": "1780139",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1709904":{
+		"fq1": "ERR1709904_1.fastq.gz",
+		"fq2": "ERR1709904_2.fastq.gz",
+		"ID": "ERR1709904",
+		"SM": "Ula",
+		"LB": "1780138",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1709903":{
+		"fq1": "ERR1709903_1.fastq.gz",
+		"fq2": "ERR1709903_2.fastq.gz",
+		"ID": "ERR1709903",
+		"SM": "Ula",
+		"LB": "1780137",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1709902":{
+		"fq1": "ERR1709902_1.fastq.gz",
+		"fq2": "ERR1709902_2.fastq.gz",
+		"ID": "ERR1709902",
+		"SM": "Ula",
+		"LB": "1780136",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1709901":{
+		"fq1": "ERR1709901_1.fastq.gz",
+		"fq2": "ERR1709901_2.fastq.gz",
+		"ID": "ERR1709901",
+		"SM": "Ula",
+		"LB": "1780135",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1709900":{
+		"fq1": "ERR1709900_1.fastq.gz",
+		"fq2": "ERR1709900_2.fastq.gz",
+		"ID": "ERR1709900",
+		"SM": "Ula",
+		"LB": "1780134",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1709899":{
+		"fq1": "ERR1709899_1.fastq.gz",
+		"fq2": "ERR1709899_2.fastq.gz",
+		"ID": "ERR1709899",
+		"SM": "Ula",
+		"LB": "1780133",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1709898":{
+		"fq1": "ERR1709898_1.fastq.gz",
+		"fq2": "ERR1709898_2.fastq.gz",
+		"ID": "ERR1709898",
+		"SM": "Ula",
+		"LB": "1780132",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1709897":{
+		"fq1": "ERR1709897_1.fastq.gz",
+		"fq2": "ERR1709897_2.fastq.gz",
+		"ID": "ERR1709897",
+		"SM": "Ula",
+		"LB": "1780131",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1709896":{
+		"fq1": "ERR1709896_1.fastq.gz",
+		"fq2": "ERR1709896_2.fastq.gz",
+		"ID": "ERR1709896",
+		"SM": "Ula",
+		"LB": "1780130",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1709895":{
+		"fq1": "ERR1709895_1.fastq.gz",
+		"fq2": "ERR1709895_2.fastq.gz",
+		"ID": "ERR1709895",
+		"SM": "Ula",
+		"LB": "1780129",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1709894":{
+		"fq1": "ERR1709894_1.fastq.gz",
+		"fq2": "ERR1709894_2.fastq.gz",
+		"ID": "ERR1709894",
+		"SM": "Ula",
+		"LB": "1780128",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1709893":{
+		"fq1": "ERR1709893_1.fastq.gz",
+		"fq2": "ERR1709893_2.fastq.gz",
+		"ID": "ERR1709893",
+		"SM": "Ula",
+		"LB": "1780127",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1709892":{
+		"fq1": "ERR1709892_1.fastq.gz",
+		"fq2": "ERR1709892_2.fastq.gz",
+		"ID": "ERR1709892",
+		"SM": "Ula",
+		"LB": "1780126",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1709891":{
+		"fq1": "ERR1709891_1.fastq.gz",
+		"fq2": "ERR1709891_2.fastq.gz",
+		"ID": "ERR1709891",
+		"SM": "Ula",
+		"LB": "1780125",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1709890":{
+		"fq1": "ERR1709890_1.fastq.gz",
+		"fq2": "ERR1709890_2.fastq.gz",
+		"ID": "ERR1709890",
+		"SM": "Ula",
+		"LB": "1780124",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1709889":{
+		"fq1": "ERR1709889_1.fastq.gz",
+		"fq2": "ERR1709889_2.fastq.gz",
+		"ID": "ERR1709889",
+		"SM": "Ula",
+		"LB": "1780123",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1709888":{
+		"fq1": "ERR1709888_1.fastq.gz",
+		"fq2": "ERR1709888_2.fastq.gz",
+		"ID": "ERR1709888",
+		"SM": "Ula",
+		"LB": "1780122",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1709887":{
+		"fq1": "ERR1709887_1.fastq.gz",
+		"fq2": "ERR1709887_2.fastq.gz",
+		"ID": "ERR1709887",
+		"SM": "Ula",
+		"LB": "1780121",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1709886":{
+		"fq1": "ERR1709886_1.fastq.gz",
+		"fq2": "ERR1709886_2.fastq.gz",
+		"ID": "ERR1709886",
+		"SM": "Ula",
+		"LB": "1780120",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1709885":{
+		"fq1": "ERR1709885_1.fastq.gz",
+		"fq2": "ERR1709885_2.fastq.gz",
+		"ID": "ERR1709885",
+		"SM": "Ula",
+		"LB": "1780119",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1710017":{
+		"fq1": "ERR1710017_1.fastq.gz",
+		"fq2": "ERR1710017_2.fastq.gz",
+		"ID": "ERR1710017",
+		"SM": "Mirinda",
+		"LB": "1780251",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1710016":{
+		"fq1": "ERR1710016_1.fastq.gz",
+		"fq2": "ERR1710016_2.fastq.gz",
+		"ID": "ERR1710016",
+		"SM": "Mirinda",
+		"LB": "1780250",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1710015":{
+		"fq1": "ERR1710015_1.fastq.gz",
+		"fq2": "ERR1710015_2.fastq.gz",
+		"ID": "ERR1710015",
+		"SM": "Mirinda",
+		"LB": "1780249",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1710014":{
+		"fq1": "ERR1710014_1.fastq.gz",
+		"fq2": "ERR1710014_2.fastq.gz",
+		"ID": "ERR1710014",
+		"SM": "Mirinda",
+		"LB": "1780248",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1710013":{
+		"fq1": "ERR1710013_1.fastq.gz",
+		"fq2": "ERR1710013_2.fastq.gz",
+		"ID": "ERR1710013",
+		"SM": "Mirinda",
+		"LB": "1780247",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1710012":{
+		"fq1": "ERR1710012_1.fastq.gz",
+		"fq2": "ERR1710012_2.fastq.gz",
+		"ID": "ERR1710012",
+		"SM": "Mirinda",
+		"LB": "1780246",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1710011":{
+		"fq1": "ERR1710011_1.fastq.gz",
+		"fq2": "ERR1710011_2.fastq.gz",
+		"ID": "ERR1710011",
+		"SM": "Mirinda",
+		"LB": "1780245",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1710010":{
+		"fq1": "ERR1710010_1.fastq.gz",
+		"fq2": "ERR1710010_2.fastq.gz",
+		"ID": "ERR1710010",
+		"SM": "Mirinda",
+		"LB": "1780244",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1710009":{
+		"fq1": "ERR1710009_1.fastq.gz",
+		"fq2": "ERR1710009_2.fastq.gz",
+		"ID": "ERR1710009",
+		"SM": "Mirinda",
+		"LB": "1780243",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1710008":{
+		"fq1": "ERR1710008_1.fastq.gz",
+		"fq2": "ERR1710008_2.fastq.gz",
+		"ID": "ERR1710008",
+		"SM": "Mirinda",
+		"LB": "1780242",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1710007":{
+		"fq1": "ERR1710007_1.fastq.gz",
+		"fq2": "ERR1710007_2.fastq.gz",
+		"ID": "ERR1710007",
+		"SM": "Mirinda",
+		"LB": "1780241",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1710006":{
+		"fq1": "ERR1710006_1.fastq.gz",
+		"fq2": "ERR1710006_2.fastq.gz",
+		"ID": "ERR1710006",
+		"SM": "Mirinda",
+		"LB": "1780240",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1710005":{
+		"fq1": "ERR1710005_1.fastq.gz",
+		"fq2": "ERR1710005_2.fastq.gz",
+		"ID": "ERR1710005",
+		"SM": "Mirinda",
+		"LB": "1780239",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1710004":{
+		"fq1": "ERR1710004_1.fastq.gz",
+		"fq2": "ERR1710004_2.fastq.gz",
+		"ID": "ERR1710004",
+		"SM": "Mirinda",
+		"LB": "1780238",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1710003":{
+		"fq1": "ERR1710003_1.fastq.gz",
+		"fq2": "ERR1710003_2.fastq.gz",
+		"ID": "ERR1710003",
+		"SM": "Mirinda",
+		"LB": "1780237",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1710002":{
+		"fq1": "ERR1710002_1.fastq.gz",
+		"fq2": "ERR1710002_2.fastq.gz",
+		"ID": "ERR1710002",
+		"SM": "Mirinda",
+		"LB": "1780236",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1710001":{
+		"fq1": "ERR1710001_1.fastq.gz",
+		"fq2": "ERR1710001_2.fastq.gz",
+		"ID": "ERR1710001",
+		"SM": "Mirinda",
+		"LB": "1780235",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1710000":{
+		"fq1": "ERR1710000_1.fastq.gz",
+		"fq2": "ERR1710000_2.fastq.gz",
+		"ID": "ERR1710000",
+		"SM": "Mirinda",
+		"LB": "1780234",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1709999":{
+		"fq1": "ERR1709999_1.fastq.gz",
+		"fq2": "ERR1709999_2.fastq.gz",
+		"ID": "ERR1709999",
+		"SM": "Mirinda",
+		"LB": "1780233",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1709998":{
+		"fq1": "ERR1709998_1.fastq.gz",
+		"fq2": "ERR1709998_2.fastq.gz",
+		"ID": "ERR1709998",
+		"SM": "Mirinda",
+		"LB": "1780232",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1709997":{
+		"fq1": "ERR1709997_1.fastq.gz",
+		"fq2": "ERR1709997_2.fastq.gz",
+		"ID": "ERR1709997",
+		"SM": "Mirinda",
+		"LB": "1780231",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1709996":{
+		"fq1": "ERR1709996_1.fastq.gz",
+		"fq2": "ERR1709996_2.fastq.gz",
+		"ID": "ERR1709996",
+		"SM": "Mirinda",
+		"LB": "1780230",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1709995":{
+		"fq1": "ERR1709995_1.fastq.gz",
+		"fq2": "ERR1709995_2.fastq.gz",
+		"ID": "ERR1709995",
+		"SM": "Mirinda",
+		"LB": "1780229",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1709994":{
+		"fq1": "ERR1709994_1.fastq.gz",
+		"fq2": "ERR1709994_2.fastq.gz",
+		"ID": "ERR1709994",
+		"SM": "Mirinda",
+		"LB": "1780228",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1710060":{
+		"fq1": "ERR1710060_1.fastq.gz",
+		"fq2": "ERR1710060_2.fastq.gz",
+		"ID": "ERR1710060",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780294",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1710059":{
+		"fq1": "ERR1710059_1.fastq.gz",
+		"fq2": "ERR1710059_2.fastq.gz",
+		"ID": "ERR1710059",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780293",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1710058":{
+		"fq1": "ERR1710058_1.fastq.gz",
+		"fq2": "ERR1710058_2.fastq.gz",
+		"ID": "ERR1710058",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780292",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1710057":{
+		"fq1": "ERR1710057_1.fastq.gz",
+		"fq2": "ERR1710057_2.fastq.gz",
+		"ID": "ERR1710057",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780291",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1710056":{
+		"fq1": "ERR1710056_1.fastq.gz",
+		"fq2": "ERR1710056_2.fastq.gz",
+		"ID": "ERR1710056",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780290",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1710055":{
+		"fq1": "ERR1710055_1.fastq.gz",
+		"fq2": "ERR1710055_2.fastq.gz",
+		"ID": "ERR1710055",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780289",
+		"PU": "HS24_13300",
+		"PL": "Illumina"
+	},
+	"ERR1710054":{
+		"fq1": "ERR1710054_1.fastq.gz",
+		"fq2": "ERR1710054_2.fastq.gz",
+		"ID": "ERR1710054",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780288",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1710053":{
+		"fq1": "ERR1710053_1.fastq.gz",
+		"fq2": "ERR1710053_2.fastq.gz",
+		"ID": "ERR1710053",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780287",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1710052":{
+		"fq1": "ERR1710052_1.fastq.gz",
+		"fq2": "ERR1710052_2.fastq.gz",
+		"ID": "ERR1710052",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780286",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1710051":{
+		"fq1": "ERR1710051_1.fastq.gz",
+		"fq2": "ERR1710051_2.fastq.gz",
+		"ID": "ERR1710051",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780285",
+		"PU": "HS34_13510",
+		"PL": "Illumina"
+	},
+	"ERR1710050":{
+		"fq1": "ERR1710050_1.fastq.gz",
+		"fq2": "ERR1710050_2.fastq.gz",
+		"ID": "ERR1710050",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780284",
+		"PU": "HS36_13511",
+		"PL": "Illumina"
+	},
+	"ERR1710049":{
+		"fq1": "ERR1710049_1.fastq.gz",
+		"fq2": "ERR1710049_2.fastq.gz",
+		"ID": "ERR1710049",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780283",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1710048":{
+		"fq1": "ERR1710048_1.fastq.gz",
+		"fq2": "ERR1710048_2.fastq.gz",
+		"ID": "ERR1710048",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780282",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1710047":{
+		"fq1": "ERR1710047_1.fastq.gz",
+		"fq2": "ERR1710047_2.fastq.gz",
+		"ID": "ERR1710047",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780281",
+		"PU": "HS35_13295",
+		"PL": "Illumina"
+	},
+	"ERR1710046":{
+		"fq1": "ERR1710046_1.fastq.gz",
+		"fq2": "ERR1710046_2.fastq.gz",
+		"ID": "ERR1710046",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780280",
+		"PU": "HS30_13280",
+		"PL": "Illumina"
+	},
+	"ERR1710045":{
+		"fq1": "ERR1710045_1.fastq.gz",
+		"fq2": "ERR1710045_2.fastq.gz",
+		"ID": "ERR1710045",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780279",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1710044":{
+		"fq1": "ERR1710044_1.fastq.gz",
+		"fq2": "ERR1710044_2.fastq.gz",
+		"ID": "ERR1710044",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780278",
+		"PU": "HS34_13509",
+		"PL": "Illumina"
+	},
+	"ERR1710043":{
+		"fq1": "ERR1710043_1.fastq.gz",
+		"fq2": "ERR1710043_2.fastq.gz",
+		"ID": "ERR1710043",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780277",
+		"PU": "HS30_13313",
+		"PL": "Illumina"
+	},
+	"ERR1710042":{
+		"fq1": "ERR1710042_1.fastq.gz",
+		"fq2": "ERR1710042_2.fastq.gz",
+		"ID": "ERR1710042",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780276",
+		"PU": "HS30_13281",
+		"PL": "Illumina"
+	},
+	"ERR1710041":{
+		"fq1": "ERR1710041_1.fastq.gz",
+		"fq2": "ERR1710041_2.fastq.gz",
+		"ID": "ERR1710041",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780275",
+		"PU": "HS30_13251",
+		"PL": "Illumina"
+	},
+	"ERR1710040":{
+		"fq1": "ERR1710040_1.fastq.gz",
+		"fq2": "ERR1710040_2.fastq.gz",
+		"ID": "ERR1710040",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780274",
+		"PU": "HS35_13296",
+		"PL": "Illumina"
+	},
+	"ERR1710039":{
+		"fq1": "ERR1710039_1.fastq.gz",
+		"fq2": "ERR1710039_2.fastq.gz",
+		"ID": "ERR1710039",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780273",
+		"PU": "HS30_13312",
+		"PL": "Illumina"
+	},
+	"ERR1710038":{
+		"fq1": "ERR1710038_1.fastq.gz",
+		"fq2": "ERR1710038_2.fastq.gz",
+		"ID": "ERR1710038",
+		"SM": "Cindy_troglodytes",
+		"LB": "1780272",
+		"PU": "HS24_13301",
+		"PL": "Illumina"
+	},
+	"ERR1709911":{
+		"fq1": "ERR1709911_1.fastq.gz",
+		"fq2": "ERR1709911_2.fastq.gz",
+		"ID": "ERR1709911",
+		"SM": "Noemie",
+		"LB": "1780145",
+		"PU": "HWI-ST459_174",
+		"PL": "Illumina"
+	},
+	"ERR1709910":{
+		"fq1": "ERR1709910_1.fastq.gz",
+		"fq2": "ERR1709910_2.fastq.gz",
+		"ID": "ERR1709910",
+		"SM": "Noemie",
+		"LB": "1780144",
+		"PU": "D6L3XBQ1_282",
+		"PL": "Illumina"
+	},
+	"ERR1709909":{
+		"fq1": "ERR1709909_1.fastq.gz",
+		"fq2": "ERR1709909_2.fastq.gz",
+		"ID": "ERR1709909",
+		"SM": "Noemie",
+		"LB": "1780143",
+		"PU": "HWI-ST731_75",
+		"PL": "Illumina"
+	},
+	"ERR1710104":{
+		"fq1": "ERR1710104_1.fastq.gz",
+		"fq2": "ERR1710104_2.fastq.gz",
+		"ID": "ERR1710104",
+		"SM": "Yogui",
+		"LB": "1780338",
+		"PU": "HWI-ST1450_137",
+		"PL": "Illumina"
+	},
+	"ERR1710103":{
+		"fq1": "ERR1710103_1.fastq.gz",
+		"fq2": "ERR1710103_2.fastq.gz",
+		"ID": "ERR1710103",
+		"SM": "Yogui",
+		"LB": "1780337",
+		"PU": "HWI-ST537_205",
+		"PL": "Illumina"
+	},
+	"ERR1709872":{
+		"fq1": "ERR1709872_1.fastq.gz",
+		"fq2": "ERR1709872_2.fastq.gz",
+		"ID": "ERR1709872",
+		"SM": "Tibe",
+		"LB": "1780106",
+		"PU": "HWI-ST1450_137",
+		"PL": "Illumina"
+	},
+	"ERR1709871":{
+		"fq1": "ERR1709871_1.fastq.gz",
+		"fq2": "ERR1709871_2.fastq.gz",
+		"ID": "ERR1709871",
+		"SM": "Tibe",
+		"LB": "1780105",
+		"PU": "HWI-ST700660_256",
+		"PL": "Illumina"
+	},
+	"ERR1709961":{
+		"fq1": "ERR1709961_1.fastq.gz",
+		"fq2": "ERR1709961_2.fastq.gz",
+		"ID": "ERR1709961",
+		"SM": "Blanquita",
+		"LB": "1780195",
+		"PU": "HWI-ST537_205",
+		"PL": "Illumina"
+	},
+	"ERR1709960":{
+		"fq1": "ERR1709960_1.fastq.gz",
+		"fq2": "ERR1709960_2.fastq.gz",
+		"ID": "ERR1709960",
+		"SM": "Blanquita",
+		"LB": "1780194",
+		"PU": "HWI-ST858_168",
+		"PL": "Illumina"
+	},
+	"ERR1710094":{
+		"fq1": "ERR1710094_1.fastq.gz",
+		"fq2": "ERR1710094_2.fastq.gz",
+		"ID": "ERR1710094",
+		"SM": "Negrita",
+		"LB": "1780328",
+		"PU": "HWI-ST537_205",
+		"PL": "Illumina"
+	},
+	"ERR1710093":{
+		"fq1": "ERR1710093_1.fastq.gz",
+		"fq2": "ERR1710093_2.fastq.gz",
+		"ID": "ERR1710093",
+		"SM": "Negrita",
+		"LB": "1780327",
+		"PU": "HWI-ST858_168",
+		"PL": "Illumina"
+	},
+	"ERR1710019":{
+		"fq1": "ERR1710019_1.fastq.gz",
+		"fq2": "ERR1710019_2.fastq.gz",
+		"ID": "ERR1710019",
+		"SM": "Marlin",
+		"LB": "1780253",
+		"PU": "HWI-ST537_205",
+		"PL": "Illumina"
+	},
+	"ERR1710018":{
+		"fq1": "ERR1710018_1.fastq.gz",
+		"fq2": "ERR1710018_2.fastq.gz",
+		"ID": "ERR1710018",
+		"SM": "Marlin",
+		"LB": "1780252",
+		"PU": "HWI-ST858_168",
+		"PL": "Illumina"
+	},
+	"ERR1710037":{
+		"fq1": "ERR1710037_1.fastq.gz",
+		"fq2": "ERR1710037_2.fastq.gz",
+		"ID": "ERR1710037",
+		"SM": "Alice",
+		"LB": "1780271",
+		"PU": "D6L3XBQ1_241",
+		"PL": "Illumina"
+	},
+	"ERR1710036":{
+		"fq1": "ERR1710036_1.fastq.gz",
+		"fq2": "ERR1710036_2.fastq.gz",
+		"ID": "ERR1710036",
+		"SM": "Alice",
+		"LB": "1780270",
+		"PU": "HWI-ST858_110",
+		"PL": "Illumina"
+	},
+	"ERR1710035":{
+		"fq1": "ERR1710035_1.fastq.gz",
+		"fq2": "ERR1710035_2.fastq.gz",
+		"ID": "ERR1710035",
+		"SM": "Alice",
+		"LB": "1780269",
+		"PU": "HWI-ST731_36",
+		"PL": "Illumina"
+	},
+	"ERR1710034":{
+		"fq1": "ERR1710034_1.fastq.gz",
+		"fq2": "ERR1710034_2.fastq.gz",
+		"ID": "ERR1710034",
+		"SM": "Alice",
+		"LB": "1780268",
+		"PU": "D6L3XBQ1_241",
+		"PL": "Illumina"
+	},
+	"ERR1710124":{
+		"fq1": "ERR1710124_1.fastq.gz",
+		"fq2": "ERR1710124_2.fastq.gz",
+		"ID": "ERR1710124",
+		"SM": "Cindy_verus",
+		"LB": "1780358",
+		"PU": "HWI-ST858_110",
+		"PL": "Illumina"
+	},
+	"ERR1710123":{
+		"fq1": "ERR1710123_1.fastq.gz",
+		"fq2": "ERR1710123_2.fastq.gz",
+		"ID": "ERR1710123",
+		"SM": "Cindy_verus",
+		"LB": "1780357",
+		"PU": "D6L3XBQ1_240",
+		"PL": "Illumina"
+	},
+	"ERR1710122":{
+		"fq1": "ERR1710122_1.fastq.gz",
+		"fq2": "ERR1710122_2.fastq.gz",
+		"ID": "ERR1710122",
+		"SM": "Cindy_verus",
+		"LB": "1780356",
+		"PU": "D6L3XBQ1_241",
+		"PL": "Illumina"
+	},
+	"ERR1710121":{
+		"fq1": "ERR1710121_1.fastq.gz",
+		"fq2": "ERR1710121_2.fastq.gz",
+		"ID": "ERR1710121",
+		"SM": "Cindy_verus",
+		"LB": "1780355",
+		"PU": "D6L3XBQ1_240",
+		"PL": "Illumina"
+	},
 }
