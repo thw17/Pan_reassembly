@@ -132,7 +132,7 @@ rule all:
 
 rule prefetch_sra:
 	output:
-		temp(os.path.join(temp_directory, "{id}/{id}.sra"))
+		os.path.join(temp_directory, "{id}/{id}.sra")
 	params:
 		tool = prefetch_path,
 		tmp_dir = temp_directory,
@@ -142,7 +142,7 @@ rule prefetch_sra:
 
 rule fastq_dump_paired:
 	input:
-		sra = os.path.join(sra_directory, "{sample}.sra")
+		sra = os.path.join(temp_directory, "{sample}/{sample}.sra")
 	output:
 		fq1 = os.path.join("paired_fastqs", "{sample}_1.fastq.gz"),
 		fq2 = os.path.join("paired_fastqs", "{sample}_2.fastq.gz")
@@ -154,7 +154,7 @@ rule fastq_dump_paired:
 
 rule fastq_dump_single:
 	input:
-		sra = os.path.join(sra_directory, "{sample}.sra")
+		sra = os.path.join(temp_directory, "{sample}/{sample}.sra")
 	output:
 		fq1 = os.path.join("single_fastqs", "{sample}_1.fastq.gz")
 	params:
