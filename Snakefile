@@ -167,7 +167,7 @@ rule fastqc_analysis_paired:
 	input:
 		os.path.join("paired_fastqs", "{fq_prefix}.fastq.gz")
 	output:
-		"fastqc/{fq_prefix}_fastqc.html"
+		"fastqc_paired/{fq_prefix}_fastqc.html"
 	params:
 		fastqc = fastqc_path
 	shell:
@@ -177,7 +177,7 @@ rule fastqc_analysis_single:
 	input:
 		os.path.join("single_fastqs", "{fq_prefix}.fastq.gz")
 	output:
-		"fastqc/{fq_prefix}_fastqc.html"
+		"fastqc_single/{fq_prefix}_fastqc.html"
 	params:
 		fastqc = fastqc_path
 	shell:
@@ -185,15 +185,15 @@ rule fastqc_analysis_single:
 
 rule multiqc_analysis:
 	input:
-		paired = expand("fastqc/{fq_prefix}_fastqc.html", fq_prefix=fastq_prefixes_paired),
-		single = expand("fastqc/{fq_prefix}_fastqc.html", fq_prefix=fastq_prefixes_single)
+		paired = expand("fastqc_paired/{fq_prefix}_fastqc.html", fq_prefix=fastq_prefixes_paired),
+		single = expand("fastqc_single/{fq_prefix}_fastqc.html", fq_prefix=fastq_prefixes_single)
 	output:
 		"multiqc/multiqc_report.html"
 	params:
 		multiqc = multiqc_path
 	shell:
 		"export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && "
-		"{params.multiqc} -o multiqc fastqc"
+		"{params.multiqc} -o multiqc fastqc_paired fastqc_single"
 
 rule trim_adapters_paired_bbduk:
 	input:
