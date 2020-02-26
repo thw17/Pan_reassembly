@@ -25,6 +25,7 @@ tabix_path = "tabix"
 paired = [x for x in config["sras"] if x not in config["single_end"]]
 
 # exclude_list = ["SRR740818", "SRR740831"]
+exclude_list = []
 
 fastq_prefixes_paired = [
 	config[x]["fq1"][:-9] for x in paired] + [
