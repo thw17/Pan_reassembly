@@ -190,7 +190,7 @@ rule multiqc_analysis:
 		multiqc = multiqc_path
 	shell:
 		"export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && "
-		"{params.multiqc} -o multiqc fastqc_paired fastqc_single"
+		"{params.multiqc} --interactive -f -o multiqc fastqc_paired fastqc_single"
 
 rule trim_adapters_paired_bbduk:
 	input:
@@ -244,7 +244,7 @@ rule multiqc_analysis_trimmed:
 		multiqc = multiqc_path
 	shell:
 		"export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && "
-		"{params.multiqc} --interactive -o multiqc_trimmed trimmed_fastqc"
+		"{params.multiqc} --interactive -f -o multiqc_trimmed trimmed_fastqc"
 
 rule xyalign_create_references:
 	input:
