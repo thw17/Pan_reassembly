@@ -88,41 +88,41 @@ rule all:
 			sample=paired),
 		"multiqc/multiqc_report.html",
 		"multiqc_trimmed/multiqc_report.html",
-		expand(
-			"stats/{sample}.{genome}.sorted.mkdup.bam.stats",
-			sample=config["sample_names"], genome=assemblies),
-		expand(
-			"callable_sites/{sample}.{genome}.ONLYcallablesites.bed",
-			sample=config["sample_names"], genome=assemblies),
-		expand(
-			"vcf_combined/{population}.{genome}.combined.filtered_{type}.vcf.gz.tbi",
-			population=["allpan"],
-			genome=assemblies,
-			type=["allvariant"])
+		# expand(
+		# 	"stats/{sample}.{genome}.sorted.mkdup.bam.stats",
+		# 	sample=config["sample_names"], genome=assemblies),
+		# expand(
+		# 	"callable_sites/{sample}.{genome}.ONLYcallablesites.bed",
+		# 	sample=config["sample_names"], genome=assemblies),
+		# expand(
+		# 	"vcf_combined/{population}.{genome}.combined.filtered_{type}.vcf.gz.tbi",
+		# 	population=["allpan"],
+		# 	genome=assemblies,
+		# 	type=["allvariant"])
 
-rule prepare_reference:
-	input:
-		ref = lambda wildcards: config["genome_paths"][wildcards.assembly]
-	output:
-		new = "reference/{assembly}.fasta",
-		fai = "reference/{assembly}.fasta.fai",
-		amb = "reference/{assembly}.fasta.amb",
-		dict = "reference/{assembly}.dict"
-	params:
-		samtools = samtools_path,
-		bwa = bwa_path
-	run:
-		shell(
-			"ln -s ../{} {{output.new}} && touch -h {{output.new}}".format(input.ref))
-		# faidx
-		shell(
-			"{params.samtools} faidx {output.new}")
-		# .dict
-		shell(
-			"{params.samtools} dict -o {output.dict} {output.new}")
-		# bwa
-		shell(
-			"{params.bwa} index {output.new}")
+# rule prepare_reference:
+# 	input:
+# 		ref = lambda wildcards: config["genome_paths"][wildcards.assembly]
+# 	output:
+# 		new = "reference/{assembly}.fasta",
+# 		fai = "reference/{assembly}.fasta.fai",
+# 		amb = "reference/{assembly}.fasta.amb",
+# 		dict = "reference/{assembly}.dict"
+# 	params:
+# 		samtools = samtools_path,
+# 		bwa = bwa_path
+# 	run:
+# 		shell(
+# 			"ln -s ../{} {{output.new}} && touch -h {{output.new}}".format(input.ref))
+# 		# faidx
+# 		shell(
+# 			"{params.samtools} faidx {output.new}")
+# 		# .dict
+# 		shell(
+# 			"{params.samtools} dict -o {output.dict} {output.new}")
+# 		# bwa
+# 		shell(
+# 			"{params.bwa} index {output.new}")
 
 rule fastqc_analysis:
 	input:
@@ -212,12 +212,69 @@ rule multiqc_analysis_trimmed:
 		"export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && "
 		"{params.multiqc} --interactive -o multiqc_trimmed trimmed_fastqc"
 
-rule map_and_process_trimmed_reads_paired:
+rule xyalign_create_references:
+	input:
+		ref = lambda wildcards: config["genome_paths"][wildcards.assembly]
+	output:
+		xx = "xyalign/reference/{assembly}.XXonly.fa",
+		xy = "xyalign/reference/{assembly}.XY.fasta"
+	conda:
+		"envs/xyalign.yml"
+	params:
+		gen_assembly = "{assembly}",
+		output_dir = "xyalign",
+		x = lambda wildcards: config["chrx"][wildcards.assembly],
+		y = lambda wildcards: config["chry"][wildcards.assembly]
+	shell:
+		"xyalign --PREPARE_REFERENCE --ref {input} --bam null "
+		"--xx_ref_out {output.xx} --xy_ref_out {output.xy} "
+		"--output_dir {params.output_dir} --x_chromosome {params.x} "
+		"--y_chromosome {params.y}"
+
+rule prepare_reference_males:
+	input:
+		"xyalign/reference/{assembly}.XY.fasta"
+	output:
+		fai = "xyalign/reference/{assembly}.XY.fasta.fai",
+		amb = "xyalign/reference/{assembly}.XY.fasta.amb",
+		dict = "xyalign/reference/{assembly}.XY.dict"
+	params:
+		samtools = samtools_path,
+		bwa = bwa_path
+	run:
+		# faidx
+		shell("{params.samtools} faidx {input}")
+		# .dict
+		shell("{params.samtools} dict -o {output.dict} {input}")
+		# bwa
+		shell("{params.bwa} index {input}")
+
+rule prepare_reference_females:
+	input:
+		"xyalign/reference/{assembly}.XXonly.fa"
+	output:
+		fai = "xyalign/reference/{assembly}.XXonly.fa.fai",
+		amb = "xyalign/reference/{assembly}.XXonly.fa.amb",
+		dict = "xyalign/reference/{assembly}.XXonly.dict"
+	params:
+		samtools = samtools_path,
+		bwa = bwa_path
+	run:
+		# faidx
+		shell("{params.samtools} faidx {input}")
+		# .dict
+		shell("{params.samtools} dict -o {output.dict} {input}")
+		# bwa
+		shell("{params.bwa} index {input}")
+
+rule map_and_process_trimmed_paired_reads:
 	input:
 		fq1 = "trimmed_fastqs/{sample}_trimmed_read1.fastq.gz",
 		fq2 = "trimmed_fastqs/{sample}_trimmed_read2.fastq.gz",
-		ref = "reference/{assembly}.fasta",
-		amb = "reference/{assembly}.fasta.amb"
+		fai_xx = "xyalign/reference/{assembly}.XXonly.fa.fai",
+		ref_xx = "xyalign/reference/{assembly}.XXonly.fa",
+		fai_xy = "xyalign/reference/{assembly}.XY.fasta.fai",
+		ref_xy = "xyalign/reference/{assembly}.XY.fasta"
 	output:
 		"processed_bams/{sample}.{assembly}.sorted.paired.bam"
 	params:
@@ -227,22 +284,31 @@ rule map_and_process_trimmed_reads_paired:
 		pu = lambda wildcards: config[wildcards.sample]["PU"],
 		pl = lambda wildcards: config[wildcards.sample]["PL"],
 		bwa = bwa_path,
-		samtools = samtools_path,
-		threads = 4
-	threads:
-		4
-	shell:
-		"{params.bwa} mem -t {params.threads} -R "
-	 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
-		"{input.ref} {input.fq1} {input.fq2} "
-		"| {params.samtools} fixmate -O bam - - | {params.samtools} sort "
-		"-O bam -o {output}"
+		samtools = samtools_path
+	threads: 4
+	run:
+		if wildcards.sample in males:
+			shell(
+				" {params.bwa} mem -t {threads} -R "
+			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
+				"{input.ref_xy} {input.fq1} {input.fq2}"
+				"| {params.samtools} fixmate -O bam - - | {params.samtools} sort "
+				"-O bam -o {output}")
+		else:
+			shell(
+				" {params.bwa} mem -t {threads} -R "
+			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
+				"{input.ref_xx} {input.fq1} {input.fq2}"
+				"| {params.samtools} fixmate -O bam - - | {params.samtools} sort "
+				"-O bam -o {output}")
 
-rule map_and_process_trimmed_reads_single:
+rule map_and_process_trimmed_single_reads:
 	input:
 		fq1 = "trimmed_fastqs/{sample}_trimmed_single.fastq.gz",
-		ref = "reference/{assembly}.fasta",
-		amb = "reference/{assembly}.fasta.amb"
+		fai_xx = "xyalign/reference/{assembly}.XXonly.fa.fai",
+		ref_xx = "xyalign/reference/{assembly}.XXonly.fa",
+		fai_xy = "xyalign/reference/{assembly}.XY.fasta.fai",
+		ref_xy = "xyalign/reference/{assembly}.XY.fasta"
 	output:
 		"processed_bams/{sample}.{assembly}.sorted.single.bam"
 	params:
@@ -252,16 +318,23 @@ rule map_and_process_trimmed_reads_single:
 		pu = lambda wildcards: config[wildcards.sample]["PU"],
 		pl = lambda wildcards: config[wildcards.sample]["PL"],
 		bwa = bwa_path,
-		samtools = samtools_path,
-		threads = 4
-	threads:
-		4
-	shell:
-		"{params.bwa} mem -t {params.threads} -R "
-	 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
-		"{input.ref} {input.fq1} "
-		"| {params.samtools} view -b - | {params.samtools} sort "
-		"-O bam -o {output}"
+		samtools = samtools_path
+	threads: 4
+	run:
+		if wildcards.sample in males:
+			shell(
+				" {params.bwa} mem -t {threads} -R "
+			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
+				"{input.ref_xy} {input.fq1} "
+				"| {params.samtools} view -b - | {params.samtools} sort "
+				"-O bam -o {output}")
+		else:
+			shell(
+				" {params.bwa} mem -t {threads} -R "
+			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
+				"{input.ref_xx} {input.fq1} "
+				"| {params.samtools} view -b - | {params.samtools} sort "
+				"-O bam -o {output}")
 
 rule index_paired_bam:
 	input:
