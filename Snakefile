@@ -13,9 +13,11 @@ bbmerge_sh_path = "bbmerge.sh"
 bcftools_path = "bcftools"
 bgzip_path = "bgzip"
 bwa_path = "bwa"
+fastq_dump_path = "fastq-dump"
 fastqc_path = "fastqc"
 multiqc_path = "multiqc"
 picard_path = "picard"
+prefetch_path = "prefetch"
 sambamba_path = "sambamba"
 samtools_path = "samtools"
 tabix_path = "tabix"
@@ -24,9 +26,12 @@ paired = [x for x in config["sras"] if x not in config["single_end"]]
 
 exclude_list = ["SRR740818", "SRR740831"]
 
-fastq_prefixes = [
-	config[x]["fq1"][:-9] for x in config["sras"]] + [
+fastq_prefixes_paired = [
+	config[x]["fq1"][:-9] for x in paired] + [
 		config[x]["fq2"][:-9] for x in paired]
+
+fastq_prefixes_single = [
+	config[x]["fq1"][:-9] for x in config["single_end"]]
 
 trimmed_fastq_prefixes = [
 	"{}_trimmed_read1".format(x) for x in paired] + [
@@ -124,9 +129,52 @@ rule all:
 # 		shell(
 # 			"{params.bwa} index {output.new}")
 
-rule fastqc_analysis:
+rule prefetch_sra:
+	output:
+		temp(os.path.join(temp_directory, "{id}/{id}.sra"))
+	params:
+		tool = prefetch_path,
+		tmp_dir = temp_directory,
+		use_id = "{id}"
+	shell:
+		"{params.tool} {params.use_id} -O {params.tmp_dir}"
+
+rule fastq_dump_paired:
 	input:
-		os.path.join(fastq_directory, "{fq_prefix}.fastq.gz")
+		sra = os.path.join(sra_directory, "{sample}.sra")
+	output:
+		fq1 = os.path.join("paired_fastqs", "{sample}_1.fastq.gz"),
+		fq2 = os.path.join("paired_fastqs", "{sample}_2.fastq.gz")
+	params:
+		output_dir = "paired_fastqs",
+		fastq_dump = fastq_dump_path
+	shell:
+		"{params.fastq_dump} --outdir {params.output_dir} --gzip --readids --split-files {input.sra}"
+
+rule fastq_dump_single:
+	input:
+		sra = os.path.join(sra_directory, "{sample}.sra")
+	output:
+		fq1 = os.path.join("single_fastqs", "{sample}_1.fastq.gz")
+	params:
+		output_dir = "single_fastqs",
+		fastq_dump = fastq_dump_path
+	shell:
+		"{params.fastq_dump} --outdir {params.output_dir} --gzip --readids --split-files {input.sra}"
+
+rule fastqc_analysis_paired:
+	input:
+		os.path.join("paired_fastqs", "{fq_prefix}.fastq.gz")
+	output:
+		"fastqc/{fq_prefix}_fastqc.html"
+	params:
+		fastqc = fastqc_path
+	shell:
+		"{params.fastqc} -o fastqc {input}"
+
+rule fastqc_analysis_single:
+	input:
+		os.path.join("single_fastqs", "{fq_prefix}.fastq.gz")
 	output:
 		"fastqc/{fq_prefix}_fastqc.html"
 	params:
@@ -136,7 +184,8 @@ rule fastqc_analysis:
 
 rule multiqc_analysis:
 	input:
-		expand("fastqc/{fq_prefix}_fastqc.html", fq_prefix=fastq_prefixes)
+		paired = expand("fastqc/{fq_prefix}_fastqc.html", fq_prefix=fastq_prefixes_paired),
+		single = expand("fastqc/{fq_prefix}_fastqc.html", fq_prefix=fastq_prefixes_single),
 	output:
 		"multiqc/multiqc_report.html"
 	params:
@@ -161,9 +210,9 @@ rule adapter_discovery:
 rule trim_adapters_paired_bbduk:
 	input:
 		fq1 = lambda wildcards: os.path.join(
-			fastq_directory, config[wildcards.sample]["fq1"]),
+			"paired_fastqs", config[wildcards.sample]["fq1"]),
 		fq2 = lambda wildcards: os.path.join(
-			fastq_directory, config[wildcards.sample]["fq2"])
+			"paired_fastqs", config[wildcards.sample]["fq2"])
 	output:
 		out_fq1 = "trimmed_fastqs/{sample}_trimmed_read1.fastq.gz",
 		out_fq2 = "trimmed_fastqs/{sample}_trimmed_read2.fastq.gz"
@@ -178,7 +227,7 @@ rule trim_adapters_paired_bbduk:
 rule trim_adapters_single_bbduk:
 	input:
 		fq1 = lambda wildcards: os.path.join(
-			fastq_directory, config[wildcards.sample]["fq1"])
+			"single_fastqs", config[wildcards.sample]["fq1"])
 	output:
 		out_fq1 = "trimmed_fastqs/{sample}_trimmed_single.fastq.gz"
 	params:

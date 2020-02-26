@@ -172,8 +172,8 @@
 			"ERR1710033","ERR1710032","ERR1710031","ERR1710030",
 			"ERR1710092","ERR1710091","ERR1710090","ERR1710089",
 			"ERR1709965","ERR1709964","ERR1709963","ERR1709962",
-			"HG00513_wgs_run1", "HG00513_wgs_run2", "HG00513_wgs_run3",
-			"HG00513_wgs_run4", "HG00513_wgs_run5", "HG00513_wgs_run6"],
+			"ERR894727", "ERR894728", "ERR899714",
+			"ERR899715", "ERR899716", "ERR903027"],
 
 	"samples": {
 		"Nakuu": [
@@ -338,8 +338,8 @@
 		"Berta": [
 			"ERR1709965","ERR1709964","ERR1709963","ERR1709962"],
 		"HG00513": [
-			"HG00513_wgs_run1", "HG00513_wgs_run2", "HG00513_wgs_run3",
-			"HG00513_wgs_run4", "HG00513_wgs_run5", "HG00513_wgs_run6"]
+			"ERR894727", "ERR894728", "ERR899714",
+			"ERR899715", "HG00513_wgs_run5", "HG00513_wgs_run6"]
 	},
 
 	"single_end": [
@@ -3062,55 +3062,55 @@
 		"PU": "HWI-ST699_202",
 		"PL": "Illumina"
 	},
-	"HG00513_wgs_run1":{
+	"ERR894727":{
 		"fq1": "ERR894727_1.fastq.gz",
 		"fq2": "ERR894727_2.fastq.gz",
-		"ID": "HG00513_wgs_run1",
+		"ID": "ERR894727",
 		"SM": "HG00513",
 		"LB": "HG00513",
 		"PU": "C6L9WANXX.3",
 		"PL": "Illumina"
 	},
-	"HG00513_wgs_run2":{
+	"ERR894728":{
 		"fq1": "ERR894728_1.fastq.gz",
 		"fq2": "ERR894728_2.fastq.gz",
-		"ID": "HG00513_wgs_run2",
+		"ID": "ERR894728",
 		"SM": "HG00513",
 		"LB": "HG00513",
 		"PU": "C6L9WANXX.4",
 		"PL": "Illumina"
 	},
-	"HG00513_wgs_run3":{
+	"ERR899714":{
 		"fq1": "ERR899714_1.fastq.gz",
 		"fq2": "ERR899714_2.fastq.gz",
-		"ID": "HG00513_wgs_run3",
+		"ID": "ERR899714",
 		"SM": "HG00513",
 		"LB": "HG00513",
 		"PU": "C6A74ANXX.4",
 		"PL": "Illumina"
 	},
-	"HG00513_wgs_run4":{
+	"ERR899715":{
 		"fq1": "ERR899715_1.fastq.gz",
 		"fq2": "ERR899715_2.fastq.gz",
-		"ID": "HG00513_wgs_run4",
+		"ID": "ERR899715",
 		"SM": "HG00513",
 		"LB": "HG00513",
 		"PU": "C6A74ANXX.7",
 		"PL": "Illumina"
 	},
-	"HG00513_wgs_run5":{
+	"ERR899716":{
 		"fq1": "ERR899716_1.fastq.gz",
 		"fq2": "ERR899716_2.fastq.gz",
-		"ID": "HG00513_wgs_run5",
+		"ID": "ERR899716",
 		"SM": "HG00513",
 		"LB": "HG00513",
 		"PU": "C6A74ANXX.8",
 		"PL": "Illumina"
 	},
-	"HG00513_wgs_run6":{
+	"ERR903027":{
 		"fq1": "ERR903027_1.fastq.gz",
 		"fq2": "ERR903027_2.fastq.gz",
-		"ID": "HG00513_wgs_run6",
+		"ID": "ERR903027",
 		"SM": "HG00513",
 		"LB": "HG00513",
 		"PU": "C6L01ANXX.2",
