@@ -107,6 +107,9 @@ rule prefetch_sra:
 		tool = prefetch_path,
 		tmp_dir = temp_directory,
 		use_id = "{id}"
+		threads = 1,
+		mem = 4,
+		t = "12:00:00"
 	shell:
 		"{params.tool} {params.use_id} -O {params.tmp_dir}"
 
@@ -118,7 +121,10 @@ rule fastq_dump_paired:
 		fq2 = os.path.join("paired_fastqs", "{sample}_2.fastq.gz")
 	params:
 		output_dir = "paired_fastqs",
-		fastq_dump = fastq_dump_path
+		fastq_dump = fastq_dump_path,
+		threads = 1,
+		mem = 4,
+		t = "24:00:00"
 	shell:
 		"{params.fastq_dump} --outdir {params.output_dir} --gzip --readids --split-files {input.sra}"
 
@@ -129,7 +135,10 @@ rule fastq_dump_single:
 		fq1 = os.path.join("single_fastqs", "{sample}_1.fastq.gz")
 	params:
 		output_dir = "single_fastqs",
-		fastq_dump = fastq_dump_path
+		fastq_dump = fastq_dump_path,
+		threads = 1,
+		mem = 4,
+		t = "24:00:00"
 	shell:
 		"{params.fastq_dump} --outdir {params.output_dir} --gzip --readids --split-files {input.sra}"
 
@@ -139,7 +148,10 @@ rule fastqc_analysis_paired:
 	output:
 		"fastqc_paired/{fq_prefix}_fastqc.html"
 	params:
-		fastqc = fastqc_path
+		fastqc = fastqc_path,
+		threads = 1,
+		mem = 4,
+		t = "24:00:00"
 	shell:
 		"{params.fastqc} -o fastqc {input}"
 
@@ -149,7 +161,10 @@ rule fastqc_analysis_single:
 	output:
 		"fastqc_single/{fq_prefix}_fastqc.html"
 	params:
-		fastqc = fastqc_path
+		fastqc = fastqc_path,
+		threads = 1,
+		mem = 4,
+		t = "24:00:00"
 	shell:
 		"{params.fastqc} -o fastqc {input}"
 
@@ -160,7 +175,10 @@ rule multiqc_analysis:
 	output:
 		"multiqc/multiqc_report.html"
 	params:
-		multiqc = multiqc_path
+		multiqc = multiqc_path,
+		threads = 1,
+		mem = 4,
+		t = "24:00:00"
 	shell:
 		"export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && "
 		"{params.multiqc} --interactive -f -o multiqc fastqc_paired fastqc_single"
@@ -175,7 +193,10 @@ rule trim_adapters_paired_bbduk:
 		out_fq1 = "trimmed_fastqs/{sample}_trimmed_read1.fastq.gz",
 		out_fq2 = "trimmed_fastqs/{sample}_trimmed_read2.fastq.gz"
 	params:
-		bbduksh = bbduksh_path
+		bbduksh = bbduksh_path,
+		threads = 2,
+		mem = 8,
+		t = "24:00:00"
 	shell:
 		"{params.bbduksh} -Xmx3g in1={input.fq1} in2={input.fq2} "
 		"out1={output.out_fq1} out2={output.out_fq2} "
@@ -189,7 +210,10 @@ rule trim_adapters_single_bbduk:
 	output:
 		out_fq1 = "trimmed_fastqs/{sample}_trimmed_single.fastq.gz"
 	params:
-		bbduksh = bbduksh_path
+		bbduksh = bbduksh_path,
+		threads = 2,
+		mem = 8,
+		t = "24:00:00"
 	shell:
 		"{params.bbduksh} -Xmx3g in={input.fq1} "
 		"out={output.out_fq1} "
@@ -202,7 +226,10 @@ rule fastqc_analysis_trimmed:
 	output:
 		"trimmed_fastqc/{fq_prefix}_fastqc.html"
 	params:
-		fastqc = fastqc_path
+		fastqc = fastqc_path,
+		threads = 1,
+		mem = 4,
+		t = "24:00:00"
 	shell:
 		"{params.fastqc} -o trimmed_fastqc {input}"
 
@@ -212,7 +239,10 @@ rule multiqc_analysis_trimmed:
 			"trimmed_fastqc/{fq_prefix}_fastqc.html",
 			fq_prefix=trimmed_fastq_prefixes)
 	output:
-		"multiqc_trimmed/multiqc_report.html"
+		"multiqc_trimmed/multiqc_report.html",
+		threads = 1,
+		mem = 4,
+		t = "24:00:00"
 	params:
 		multiqc = multiqc_path
 	shell:
@@ -224,7 +254,10 @@ rule get_reference:
 		"reference/{genome}.fa"
 	params:
 		web_address = lambda wildcards: config["genome_paths"][wildcards.genome],
-		initial_output = "reference/{genome}.fa.gz"
+		initial_output = "reference/{genome}.fa.gz",
+		threads = 1,
+		mem = 4,
+		t = "24:00:00"
 	run:
 		shell("wget {params.web_address} -O {params.initial_output}")
 		shell("gunzip {params.initial_output}")
@@ -241,7 +274,10 @@ rule xyalign_create_references:
 		gen_assembly = "{assembly}",
 		output_dir = "xyalign",
 		x = lambda wildcards: config["chrx"][wildcards.assembly],
-		y = lambda wildcards: config["chry"][wildcards.assembly]
+		y = lambda wildcards: config["chry"][wildcards.assembly],
+		threads = 4,
+		mem = 16,
+		t = "24:00:00"
 	shell:
 		"xyalign --PREPARE_REFERENCE --ref {input} --bam null "
 		"--xx_ref_out {output.xx} --xy_ref_out {output.xy} "
@@ -257,7 +293,10 @@ rule prepare_reference_males:
 		dict = "xyalign/reference/{assembly}.XY.dict"
 	params:
 		samtools = samtools_path,
-		bwa = bwa_path
+		bwa = bwa_path,
+		threads = 4,
+		mem = 16,
+		t = "24:00:00"
 	run:
 		# faidx
 		shell("{params.samtools} faidx {input}")
@@ -275,7 +314,10 @@ rule prepare_reference_females:
 		dict = "xyalign/reference/{assembly}.XXonly.dict"
 	params:
 		samtools = samtools_path,
-		bwa = bwa_path
+		bwa = bwa_path,
+		threads = 4,
+		mem = 16,
+		t = "24:00:00"
 	run:
 		# faidx
 		shell("{params.samtools} faidx {input}")
