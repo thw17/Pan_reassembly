@@ -2,11 +2,7 @@ import os
 
 configfile: "pan_config.json"
 
-fastq_directory = "/mnt/storage/COMBINEDLABPUB/greatapes/fastq"
-
 temp_directory = "temp/"
-
-gatk_path = "/home/thwebste/Tools/GenomeAnalysisTK_37.jar"
 
 bbduksh_path = "bbduk.sh"
 bbmerge_sh_path = "bbmerge.sh"
@@ -317,8 +313,8 @@ rule map_and_process_trimmed_paired_reads:
 		fq2 = "trimmed_fastqs/{sample}_trimmed_read2.fastq.gz",
 		fai_xx = "xyalign/reference/{assembly}.XXonly.fa.fai",
 		ref_xx = "xyalign/reference/{assembly}.XXonly.fa",
-		fai_xy = "xyalign/reference/{assembly}.XY.fasta.fai",
-		ref_xy = "xyalign/reference/{assembly}.XY.fasta"
+		fai_xy = "xyalign/reference/{assembly}.XY.fa.fai",
+		ref_xy = "xyalign/reference/{assembly}.XY.fa"
 	output:
 		"processed_bams/{sample}.{assembly}.sorted.paired.bam"
 	params:
@@ -351,8 +347,8 @@ rule map_and_process_trimmed_single_reads:
 		fq1 = "trimmed_fastqs/{sample}_trimmed_single.fastq.gz",
 		fai_xx = "xyalign/reference/{assembly}.XXonly.fa.fai",
 		ref_xx = "xyalign/reference/{assembly}.XXonly.fa",
-		fai_xy = "xyalign/reference/{assembly}.XY.fasta.fai",
-		ref_xy = "xyalign/reference/{assembly}.XY.fasta"
+		fai_xy = "xyalign/reference/{assembly}.XY.fa.fai",
+		ref_xy = "xyalign/reference/{assembly}.XY.fa"
 	output:
 		"processed_bams/{sample}.{assembly}.sorted.single.bam"
 	params:
