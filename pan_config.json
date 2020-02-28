@@ -1,7 +1,6 @@
 {
 	"genome_paths": {
-		"pantro4": "reference/panTro4.fa",
-		"pantro6": "reference/panTro6.fa"
+		"pantro6": "http://hgdownload.soe.ucsc.edu/goldenPath/panTro6/bigZips/panTro6.fa.gz"
 	},
 
 	"chromosomes_to_analyze": {

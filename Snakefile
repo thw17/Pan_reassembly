@@ -87,8 +87,8 @@ assemblies = ["pantro6"]
 rule all:
 	input:
 		expand(
-			"reference/{assembly}.fasta.fai",
-			assembly=assemblies),
+			"xyalign/reference/{assembly}.{ver}.fasta.fai",
+			assembly=assemblies, ver=["XY", "XXonly"]),
 		"multiqc/multiqc_report.html",
 		"multiqc_trimmed/multiqc_report.html",
 		# expand(
@@ -245,6 +245,16 @@ rule multiqc_analysis_trimmed:
 	shell:
 		"export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && "
 		"{params.multiqc} --interactive -f -o multiqc_trimmed trimmed_fastqc"
+
+rule get_annotation:
+	output:
+		"reference/{genome}.fa"
+	params:
+		web_address = lambda wildcards: config["genome_paths"][wildcards.genome],
+		initial_output = "reference/{genome}.fa.gz"
+	run:
+		shell("wget {params.web_address} -O {params.initial_output}")
+		shell("gunzip {params.initial_output}")
 
 rule xyalign_create_references:
 	input:
