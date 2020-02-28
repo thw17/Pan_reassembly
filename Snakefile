@@ -87,7 +87,7 @@ assemblies = ["pantro6"]
 rule all:
 	input:
 		expand(
-			"xyalign/reference/{assembly}.{ver}.fasta.fai",
+			"xyalign/reference/{assembly}.{ver}.fa.fai",
 			assembly=assemblies, ver=["XY", "XXonly"]),
 		"multiqc/multiqc_report.html",
 		"multiqc_trimmed/multiqc_report.html",
@@ -261,7 +261,7 @@ rule xyalign_create_references:
 		ref = "reference/{assembly}.fa"
 	output:
 		xx = "xyalign/reference/{assembly}.XXonly.fa",
-		xy = "xyalign/reference/{assembly}.XY.fasta"
+		xy = "xyalign/reference/{assembly}.XY.fa"
 	conda:
 		"envs/xyalign.yml"
 	params:
@@ -277,10 +277,10 @@ rule xyalign_create_references:
 
 rule prepare_reference_males:
 	input:
-		"xyalign/reference/{assembly}.XY.fasta"
+		"xyalign/reference/{assembly}.XY.fa"
 	output:
-		fai = "xyalign/reference/{assembly}.XY.fasta.fai",
-		amb = "xyalign/reference/{assembly}.XY.fasta.amb",
+		fai = "xyalign/reference/{assembly}.XY.fa.fai",
+		amb = "xyalign/reference/{assembly}.XY.fa.amb",
 		dict = "xyalign/reference/{assembly}.XY.dict"
 	params:
 		samtools = samtools_path,
