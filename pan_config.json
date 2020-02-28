@@ -18,12 +18,12 @@
 
 	"chrx": {
 		"pantro4": ["chrX"],
-		"pantro46": ["chrX"]
+		"pantro6": ["chrX"]
 	},
 
 	"chry": {
 		"pantro4": ["chrY"],
-		"pantro46": ["chrY"]
+		"pantro6": ["chrY"]
 	},
 
 	"sample_names": [
