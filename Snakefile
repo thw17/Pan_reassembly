@@ -246,7 +246,7 @@ rule multiqc_analysis_trimmed:
 		"export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && "
 		"{params.multiqc} --interactive -f -o multiqc_trimmed trimmed_fastqc"
 
-rule get_annotation:
+rule get_reference:
 	output:
 		"reference/{genome}.fa"
 	params:
