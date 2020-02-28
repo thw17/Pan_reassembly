@@ -2,61 +2,73 @@
 	"__default__" :
 	{
 		"n": 4,
-		"t": "48:00:00"
+		"t": "48:00:00",
+		"m": 16
 	},
 	"prefetch_sra":
 	{
 		"n": 1,
-		"t": "24:00:00"
+		"t": "24:00:00",
+		"m": 4
 	},
 	"fastq_dump_paired":
 	{
 		"n": 1,
-		"t": "24:00:00"
+		"t": "24:00:00",
+		"m": 4
 	},
 	"fastq_dump_single":
 	{
 		"n": 1,
-		"t": "24:00:00"
+		"t": "24:00:00",
+		"m": 4
 	},
 	"fastqc_analysis_paired":
 	{
 		"n": 1,
-		"t": "24:00:00"
+		"t": "24:00:00",
+		"m": 4
 	},
 	"fastqc_analysis_single":
 	{
 		"n": 1,
-		"t": "24:00:00"
+		"t": "24:00:00",
+		"m": 4
 	},
 	"multiqc_analysis":
 	{
 		"n": 1,
-		"t": "24:00:00"
+		"t": "24:00:00",
+		"m": 4
 	},
 	"trim_adapters_paired_bbduk":
 	{
 		"n": 2,
-		"t": "24:00:00"
+		"t": "24:00:00",
+		"m": 8
 	},
 	"trim_adapters_single_bbduk":
 	{
 		"n": 2,
-		"t": "24:00:00"
+		"t": "24:00:00",
+		"m": 8
 	},
 	"fastqc_analysis_trimmed":
 	{
 		"n": 1,
-		"t": "24:00:00"
+		"t": "24:00:00",
+		"m": 4
 	},
 	"multiqc_analysis_trimmed":
 	{
 		"n": 1,
-		"t": "24:00:00"
+		"t": "24:00:00",
+		"m": 4
 	},
 	"get_reference":
 	{
 		"n": 1,
-		"t": "24:00:00"
-	},
+		"t": "24:00:00",
+		"m": 4
+	}
 }
