@@ -258,7 +258,7 @@ rule get_annotation:
 
 rule xyalign_create_references:
 	input:
-		ref = "reference/{genome}.fa"
+		ref = "reference/{assembly}.fa"
 	output:
 		xx = "xyalign/reference/{assembly}.XXonly.fa",
 		xy = "xyalign/reference/{assembly}.XY.fasta"
