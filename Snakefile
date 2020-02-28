@@ -153,7 +153,7 @@ rule fastqc_analysis_paired:
 		mem = 4,
 		t = "24:00:00"
 	shell:
-		"{params.fastqc} -o fastqc {input}"
+		"{params.fastqc} -o fastqc_paired {input}"
 
 rule fastqc_analysis_single:
 	input:
@@ -166,7 +166,7 @@ rule fastqc_analysis_single:
 		mem = 4,
 		t = "24:00:00"
 	shell:
-		"{params.fastqc} -o fastqc {input}"
+		"{params.fastqc} -o fastqc_single {input}"
 
 rule multiqc_analysis:
 	input:
