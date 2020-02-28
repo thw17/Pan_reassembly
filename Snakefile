@@ -258,7 +258,7 @@ rule get_annotation:
 
 rule xyalign_create_references:
 	input:
-		ref = lambda wildcards: config["genome_paths"][wildcards.assembly]
+		ref = "reference/{genome}.fa"
 	output:
 		xx = "xyalign/reference/{assembly}.XXonly.fa",
 		xy = "xyalign/reference/{assembly}.XY.fasta"
