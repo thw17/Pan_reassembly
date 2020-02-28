@@ -106,7 +106,7 @@ rule prefetch_sra:
 	params:
 		tool = prefetch_path,
 		tmp_dir = temp_directory,
-		use_id = "{id}"
+		use_id = "{id}",
 		threads = 1,
 		mem = 4,
 		t = "12:00:00"
@@ -240,11 +240,11 @@ rule multiqc_analysis_trimmed:
 			fq_prefix=trimmed_fastq_prefixes)
 	output:
 		"multiqc_trimmed/multiqc_report.html",
+	params:
+		multiqc = multiqc_path,
 		threads = 1,
 		mem = 4,
 		t = "24:00:00"
-	params:
-		multiqc = multiqc_path
 	shell:
 		"export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && "
 		"{params.multiqc} --interactive -f -o multiqc_trimmed trimmed_fastqc"
