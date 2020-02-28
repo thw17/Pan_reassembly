@@ -111,7 +111,7 @@ rule prefetch_sra:
 		mem = 4,
 		t = "12:00:00"
 	shell:
-		"{params.tool} {params.use_id} -O {params.tmp_dir}"
+		"{params.tool} {params.use_id} -O {params.tmp_dir} --max-size 100GB"
 
 rule fastq_dump_paired:
 	input:
