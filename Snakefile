@@ -4,6 +4,12 @@ configfile: "pan_config.json"
 
 temp_directory = "temp/"
 
+# Runtime values
+very_short = "4:00:00"
+medium = "12:00:00"
+day = "24:00:00"
+
+# Tool paths
 bbduksh_path = "bbduk.sh"
 bbmerge_sh_path = "bbmerge.sh"
 bcftools_path = "bcftools"
@@ -109,7 +115,7 @@ rule prefetch_sra:
 		use_id = "{id}",
 		threads = 1,
 		mem = 4,
-		t = "12:00:00"
+		t = very_short
 	shell:
 		"{params.tool} {params.use_id} -O {params.tmp_dir} --max-size 100GB"
 
@@ -124,7 +130,7 @@ rule fastq_dump_paired:
 		fastq_dump = fastq_dump_path,
 		threads = 1,
 		mem = 4,
-		t = "24:00:00"
+		t = medium
 	shell:
 		"{params.fastq_dump} --outdir {params.output_dir} --gzip --readids --split-files {input.sra}"
 
@@ -138,7 +144,7 @@ rule fastq_dump_single:
 		fastq_dump = fastq_dump_path,
 		threads = 1,
 		mem = 4,
-		t = "24:00:00"
+		t = medium
 	shell:
 		"{params.fastq_dump} --outdir {params.output_dir} --gzip --readids --split-files {input.sra}"
 
@@ -151,7 +157,7 @@ rule fastqc_analysis_paired:
 		fastqc = fastqc_path,
 		threads = 1,
 		mem = 4,
-		t = "24:00:00"
+		t = very_short
 	shell:
 		"{params.fastqc} -o fastqc_paired {input}"
 
@@ -164,7 +170,7 @@ rule fastqc_analysis_single:
 		fastqc = fastqc_path,
 		threads = 1,
 		mem = 4,
-		t = "24:00:00"
+		t = very_short
 	shell:
 		"{params.fastqc} -o fastqc_single {input}"
 
@@ -178,7 +184,7 @@ rule multiqc_analysis:
 		multiqc = multiqc_path,
 		threads = 1,
 		mem = 4,
-		t = "24:00:00"
+		t = very_short
 	shell:
 		"export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && "
 		"{params.multiqc} --interactive -f -o multiqc fastqc_paired fastqc_single"
@@ -196,7 +202,7 @@ rule trim_adapters_paired_bbduk:
 		bbduksh = bbduksh_path,
 		threads = 2,
 		mem = 8,
-		t = "24:00:00"
+		t = very_short
 	shell:
 		"{params.bbduksh} -Xmx3g in1={input.fq1} in2={input.fq2} "
 		"out1={output.out_fq1} out2={output.out_fq2} "
@@ -213,7 +219,7 @@ rule trim_adapters_single_bbduk:
 		bbduksh = bbduksh_path,
 		threads = 2,
 		mem = 8,
-		t = "24:00:00"
+		t = very_short
 	shell:
 		"{params.bbduksh} -Xmx3g in={input.fq1} "
 		"out={output.out_fq1} "
@@ -229,7 +235,7 @@ rule fastqc_analysis_trimmed:
 		fastqc = fastqc_path,
 		threads = 1,
 		mem = 4,
-		t = "24:00:00"
+		t = very_short
 	shell:
 		"{params.fastqc} -o trimmed_fastqc {input}"
 
@@ -244,7 +250,7 @@ rule multiqc_analysis_trimmed:
 		multiqc = multiqc_path,
 		threads = 1,
 		mem = 4,
-		t = "24:00:00"
+		t = very_short
 	shell:
 		"export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && "
 		"{params.multiqc} --interactive -f -o multiqc_trimmed trimmed_fastqc"
@@ -257,7 +263,7 @@ rule get_reference:
 		initial_output = "reference/{genome}.fa.gz",
 		threads = 1,
 		mem = 4,
-		t = "24:00:00"
+		t = very_short
 	run:
 		shell("wget {params.web_address} -O {params.initial_output}")
 		shell("gunzip {params.initial_output}")
@@ -277,7 +283,7 @@ rule xyalign_create_references:
 		y = lambda wildcards: config["chry"][wildcards.assembly],
 		threads = 4,
 		mem = 16,
-		t = "24:00:00"
+		t = very_short
 	shell:
 		"xyalign --PREPARE_REFERENCE --ref {input} --bam null "
 		"--xx_ref_out {output.xx} --xy_ref_out {output.xy} "
@@ -296,7 +302,7 @@ rule prepare_reference_males:
 		bwa = bwa_path,
 		threads = 4,
 		mem = 16,
-		t = "24:00:00"
+		t = medium
 	run:
 		# faidx
 		shell("{params.samtools} faidx {input}")
@@ -317,7 +323,7 @@ rule prepare_reference_females:
 		bwa = bwa_path,
 		threads = 4,
 		mem = 16,
-		t = "24:00:00"
+		t = medium
 	run:
 		# faidx
 		shell("{params.samtools} faidx {input}")
