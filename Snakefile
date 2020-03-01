@@ -5,7 +5,7 @@ configfile: "pan_config.json"
 temp_directory = "temp/"
 
 # Runtime values
-very_short = "4:00:00"
+very_short = "6:00:00"
 medium = "12:00:00"
 day = "24:00:00"
 
@@ -115,7 +115,7 @@ rule prefetch_sra:
 		use_id = "{id}",
 		threads = 1,
 		mem = 4,
-		t = very_short
+		t = day
 	shell:
 		"{params.tool} {params.use_id} -O {params.tmp_dir} --max-size 100GB"
 
@@ -130,7 +130,7 @@ rule fastq_dump_paired:
 		fastq_dump = fastq_dump_path,
 		threads = 1,
 		mem = 4,
-		t = medium
+		t = day
 	shell:
 		"{params.fastq_dump} --outdir {params.output_dir} --gzip --readids --split-files {input.sra}"
 
@@ -144,7 +144,7 @@ rule fastq_dump_single:
 		fastq_dump = fastq_dump_path,
 		threads = 1,
 		mem = 4,
-		t = medium
+		t = day
 	shell:
 		"{params.fastq_dump} --outdir {params.output_dir} --gzip --readids --split-files {input.sra}"
 
