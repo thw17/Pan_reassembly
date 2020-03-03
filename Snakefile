@@ -268,7 +268,10 @@ rule fix_read_IDs_for_paired_fastqs_from_SRA_paired:
 		out2 = "renamed_fastqs/{sample}_trimmed_fixed_2.fastq.gz"
 	params:
 		rename_sh = rename_sh_path,
-		read_name = "{sample}"
+		read_name = "{sample}",
+		threads = 1,
+		mem = 4,
+		t = very_short
 	shell:
 		"{params.rename_sh} in={input.fq1} in2={input.fq2} out={output.out1} out2={output.out2} prefix={params.read_name}"
 
@@ -282,7 +285,10 @@ rule fix_read_IDs_for_paired_fastqs_from_SRA_single:
 		out1 = "renamed_fastqs/{sample}_trimmed_fixed_single.fastq.gz"
 	params:
 		rename_sh = rename_sh_path,
-		read_name = "{sample}"
+		read_name = "{sample}",
+		threads = 1,
+		mem = 4,
+		t = very_short
 	shell:
 		"{params.rename_sh} in={input.fq1} out={output.out1} prefix={params.read_name}"
 
