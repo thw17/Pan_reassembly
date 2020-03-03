@@ -41,6 +41,16 @@
 		"Catherine", "Desmond", "Hermien", "Dzeeta", "Kosana",
 		"Hortense", "LB502", "HG00513"],
 
+	"females": [
+			"Catherine", "Chipita", "Dzeeta", "Hermien", "Hortense", "Kombote",
+			"Kosana", "Kumbuka", "Natalie", "Salonga", "Andromeda", "Bihati",
+			"Cindy_schwein", "Cleo", "Coco_chimp", "Frederike", "Harriet",
+			"Ikuru", "Kidongo", "LB502", "Maya", "Nakuu", "Trixie", "Marlin",
+			"Negrita", "Blanquita", "Tibe", "Noemie", "Cindy_troglodytes",
+			"Mirinda", "Ula", "Lara", "Luky", "Doris", "Julie_A959", "Clara",
+			"Banyo", "Julie_LWC21", "Kopongo", "Paquita", "Tobi",
+			"Berta", "Annie", "Linda", "Cindy_verus", "Alice", "Jimmie"],
+
 	"subspecies": {
 		"allpan": [
 			"Tobi", "Taweh", "Paquita", "Koto", "Kopongo", "Julie_LWC21",

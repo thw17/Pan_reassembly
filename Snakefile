@@ -29,6 +29,9 @@ tabix_path = "tabix"
 
 paired = [x for x in config["sras"] if x not in config["single_end"]]
 
+males = [x for x in config["sample_names"] if x not in config["females"]]
+females = config["females"]
+
 exclude_list = ["SRR740818", "SRR740831"]
 
 fastq_prefixes_paired = [
