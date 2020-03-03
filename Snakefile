@@ -8,6 +8,7 @@ temp_directory = "temp/"
 very_short = "6:00:00"
 medium = "12:00:00"
 day = "24:00:00"
+long = "48:00:00"
 
 # Tool paths
 bbduksh_path = "bbduk.sh"
@@ -21,14 +22,14 @@ gatk_path = "gatk"
 multiqc_path = "multiqc"
 picard_path = "picard"
 prefetch_path = "prefetch"
+rename_sh_path = "rename.sh"
 sambamba_path = "sambamba"
 samtools_path = "samtools"
 tabix_path = "tabix"
 
 paired = [x for x in config["sras"] if x not in config["single_end"]]
 
-# exclude_list = ["SRR740818", "SRR740831"]
-exclude_list = []
+exclude_list = ["SRR740818", "SRR740831"]
 
 fastq_prefixes_paired = [
 	config[x]["fq1"][:-9] for x in paired] + [
@@ -93,10 +94,10 @@ rule all:
 		"multiqc_trimmed/multiqc_report.html",
 		expand(
 			"xyalign/reference/{assembly}.{ver}.fa.fai",
-			assembly=assemblies, ver=["XY", "XXonly"])
-		# expand(
-		# 	"stats/{sample}.{genome}.sorted.mkdup.bam.stats",
-		# 	sample=config["sample_names"], genome=assemblies),
+			assembly=assemblies, ver=["XY", "XXonly"]),
+		expand(
+			"stats/{sample}.{genome}.sorted.mkdup.bam.stats",
+			sample=config["sample_names"], genome=assemblies)
 		# expand(
 		# 	"callable_sites/{sample}.{genome}.ONLYcallablesites.bed",
 		# 	sample=config["sample_names"], genome=assemblies),
@@ -255,6 +256,36 @@ rule multiqc_analysis_trimmed:
 		"export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && "
 		"{params.multiqc} --interactive -f -o multiqc_trimmed trimmed_fastqc"
 
+rule fix_read_IDs_for_paired_fastqs_from_SRA_paired:
+	# The fastq-dump created issues with read ID names for paired files so that
+	# they give bwa issues.  This rule will go through and rename them so that
+	# they're compatible with bwa
+	input:
+		fq1 = "trimmed_fastqs/{sample}_trimmed_read1.fastq.gz",
+		fq2 = "trimmed_fastqs/{sample}_trimmed_read2.fastq.gz"
+	output:
+		out1 = "renamed_fastqs/{sample}_trimmed_fixed_1.fastq.gz",
+		out2 = "renamed_fastqs/{sample}_trimmed_fixed_2.fastq.gz"
+	params:
+		rename_sh = rename_sh_path,
+		read_name = "{sample}"
+	shell:
+		"{params.rename_sh} in={input.fq1} in2={input.fq2} out={output.out1} out2={output.out2} prefix={params.read_name}"
+
+rule fix_read_IDs_for_paired_fastqs_from_SRA_single:
+	# The fastq-dump created issues with read ID names for paired files so that
+	# they give bwa issues.  This rule will go through and rename them so that
+	# they're compatible with bwa
+	input:
+		fq1 = "trimmed_fastqs/{sample}_trimmed_single.fastq.gz"
+	output:
+		out1 = "renamed_fastqs/{sample}_trimmed_fixed_single.fastq.gz"
+	params:
+		rename_sh = rename_sh_path,
+		read_name = "{sample}"
+	shell:
+		"{params.rename_sh} in={input.fq1} out={output.out1} prefix={params.read_name}"
+
 rule get_reference:
 	output:
 		"reference/{genome}.fa"
@@ -332,152 +363,178 @@ rule prepare_reference_females:
 		# bwa
 		shell("{params.bwa} index {input}")
 
-# rule map_and_process_trimmed_paired_reads:
-# 	input:
-# 		fq1 = "trimmed_fastqs/{sample}_trimmed_read1.fastq.gz",
-# 		fq2 = "trimmed_fastqs/{sample}_trimmed_read2.fastq.gz",
-# 		fai_xx = "xyalign/reference/{assembly}.XXonly.fa.fai",
-# 		ref_xx = "xyalign/reference/{assembly}.XXonly.fa",
-# 		fai_xy = "xyalign/reference/{assembly}.XY.fa.fai",
-# 		ref_xy = "xyalign/reference/{assembly}.XY.fa"
-# 	output:
-# 		"processed_bams/{sample}.{assembly}.sorted.paired.bam"
-# 	params:
-# 		id = lambda wildcards: config[wildcards.sample]["ID"],
-# 		sm = lambda wildcards: config[wildcards.sample]["SM"],
-# 		lb = lambda wildcards: config[wildcards.sample]["LB"],
-# 		pu = lambda wildcards: config[wildcards.sample]["PU"],
-# 		pl = lambda wildcards: config[wildcards.sample]["PL"],
-# 		bwa = bwa_path,
-# 		samtools = samtools_path
-# 	threads: 4
-# 	run:
-# 		if wildcards.sample in males:
-# 			shell(
-# 				" {params.bwa} mem -t {threads} -R "
-# 			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
-# 				"{input.ref_xy} {input.fq1} {input.fq2}"
-# 				"| {params.samtools} fixmate -O bam - - | {params.samtools} sort "
-# 				"-O bam -o {output}")
-# 		else:
-# 			shell(
-# 				" {params.bwa} mem -t {threads} -R "
-# 			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
-# 				"{input.ref_xx} {input.fq1} {input.fq2}"
-# 				"| {params.samtools} fixmate -O bam - - | {params.samtools} sort "
-# 				"-O bam -o {output}")
-#
-# rule map_and_process_trimmed_single_reads:
-# 	input:
-# 		fq1 = "trimmed_fastqs/{sample}_trimmed_single.fastq.gz",
-# 		fai_xx = "xyalign/reference/{assembly}.XXonly.fa.fai",
-# 		ref_xx = "xyalign/reference/{assembly}.XXonly.fa",
-# 		fai_xy = "xyalign/reference/{assembly}.XY.fa.fai",
-# 		ref_xy = "xyalign/reference/{assembly}.XY.fa"
-# 	output:
-# 		"processed_bams/{sample}.{assembly}.sorted.single.bam"
-# 	params:
-# 		id = lambda wildcards: config[wildcards.sample]["ID"],
-# 		sm = lambda wildcards: config[wildcards.sample]["SM"],
-# 		lb = lambda wildcards: config[wildcards.sample]["LB"],
-# 		pu = lambda wildcards: config[wildcards.sample]["PU"],
-# 		pl = lambda wildcards: config[wildcards.sample]["PL"],
-# 		bwa = bwa_path,
-# 		samtools = samtools_path
-# 	threads: 4
-# 	run:
-# 		if wildcards.sample in males:
-# 			shell(
-# 				" {params.bwa} mem -t {threads} -R "
-# 			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
-# 				"{input.ref_xy} {input.fq1} "
-# 				"| {params.samtools} view -b - | {params.samtools} sort "
-# 				"-O bam -o {output}")
-# 		else:
-# 			shell(
-# 				" {params.bwa} mem -t {threads} -R "
-# 			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
-# 				"{input.ref_xx} {input.fq1} "
-# 				"| {params.samtools} view -b - | {params.samtools} sort "
-# 				"-O bam -o {output}")
-#
-# rule index_paired_bam:
-# 	input:
-# 		"processed_bams/{sample}.{assembly}.sorted.paired.bam"
-# 	output:
-# 		"processed_bams/{sample}.{assembly}.sorted.paired.bam.bai"
-# 	params:
-# 		samtools = samtools_path
-# 	shell:
-# 		"{params.samtools} index {input}"
-#
-# rule index_single_bam:
-# 	input:
-# 		"processed_bams/{sample}.{assembly}.sorted.single.bam"
-# 	output:
-# 		"processed_bams/{sample}.{assembly}.sorted.single.bam.bai"
-# 	params:
-# 		samtools = samtools_path
-# 	shell:
-# 		"{params.samtools} index {input}"
-#
-# rule merge_bams:
-# 	input:
-# 		bams = gather_bam_input_for_merging,
-# 		bais = gather_bai_input_for_merging
-# 	output:
-# 		"processed_bams/{sample}.{genome}.sorted.merged.bam"
-# 	threads: 4
-# 	params:
-# 		sambamba = sambamba_path,
-# 		threads = 4
-# 	shell:
-# 		"{params.sambamba} merge -t {params.threads} {output} {input.bams}"
-#
-# rule index_merged_bam:
-# 	input:
-# 		"processed_bams/{sample}.{genome}.sorted.merged.bam"
-# 	output:
-# 		"processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
-# 	params:
-# 		samtools = samtools_path
-# 	shell:
-# 		"{params.samtools} index {input}"
-#
-# rule picard_mkdups:
-# 	input:
-# 		bam = "processed_bams/{sample}.{genome}.sorted.merged.bam",
-# 		bai = "processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
-# 	output:
-# 		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
-# 		metrics = "stats/{sample}.{genome}.picard_mkdup_metrics.txt"
-# 	threads: 4
-# 	params:
-# 		picard = picard_path
-# 	shell:
-# 		"{params.picard} -Xmx14g MarkDuplicates I={input.bam} O={output.bam} "
-# 		"M={output.metrics}"
-#
-# rule index_mkdup_bam:
-# 	input:
-# 		"processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam"
-# 	output:
-# 		"processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
-# 	params:
-# 		samtools = samtools_path
-# 	shell:
-# 		"{params.samtools} index {input}"
-#
-# rule bam_stats:
-# 	input:
-# 		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
-# 		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
-# 	output:
-# 		"stats/{sample}.{genome}.sorted.mkdup.bam.stats"
-# 	params:
-# 		samtools = samtools_path
-# 	shell:
-# 		"{params.samtools} stats {input.bam} | grep ^SN | cut -f 2- > {output}"
+rule map_and_process_trimmed_paired_reads:
+	input:
+		fq1 = "renamed_fastqs/{sample}_trimmed_fixed_1.fastq.gz",
+		fq2 = "renamed_fastqs/{sample}_trimmed_fixed_2.fastq.gz",
+		fai_xx = "xyalign/reference/{assembly}.XXonly.fa.fai",
+		ref_xx = "xyalign/reference/{assembly}.XXonly.fa",
+		fai_xy = "xyalign/reference/{assembly}.XY.fa.fai",
+		ref_xy = "xyalign/reference/{assembly}.XY.fa"
+	output:
+		"processed_bams/{sample}.{assembly}.sorted.paired.bam"
+	params:
+		id = lambda wildcards: config[wildcards.sample]["ID"],
+		sm = lambda wildcards: config[wildcards.sample]["SM"],
+		lb = lambda wildcards: config[wildcards.sample]["LB"],
+		pu = lambda wildcards: config[wildcards.sample]["PU"],
+		pl = lambda wildcards: config[wildcards.sample]["PL"],
+		bwa = bwa_path,
+		samtools = samtools_path,
+		threads = 4,
+		mem = 16,
+		t = long
+	threads: 4
+	run:
+		if wildcards.sample in males:
+			shell(
+				" {params.bwa} mem -t {threads} -R "
+			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
+				"{input.ref_xy} {input.fq1} {input.fq2}"
+				"| {params.samtools} fixmate -O bam - - | {params.samtools} sort "
+				"-O bam -o {output}")
+		else:
+			shell(
+				" {params.bwa} mem -t {threads} -R "
+			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
+				"{input.ref_xx} {input.fq1} {input.fq2}"
+				"| {params.samtools} fixmate -O bam - - | {params.samtools} sort "
+				"-O bam -o {output}")
+
+rule map_and_process_trimmed_single_reads:
+	input:
+		fq1 = "renamed_fastqs/{sample}_trimmed_fixed_single.fastq.gz",
+		fai_xx = "xyalign/reference/{assembly}.XXonly.fa.fai",
+		ref_xx = "xyalign/reference/{assembly}.XXonly.fa",
+		fai_xy = "xyalign/reference/{assembly}.XY.fa.fai",
+		ref_xy = "xyalign/reference/{assembly}.XY.fa"
+	output:
+		"processed_bams/{sample}.{assembly}.sorted.single.bam"
+	params:
+		id = lambda wildcards: config[wildcards.sample]["ID"],
+		sm = lambda wildcards: config[wildcards.sample]["SM"],
+		lb = lambda wildcards: config[wildcards.sample]["LB"],
+		pu = lambda wildcards: config[wildcards.sample]["PU"],
+		pl = lambda wildcards: config[wildcards.sample]["PL"],
+		bwa = bwa_path,
+		samtools = samtools_path,
+		threads = 4,
+		mem = 16,
+		t = long
+	threads: 4
+	run:
+		if wildcards.sample in males:
+			shell(
+				" {params.bwa} mem -t {threads} -R "
+			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
+				"{input.ref_xy} {input.fq1} "
+				"| {params.samtools} view -b - | {params.samtools} sort "
+				"-O bam -o {output}")
+		else:
+			shell(
+				" {params.bwa} mem -t {threads} -R "
+			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
+				"{input.ref_xx} {input.fq1} "
+				"| {params.samtools} view -b - | {params.samtools} sort "
+				"-O bam -o {output}")
+
+rule index_paired_bam:
+	input:
+		"processed_bams/{sample}.{assembly}.sorted.paired.bam"
+	output:
+		"processed_bams/{sample}.{assembly}.sorted.paired.bam.bai"
+	params:
+		samtools = samtools_path,
+		threads = 4,
+		mem = 16,
+		t = very_short
+	shell:
+		"{params.samtools} index {input}"
+
+rule index_single_bam:
+	input:
+		"processed_bams/{sample}.{assembly}.sorted.single.bam"
+	output:
+		"processed_bams/{sample}.{assembly}.sorted.single.bam.bai"
+	params:
+		samtools = samtools_path,
+		threads = 4,
+		mem = 16,
+		t = very_short
+	shell:
+		"{params.samtools} index {input}"
+
+rule merge_bams:
+	input:
+		bams = gather_bam_input_for_merging,
+		bais = gather_bai_input_for_merging
+	output:
+		"processed_bams/{sample}.{genome}.sorted.merged.bam"
+	threads: 4
+	params:
+		sambamba = sambamba_path,
+		threads = 4,
+		mem = 16,
+		t = long
+	shell:
+		"{params.sambamba} merge -t {params.threads} {output} {input.bams}"
+
+rule index_merged_bam:
+	input:
+		"processed_bams/{sample}.{genome}.sorted.merged.bam"
+	output:
+		"processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
+	params:
+		samtools = samtools_path,
+		threads = 4,
+		mem = 16,
+		t = very_short
+	shell:
+		"{params.samtools} index {input}"
+
+rule picard_mkdups:
+	input:
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.bam",
+		bai = "processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
+	output:
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
+		metrics = "stats/{sample}.{genome}.picard_mkdup_metrics.txt"
+	threads: 4
+	params:
+		picard = picard_path,
+		threads = 4,
+		mem = 16,
+		t = long
+	shell:
+		"{params.picard} -Xmx14g MarkDuplicates I={input.bam} O={output.bam} "
+		"M={output.metrics}"
+
+rule index_mkdup_bam:
+	input:
+		"processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam"
+	output:
+		"processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
+	params:
+		samtools = samtools_path,
+		threads = 4,
+		mem = 16,
+		t = very_short
+	shell:
+		"{params.samtools} index {input}"
+
+rule bam_stats:
+	input:
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
+		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
+	output:
+		"stats/{sample}.{genome}.sorted.mkdup.bam.stats"
+	params:
+		samtools = samtools_path,
+		threads = 4,
+		mem = 16,
+		t = very_short
+	shell:
+		"{params.samtools} stats {input.bam} | grep ^SN | cut -f 2- > {output}"
 #
 # rule generate_callable_sites:
 # 	input:
