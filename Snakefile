@@ -473,6 +473,21 @@ rule index_single_bam:
 	shell:
 		"{params.samtools} index {input}"
 
+# rule merge_bams:
+# 	input:
+# 		bams = gather_bam_input_for_merging,
+# 		bais = gather_bai_input_for_merging
+# 	output:
+# 		"processed_bams/{sample}.{genome}.sorted.merged.bam"
+# 	threads: 4
+# 	params:
+# 		sambamba = sambamba_path,
+# 		threads = 4,
+# 		mem = 16,
+# 		t = long
+# 	shell:
+# 		"{params.sambamba} merge -t {params.threads} {output} {input.bams}"
+
 rule merge_bams:
 	input:
 		bams = gather_bam_input_for_merging,
@@ -481,12 +496,12 @@ rule merge_bams:
 		"processed_bams/{sample}.{genome}.sorted.merged.bam"
 	threads: 4
 	params:
-		sambamba = sambamba_path,
+		samtools = samtools_path,
 		threads = 4,
 		mem = 16,
 		t = long
 	shell:
-		"{params.sambamba} merge -t {params.threads} {output} {input.bams}"
+		"{params.samtools} merge {output} {input.bams}"
 
 rule index_merged_bam:
 	input:
