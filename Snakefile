@@ -523,11 +523,11 @@ rule picard_mkdups:
 	output:
 		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
 		metrics = "stats/{sample}.{genome}.picard_mkdup_metrics.txt"
-	threads: 4
+	threads: 8
 	params:
 		picard = picard_path,
-		threads = 4,
-		mem = 16,
+		threads = 8,
+		mem = 24,
 		t = long
 	shell:
 		"{params.picard} -Xmx14g MarkDuplicates I={input.bam} O={output.bam} "
