@@ -528,9 +528,11 @@ rule picard_mkdups:
 		picard = picard_path,
 		threads = 8,
 		mem = 24,
-		t = long
+		t = long,
+		tmp_dir = temp_directory
 	shell:
-		"{params.picard} -Xmx14g MarkDuplicates I={input.bam} O={output.bam} "
+		"{params.picard} -Xmx14g -Djava.io.tmpdir={params.temp_dir} "
+		"MarkDuplicates I={input.bam} O={output.bam} "
 		"M={output.metrics} ASSUME_SORT_ORDER=coordinate"
 
 rule index_mkdup_bam:
