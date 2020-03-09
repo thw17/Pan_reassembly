@@ -531,7 +531,7 @@ rule picard_mkdups:
 		t = long
 	shell:
 		"{params.picard} -Xmx14g MarkDuplicates I={input.bam} O={output.bam} "
-		"M={output.metrics}"
+		"M={output.metrics} ASSUME_SORT_ORDER=coordinate"
 
 rule index_mkdup_bam:
 	input:
