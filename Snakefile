@@ -531,7 +531,7 @@ rule picard_mkdups:
 		t = long,
 		tmp_dir = temp_directory
 	shell:
-		"{params.picard} -Xmx14g -Djava.io.tmpdir={params.temp_dir} "
+		"{params.picard} -Xmx14g -Djava.io.tmpdir={params.tmp_dir} "
 		"MarkDuplicates I={input.bam} O={output.bam} "
 		"M={output.metrics} ASSUME_SORT_ORDER=coordinate"
 
