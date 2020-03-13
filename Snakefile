@@ -23,7 +23,7 @@ multiqc_path = "multiqc"
 picard_path = "picard"
 prefetch_path = "prefetch"
 rename_sh_path = "rename.sh"
-sambamba_path = "sambamba"
+sambamba_path = "/uufs/chpc.utah.edu/common/home/u6023206/Programs/sambamba-0.7.1"
 samtools_path = "samtools"
 tabix_path = "tabix"
 
@@ -100,7 +100,7 @@ rule all:
 			assembly=assemblies, ver=["XY", "XXonly"]),
 		expand(
 			"stats/{sample}.{genome}.sorted.mkdup.bam.{tool}.stats",
-			sample=config["sample_names"], genome=assemblies, tool=["picard", "samtools"])
+			sample=config["sample_names"], genome=assemblies, tool=["picard", "sambamba"])
 		# expand(
 		# 	"callable_sites/{sample}.{genome}.ONLYcallablesites.bed",
 		# 	sample=config["sample_names"], genome=assemblies),
@@ -400,14 +400,14 @@ rule map_and_process_trimmed_paired_reads:
 				" {params.bwa} mem -t {threads} -R "
 			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
 				"{input.ref_xy} {input.fq1} {input.fq2}"
-				"| {params.samtools} fixmate -O bam - - | {params.samtools} sort "
+				"| {params.samtools} fixmate -m -O bam - - | {params.samtools} sort "
 				"-O bam -o {output}")
 		else:
 			shell(
 				" {params.bwa} mem -t {threads} -R "
 			 	"'@RG\\tID:{params.id}\\tSM:{params.sm}\\tLB:{params.lb}\\tPU:{params.pu}\\tPL:{params.pl}' "
 				"{input.ref_xx} {input.fq1} {input.fq2}"
-				"| {params.samtools} fixmate -O bam - - | {params.samtools} sort "
+				"| {params.samtools} fixmate -m -O bam - - | {params.samtools} sort "
 				"-O bam -o {output}")
 
 rule map_and_process_trimmed_single_reads:
@@ -577,7 +577,7 @@ rule samtools_mkdups:
 		t = long,
 		tmp_dir = temp_directory
 	shell:
-		"{params.samtools} markdup -s -f {output.metrics} --mode s {input.bam} {output.bam}"
+		"{params.samtools} markdup -s -f {output.metrics} --mode s - {output.bam}"
 
 rule index_samtools_mkdup_bam:
 	input:
@@ -605,6 +605,50 @@ rule bam_stats_samtools:
 		t = very_short
 	shell:
 		"{params.samtools} stats {input.bam} | grep ^SN | cut -f 2- > {output}"
+
+rule sambamba_mkdups:
+	input:
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.bam",
+		bai = "processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
+	output:
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam"
+	threads: 8
+	params:
+		sambamba = sambamba_path,
+		threads = 8,
+		mem = 32,
+		t = long,
+		tmp_dir = temp_directory
+	shell:
+		"{params.sambamba} markdup -t 6 --tmpdir={params.tmp_dir} {input.bam} {output.bam}"
+
+rule index_sambamba_mkdup_bam:
+	input:
+		"processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam"
+	output:
+		"processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam.bai"
+	params:
+		samtools = samtools_path,
+		threads = 4,
+		mem = 16,
+		t = very_short
+	shell:
+		"{params.samtools} index {input}"
+
+rule bam_stats_sambamba:
+	input:
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam",
+		bai = "processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam.bai"
+	output:
+		"stats/{sample}.{genome}.sorted.mkdup.bam.sambamba.stats"
+	params:
+		samtools = samtools_path,
+		threads = 4,
+		mem = 16,
+		t = very_short
+	shell:
+		"{params.samtools} stats {input.bam} | grep ^SN | cut -f 2- > {output}"
+
 #
 # rule generate_callable_sites:
 # 	input:
