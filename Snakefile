@@ -99,8 +99,8 @@ rule all:
 			"xyalign/reference/{assembly}.{ver}.fa.fai",
 			assembly=assemblies, ver=["XY", "XXonly"]),
 		expand(
-			"stats/{sample}.{genome}.sorted.mkdup.bam.stats",
-			sample=config["sample_names"], genome=assemblies)
+			"stats/{sample}.{genome}.sorted.mkdup.bam.{tool}.stats",
+			sample=config["sample_names"], genome=assemblies, tool=["picard", "samtools"])
 		# expand(
 		# 	"callable_sites/{sample}.{genome}.ONLYcallablesites.bed",
 		# 	sample=config["sample_names"], genome=assemblies),
@@ -535,7 +535,7 @@ rule picard_mkdups:
 		"MarkDuplicates I={input.bam} O={output.bam} "
 		"M={output.metrics} ASSUME_SORT_ORDER=coordinate"
 
-rule index_mkdup_bam:
+rule index_picard_mkdup_bam:
 	input:
 		"processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam"
 	output:
@@ -548,12 +548,56 @@ rule index_mkdup_bam:
 	shell:
 		"{params.samtools} index {input}"
 
-rule bam_stats:
+rule bam_stats_picard:
 	input:
 		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
 		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
 	output:
-		"stats/{sample}.{genome}.sorted.mkdup.bam.stats"
+		"stats/{sample}.{genome}.sorted.mkdup.bam.picard.stats"
+	params:
+		samtools = samtools_path,
+		threads = 4,
+		mem = 16,
+		t = very_short
+	shell:
+		"{params.samtools} stats {input.bam} | grep ^SN | cut -f 2- > {output}"
+
+rule samtools_mkdups:
+	input:
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.bam",
+		bai = "processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
+	output:
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam",
+		metrics = "stats/{sample}.{genome}.samtools_mkdup_metrics.txt"
+	threads: 8
+	params:
+		samtools = samtools_path,
+		threads = 8,
+		mem = 24,
+		t = long,
+		tmp_dir = temp_directory
+	shell:
+		"{params.samtools} markdup -s -f {output.metrics} --mode s {input.bam} {output.bam}"
+
+rule index_samtools_mkdup_bam:
+	input:
+		"processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam"
+	output:
+		"processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam.bai"
+	params:
+		samtools = samtools_path,
+		threads = 4,
+		mem = 16,
+		t = very_short
+	shell:
+		"{params.samtools} index {input}"
+
+rule bam_stats_samtools:
+	input:
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam",
+		bai = "processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam.bai"
+	output:
+		"stats/{sample}.{genome}.sorted.mkdup.bam.samtools.stats"
 	params:
 		samtools = samtools_path,
 		threads = 4,
