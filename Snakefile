@@ -100,7 +100,10 @@ rule all:
 			assembly=assemblies, ver=["XY", "XXonly"]),
 		expand(
 			"stats/{sample}.{genome}.sorted.mkdup.bam.{tool}.stats",
-			sample=config["sample_names"], genome=assemblies, tool=["picard", "sambamba"])
+			sample=config["sample_names"], genome=assemblies, tool=["picard", "sambamba"]),
+		expand(
+			"vcf_genotyped/pantro6.{chrom}.gatk.called.raw.vcf.gz",
+			chrom=config["chromosomes_to_analyze"]["pantro6"])
 		# expand(
 		# 	"callable_sites/{sample}.{genome}.ONLYcallablesites.bed",
 		# 	sample=config["sample_names"], genome=assemblies),
@@ -648,6 +651,65 @@ rule bam_stats_sambamba:
 		t = very_short
 	shell:
 		"{params.samtools} stats {input.bam} | grep ^SN | cut -f 2- > {output}"
+
+rule gatk_gvcf_per_chrom:
+	input:
+		ref = "xyalign/reference/{genome}.XY.fa",
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
+		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
+	output:
+		"gvcf/{sample}.{genome}.{chrom}.g.vcf.gz"
+	params:
+		temp_dir = temp_directory,
+		gatk = gatk_path,
+		chr = "{chrom}",
+		threads = 4,
+		mem = 16,
+		t = long
+	shell:
+		"""{params.gatk} --java-options "-Xmx15g -Djava.io.tmpdir={params.temp_dir}" """
+		"""HaplotypeCaller -R {input.ref} -I {input.bam} -L {params.chr} """
+		"""-ERC GVCF --do-not-run-physical-phasing -O {output}"""
+
+rule combine_gvcfs_per_chrom:
+	input:
+		ref = "xyalign/reference/{genome}.XY.fa",
+		gvcfs = lambda wildcards: expand(
+			"gvcf/{sample}.{genome}.{chrom}.g.vcf.gz",
+			sample=config["sample_names"],
+			genome=[wildcards.genome], chrom=[wildcards.chrom])
+	output:
+		v = "gvcf_combined/combined.{genome}.{chrom}.g.vcf.gz"
+	params:
+		temp_dir = temp_directory,
+		gatk = gatk_path,
+		threads = 4,
+		mem = 16,
+		t = long
+	run:
+		variant_files = []
+		for i in input.gvcfs:
+			variant_files.append("--variant " + i)
+		variant_files = " ".join(variant_files)
+		shell(
+			"""{params.gatk} --java-options "-Xmx15g -Djava.io.tmpdir={params.temp_dir}" """
+			"""CombineGVCFs -R {input.ref} {variant_files} -O {output.v}""")
+
+rule gatk_genotypegvcf_per_chrom:
+	input:
+		ref = "xyalign/reference/{genome}.XY.fa",
+		gvcf = "gvcf_combined/combined.{genome}.{chrom}.g.vcf.gz"
+	output:
+		"vcf_genotyped/{genome}.{chrom}.gatk.called.raw.vcf.gz"
+	params:
+		temp_dir = temp_directory,
+		gatk = gatk_path,
+		threads = 4,
+		mem = 16,
+		t = long
+	shell:
+		"""{params.gatk} --java-options "-Xmx15g -Djava.io.tmpdir={params.temp_dir}" """
+		"""GenotypeGVCFs --include-non-variant-sites -R {input.ref} -V {input.gvcf} -O {output}"""
 
 #
 # rule generate_callable_sites:
