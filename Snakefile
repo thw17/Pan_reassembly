@@ -19,6 +19,7 @@ bwa_path = "bwa"
 fastq_dump_path = "fastq-dump"
 fastqc_path = "fastqc"
 gatk_path = "gatk"
+mosdepth_path = "mosdepth"
 multiqc_path = "multiqc"
 picard_path = "picard"
 prefetch_path = "prefetch"
@@ -103,7 +104,10 @@ rule all:
 			sample=config["sample_names"], genome=assemblies, tool=["picard", "sambamba"]),
 		expand(
 			"vcf_genotyped/pantro6.{chrom}.gatk.called.raw.vcf.gz",
-			chrom=config["chromosomes_to_analyze"]["pantro6"])
+			chrom=config["chromosomes_to_analyze"]["pantro6"]),
+		expand(
+			"mosdepth_results/{sample}.{genome}.total.mosdepth.summary.txt",
+			sample=config["sample_names"], genome=assemblies)
 		# expand(
 		# 	"callable_sites/{sample}.{genome}.ONLYcallablesites.bed",
 		# 	sample=config["sample_names"], genome=assemblies),
@@ -564,6 +568,18 @@ rule bam_stats_picard:
 		t = very_short
 	shell:
 		"{params.samtools} stats {input.bam} | grep ^SN | cut -f 2- > {output}"
+
+rule mosdepth_total:
+	input:
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
+		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
+	output:
+		"mosdepth_results/{sample}.{genome}.total.mosdepth.summary.txt"
+	params:
+		mosdepth = mosdepth_path,
+		prefix = "mosdepth_results/{sample}.{genome}.total"
+	shell:
+		"{params.mosdepth} -n --fast-mode -F 1024 {params.prefix} {input}"
 
 rule samtools_mkdups:
 	input:
