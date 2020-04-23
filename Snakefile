@@ -582,7 +582,7 @@ rule mosdepth_total:
 		mem = 16,
 		t = long
 	shell:
-		"{params.mosdepth} -n --fast-mode -F 1024 {params.prefix} {input}"
+		"{params.mosdepth} -n --fast-mode -F 1024 {params.prefix} {input.bam}"
 
 rule samtools_mkdups:
 	input:
