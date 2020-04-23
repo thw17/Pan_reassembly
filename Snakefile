@@ -757,7 +757,7 @@ rule contamination_filter_combine_gvcfs_per_chrom:
 	input:
 		ref = "xyalign/reference/{genome}.XY.fa",
 		gvcfs = lambda wildcards: expand(
-			"gvcf/{sample}.{genome}.{chrom}.g.vcf.gz",
+			"contamination_filter_gvcf/{sample}.{genome}.{chrom}.g.vcf.gz",
 			sample=config["sample_names"],
 			genome=[wildcards.genome], chrom=[wildcards.chrom])
 	output:
@@ -780,7 +780,7 @@ rule contamination_filter_combine_gvcfs_per_chrom:
 rule contamination_filter_gatk_genotypegvcf_per_chrom:
 	input:
 		ref = "xyalign/reference/{genome}.XY.fa",
-		gvcf = "gvcf_combined/combined.{genome}.{chrom}.g.vcf.gz"
+		gvcf = "contamination_filter_gvcf_combined/combined.{genome}.{chrom}.g.vcf.gz"
 	output:
 		"contamination_filter_vcf_genotyped/{genome}.{chrom}.gatk.called.raw.vcf.gz"
 	params:
