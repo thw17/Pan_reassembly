@@ -106,6 +106,9 @@ rule all:
 			"vcf_genotyped/pantro6.{chrom}.gatk.called.raw.vcf.gz",
 			chrom=config["chromosomes_to_analyze"]["pantro6"]),
 		expand(
+			"contamination_filter_vcf_genotyped/pantro6.{chrom}.gatk.called.raw.vcf.gz",
+			chrom=config["chromosomes_to_analyze"]["pantro6"]),
+		expand(
 			"mosdepth_results/{sample}.{genome}.total.mosdepth.summary.txt",
 			sample=config["sample_names"], genome=assemblies)
 		# expand(
@@ -720,6 +723,66 @@ rule gatk_genotypegvcf_per_chrom:
 		gvcf = "gvcf_combined/combined.{genome}.{chrom}.g.vcf.gz"
 	output:
 		"vcf_genotyped/{genome}.{chrom}.gatk.called.raw.vcf.gz"
+	params:
+		temp_dir = temp_directory,
+		gatk = gatk_path,
+		threads = 4,
+		mem = 16,
+		t = long
+	shell:
+		"""{params.gatk} --java-options "-Xmx15g -Djava.io.tmpdir={params.temp_dir}" """
+		"""GenotypeGVCFs --include-non-variant-sites -R {input.ref} -V {input.gvcf} -O {output}"""
+
+
+rule contamination_filter_gatk_gvcf_per_chrom:
+	input:
+		ref = "xyalign/reference/{genome}.XY.fa",
+		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
+		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
+	output:
+		"contamination_filter_gvcf/{sample}.{genome}.{chrom}.g.vcf.gz"
+	params:
+		temp_dir = temp_directory,
+		gatk = gatk_path,
+		chr = "{chrom}",
+		threads = 4,
+		mem = 16,
+		t = long
+	shell:
+		"""{params.gatk} --java-options "-Xmx15g -Djava.io.tmpdir={params.temp_dir}" """
+		"""HaplotypeCaller -R {input.ref} -I {input.bam} -L {params.chr} """
+		"""-ERC GVCF --do-not-run-physical-phasing --contamination-fraction-to-filter 0.1 -O {output}"""
+
+rule contamination_filter_combine_gvcfs_per_chrom:
+	input:
+		ref = "xyalign/reference/{genome}.XY.fa",
+		gvcfs = lambda wildcards: expand(
+			"gvcf/{sample}.{genome}.{chrom}.g.vcf.gz",
+			sample=config["sample_names"],
+			genome=[wildcards.genome], chrom=[wildcards.chrom])
+	output:
+		v = "contamination_filter_gvcf_combined/combined.{genome}.{chrom}.g.vcf.gz"
+	params:
+		temp_dir = temp_directory,
+		gatk = gatk_path,
+		threads = 4,
+		mem = 16,
+		t = long
+	run:
+		variant_files = []
+		for i in input.gvcfs:
+			variant_files.append("--variant " + i)
+		variant_files = " ".join(variant_files)
+		shell(
+			"""{params.gatk} --java-options "-Xmx15g -Djava.io.tmpdir={params.temp_dir}" """
+			"""CombineGVCFs -R {input.ref} {variant_files} -O {output.v}""")
+
+rule contamination_filter_gatk_genotypegvcf_per_chrom:
+	input:
+		ref = "xyalign/reference/{genome}.XY.fa",
+		gvcf = "gvcf_combined/combined.{genome}.{chrom}.g.vcf.gz"
+	output:
+		"contamination_filter_vcf_genotyped/{genome}.{chrom}.gatk.called.raw.vcf.gz"
 	params:
 		temp_dir = temp_directory,
 		gatk = gatk_path,
