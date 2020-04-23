@@ -577,7 +577,10 @@ rule mosdepth_total:
 		"mosdepth_results/{sample}.{genome}.total.mosdepth.summary.txt"
 	params:
 		mosdepth = mosdepth_path,
-		prefix = "mosdepth_results/{sample}.{genome}.total"
+		prefix = "mosdepth_results/{sample}.{genome}.total",
+		threads = 4,
+		mem = 16,
+		t = long
 	shell:
 		"{params.mosdepth} -n --fast-mode -F 1024 {params.prefix} {input}"
 
