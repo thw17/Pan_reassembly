@@ -96,15 +96,15 @@ rule all:
 	input:
 		"multiqc/multiqc_report.html",
 		"multiqc_trimmed/multiqc_report.html",
-		expand(
-			"xyalign/reference/{assembly}.{ver}.fa.fai",
-			assembly=assemblies, ver=["XY", "XXonly"]),
+		# expand(
+		# 	"xyalign/reference/{assembly}.{ver}.fa.fai",
+		# 	assembly=assemblies, ver=["XY", "XXonly"]),
 		expand(
 			"stats/{sample}.{genome}.sorted.mkdup.bam.{tool}.stats",
 			sample=config["sample_names"], genome=assemblies, tool=["picard", "sambamba"]),
-		expand(
-			"vcf_genotyped/pantro6.{chrom}.gatk.called.raw.vcf.gz",
-			chrom=config["chromosomes_to_analyze"]["pantro6"]),
+		# expand(
+		# 	"vcf_genotyped/pantro6.{chrom}.gatk.called.raw.vcf.gz",
+		# 	chrom=config["chromosomes_to_analyze"]["pantro6"]),
 		expand(
 			"contamination_filter_vcf_genotyped/pantro6.{chrom}.gatk.called.raw.vcf.gz",
 			chrom=config["chromosomes_to_analyze"]["pantro6"]),
