@@ -94,14 +94,14 @@ assemblies = ["pantro6"]
 
 rule all:
 	input:
-		# "multiqc/multiqc_report.html",
-		# "multiqc_trimmed/multiqc_report.html",
-		# expand(
-		# 	"stats/{sample}.{genome}.sorted.mkdup.bam.{tool}.stats",
-		# 	sample=config["sample_names"], genome=assemblies, tool=["picard"]),
-		# expand(
-		# 	"contamination_filter_vcf_genotyped/pantro6.{chrom}.gatk.called.raw.vcf.gz",
-		# 	chrom=config["chromosomes_to_analyze"]["pantro6"]),
+		"multiqc/multiqc_report.html",
+		"multiqc_trimmed/multiqc_report.html",
+		expand(
+			"stats/{sample}.{genome}.sorted.mkdup.bam.{tool}.stats",
+			sample=config["sample_names"], genome=assemblies, tool=["picard"]),
+		expand(
+			"contamination_filter_vcf_genotyped/pantro6.{chrom}.gatk.called.raw.vcf.gz",
+			chrom=config["chromosomes_to_analyze"]["pantro6"]),
 		expand(
 			"mosdepth_results/{sample}.{genome}.total.total.nodups_mapq30.mosdepth.summary.txt",
 			sample=config["sample_names"], genome=assemblies)
@@ -469,21 +469,6 @@ rule index_single_bam:
 	shell:
 		"{params.samtools} index {input}"
 
-# rule merge_bams:
-# 	input:
-# 		bams = gather_bam_input_for_merging,
-# 		bais = gather_bai_input_for_merging
-# 	output:
-# 		"processed_bams/{sample}.{genome}.sorted.merged.bam"
-# 	threads: 4
-# 	params:
-# 		sambamba = sambamba_path,
-# 		threads = 4,
-# 		mem = 16,
-# 		t = long
-# 	shell:
-# 		"{params.sambamba} merge -t {params.threads} {output} {input.bams}"
-
 rule merge_bams:
 	input:
 		bams = gather_bam_input_for_merging,
@@ -572,93 +557,6 @@ rule mosdepth_total:
 		t = long
 	shell:
 		"{params.mosdepth} --fast-mode -F 1024 --mapq 30 {params.prefix} {input.bam}"
-
-rule samtools_mkdups:
-	input:
-		bam = "processed_bams/{sample}.{genome}.sorted.merged.bam",
-		bai = "processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
-	output:
-		bam = "processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam",
-		metrics = "stats/{sample}.{genome}.samtools_mkdup_metrics.txt"
-	threads: 8
-	params:
-		samtools = samtools_path,
-		threads = 8,
-		mem = 24,
-		t = long,
-		tmp_dir = temp_directory
-	shell:
-		"{params.samtools} markdup -s -f {output.metrics} --mode s - {output.bam}"
-
-rule index_samtools_mkdup_bam:
-	input:
-		"processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam"
-	output:
-		"processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam.bai"
-	params:
-		samtools = samtools_path,
-		threads = 4,
-		mem = 16,
-		t = very_short
-	shell:
-		"{params.samtools} index {input}"
-
-rule bam_stats_samtools:
-	input:
-		bam = "processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam",
-		bai = "processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam.bai"
-	output:
-		"stats/{sample}.{genome}.sorted.mkdup.bam.samtools.stats"
-	params:
-		samtools = samtools_path,
-		threads = 4,
-		mem = 16,
-		t = very_short
-	shell:
-		"{params.samtools} stats {input.bam} | grep ^SN | cut -f 2- > {output}"
-
-rule sambamba_mkdups:
-	input:
-		bam = "processed_bams/{sample}.{genome}.sorted.merged.bam",
-		bai = "processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
-	output:
-		bam = "processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam"
-	threads: 8
-	params:
-		sambamba = sambamba_path,
-		threads = 8,
-		mem = 32,
-		t = long,
-		tmp_dir = temp_directory
-	shell:
-		"{params.sambamba} markdup -t 6 --tmpdir={params.tmp_dir} {input.bam} {output.bam}"
-
-rule index_sambamba_mkdup_bam:
-	input:
-		"processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam"
-	output:
-		"processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam.bai"
-	params:
-		samtools = samtools_path,
-		threads = 4,
-		mem = 16,
-		t = very_short
-	shell:
-		"{params.samtools} index {input}"
-
-rule bam_stats_sambamba:
-	input:
-		bam = "processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam",
-		bai = "processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam.bai"
-	output:
-		"stats/{sample}.{genome}.sorted.mkdup.bam.sambamba.stats"
-	params:
-		samtools = samtools_path,
-		threads = 4,
-		mem = 16,
-		t = very_short
-	shell:
-		"{params.samtools} stats {input.bam} | grep ^SN | cut -f 2- > {output}"
 
 rule gatk_gvcf_per_chrom:
 	input:
@@ -779,173 +677,89 @@ rule contamination_filter_gatk_genotypegvcf_per_chrom:
 		"""{params.gatk} --java-options "-Xmx15g -Djava.io.tmpdir={params.temp_dir}" """
 		"""GenotypeGVCFs --include-non-variant-sites -R {input.ref} -V {input.gvcf} -O {output}"""
 
-#
-# rule generate_callable_sites:
+# rule samtools_mkdups:
 # 	input:
-# 		ref = "reference/{genome}.fasta",
-# 		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
-# 		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
+# 		bam = "processed_bams/{sample}.{genome}.sorted.merged.bam",
+# 		bai = "processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
 # 	output:
-# 		"callable_sites/{sample}.{genome}.callablesites"
+# 		bam = "processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam",
+# 		metrics = "stats/{sample}.{genome}.samtools_mkdup_metrics.txt"
+# 	threads: 8
 # 	params:
-# 		temp_dir = temp_directory,
-# 		gatk = gatk_path,
-# 		summary = "stats/{sample}.{genome}.callable.summary"
+# 		samtools = samtools_path,
+# 		threads = 8,
+# 		mem = 24,
+# 		t = long,
+# 		tmp_dir = temp_directory
 # 	shell:
-# 		"java -Xmx12g -Djava.io.tmpdir={params.temp_dir} "
-# 		"-jar {params.gatk} -T CallableLoci -R {input.ref} "
-# 		"-I {input.bam} --minDepth 10 --minMappingQuality 30 "
-# 		"--summary {params.summary} -o {output}"
+# 		"{params.samtools} markdup -s -f {output.metrics} --mode s - {output.bam}"
 #
-# rule extract_callable_sites:
+# rule index_samtools_mkdup_bam:
 # 	input:
-# 		"callable_sites/{sample}.{genome}.callablesites"
+# 		"processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam"
 # 	output:
-# 		"callable_sites/{sample}.{genome}.ONLYcallablesites.bed"
+# 		"processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam.bai"
+# 	params:
+# 		samtools = samtools_path,
+# 		threads = 4,
+# 		mem = 16,
+# 		t = very_short
 # 	shell:
-# 		"sed -e '/CALLABLE/!d' {input} > {output}"
+# 		"{params.samtools} index {input}"
 #
-# rule gatk_gvcf_per_chrom:
+# rule bam_stats_samtools:
 # 	input:
-# 		ref = "reference/{genome}.fasta",
-# 		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
-# 		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
+# 		bam = "processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam",
+# 		bai = "processed_bams/{sample}.{genome}.sorted.merged.samtools.mkdup.bam.bai"
 # 	output:
-# 		"vcf/{sample}.{genome}.{chrom}.g.vcf.gz"
+# 		"stats/{sample}.{genome}.sorted.mkdup.bam.samtools.stats"
 # 	params:
-# 		temp_dir = temp_directory,
-# 		gatk = gatk_path
-# 	threads:
-# 		4
+# 		samtools = samtools_path,
+# 		threads = 4,
+# 		mem = 16,
+# 		t = very_short
 # 	shell:
-# 		"java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk} "
-# 		"-T HaplotypeCaller -R {input.ref} -I {input.bam} -L {wildcards.chrom} "
-# 		"-contamination 0.05 --emitRefConfidence GVCF -o {output}"
+# 		"{params.samtools} stats {input.bam} | grep ^SN | cut -f 2- > {output}"
 #
-# rule genotype_gvcfs_per_chrom:
+# rule sambamba_mkdups:
 # 	input:
-# 		ref = "reference/{genome}.fasta",
-# 		gvcfs = lambda wildcards: expand(
-# 			"vcf/{sample}.{genome}.{chrom}.g.vcf.gz",
-# 			sample=config["subspecies"][wildcards.population],
-# 			genome=[wildcards.genome], chrom=[wildcards.chrom])
+# 		bam = "processed_bams/{sample}.{genome}.sorted.merged.bam",
+# 		bai = "processed_bams/{sample}.{genome}.sorted.merged.bam.bai"
 # 	output:
-# 		v = "vcf_joint/{population}.{genome}.{chrom}.vcf.gz"
+# 		bam = "processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam"
+# 	threads: 8
 # 	params:
-# 		temp_dir = temp_directory,
-# 		gatk = gatk_path
-# 	threads:
-# 		4
-# 	run:
-# 		variant_files = []
-# 		for i in input.gvcfs:
-# 			variant_files.append("--variant " + i)
-# 		variant_files = " ".join(variant_files)
-# 		shell(
-# 			"java -Xmx15g -Djava.io.tmpdir={params.temp_dir} -jar {params.gatk} "
-# 			"-T GenotypeGVCFs -R {input.ref} {variant_files} "
-# 			"-o {output.v}")
+# 		sambamba = sambamba_path,
+# 		threads = 8,
+# 		mem = 32,
+# 		t = long,
+# 		tmp_dir = temp_directory
+# 	shell:
+# 		"{params.sambamba} markdup -t 6 --tmpdir={params.tmp_dir} {input.bam} {output.bam}"
 #
-# rule filter_vcfs_polymorphic_only:
+# rule index_sambamba_mkdup_bam:
 # 	input:
-# 		"vcf_joint/{population}.{genome}.{chrom}.vcf.gz"
+# 		"processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam"
 # 	output:
-# 		"vcf_joint/{population}.{genome}.{chrom}.filtered_polymorphic.vcf.gz"
+# 		"processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam.bai"
 # 	params:
-# 		bgzip = bgzip_path,
-# 		bcftools = bcftools_path
+# 		samtools = samtools_path,
+# 		threads = 4,
+# 		mem = 16,
+# 		t = very_short
 # 	shell:
-# 		"{params.bcftools} filter -i "
-# 		"'QUAL >= 30 && MQ >= 30 && AF > 0 && AF < 1.0 && QD > 2' {input} | "
-# 		"{params.bcftools} filter -i 'FMT/DP >= 10 & FMT/GQ >= 30' -S . - | "
-# 		"{params.bgzip} > {output}"
+# 		"{params.samtools} index {input}"
 #
-# rule index_filtered_vcf_polymorphic:
+# rule bam_stats_sambamba:
 # 	input:
-# 		"vcf_joint/{population}.{genome}.{chrom}.filtered_polymorphic.vcf.gz"
+# 		bam = "processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam",
+# 		bai = "processed_bams/{sample}.{genome}.sorted.merged.sambamba.mkdup.bam.bai"
 # 	output:
-# 		"vcf_joint/{population}.{genome}.{chrom}.filtered_polymorphic.vcf.gz.tbi"
+# 		"stats/{sample}.{genome}.sorted.mkdup.bam.sambamba.stats"
 # 	params:
-# 		tabix = tabix_path
+# 		samtools = samtools_path,
+# 		threads = 4,
+# 		mem = 16,
+# 		t = very_short
 # 	shell:
-# 		"{params.tabix} -p vcf {input}"
-#
-# rule filter_vcfs_allvariant:
-# 	input:
-# 		"vcf_joint/{population}.{genome}.{chrom}.vcf.gz"
-# 	output:
-# 		"vcf_joint/{population}.{genome}.{chrom}.filtered_allvariant.vcf.gz"
-# 	params:
-# 		bgzip = bgzip_path,
-# 		bcftools = bcftools_path
-# 	shell:
-# 		"{params.bcftools} filter -i "
-# 		"'QUAL >= 30 && MQ >= 30 && QD > 2' {input} | "
-# 		"{params.bcftools} filter -i 'FMT/DP >= 10 & FMT/GQ >= 30' -S . - | "
-# 		"{params.bgzip} > {output}"
-#
-# rule index_filtered_vcf_allvariant:
-# 	input:
-# 		"vcf_joint/{population}.{genome}.{chrom}.filtered_allvariant.vcf.gz"
-# 	output:
-# 		"vcf_joint/{population}.{genome}.{chrom}.filtered_allvariant.vcf.gz.tbi"
-# 	params:
-# 		tabix = tabix_path
-# 	shell:
-# 		"{params.tabix} -p vcf {input}"
-#
-# rule concatenate_split_vcfs:
-# 	input:
-# 		vcf = lambda wildcards: expand(
-# 			"vcf_joint/{pop}.{gen}.{chrom}.filtered_{ty}.vcf.gz",
-# 			pop=wildcards.population,
-# 			gen=wildcards.genome,
-# 			ty=wildcards.type,
-# 			chrom=config["chromosomes_to_analyze"][wildcards.genome]),
-# 		idx = lambda wildcards: expand(
-# 			"vcf_joint/{pop}.{gen}.{chrom}.filtered_{ty}.vcf.gz.tbi",
-# 			pop=wildcards.population,
-# 			gen=wildcards.genome,
-# 			ty=wildcards.type,
-# 			chrom=config["chromosomes_to_analyze"][wildcards.genome])
-# 	output:
-# 		"vcf_combined/{population}.{genome}.combined.filtered_{type}.vcf.gz"
-# 	params:
-# 		bcftools = bcftools_path
-# 	shell:
-# 		"{params.bcftools} concat -O z -o {output} {input.vcf}"
-#
-# rule index_concatenated_vcf:
-# 	input:
-# 		"vcf_combined/{population}.{gen}.combined.filtered_{type}.vcf.gz"
-# 	output:
-# 		"vcf_combined/{population}.{gen}.combined.filtered_{type}.vcf.gz.tbi"
-# 	params:
-# 		tabix = tabix_path
-# 	shell:
-# 		"{params.tabix} -p vcf {input}"
-
-# rule filter_vcfs:
-# 	input:
-# 		"vcf_joint/{population}.{genome}.{chrom}.vcf.gz"
-# 	output:
-# 		"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz"
-# 	params:
-# 		bgzip = bgzip_path,
-# 		bcftools = bcftools_path
-# 	shell:
-# 		"{params.bcftools} filter -i "
-# 		"'QUAL >= 30 && MQ >= 30 && AF > 0 && AF < 1.0 && QD > 2 & "
-# 		"FMT/DP >= 10 & FMT/GQ >= 30' {input} | "
-# 		"{params.bcftools} filter -i 'FMT/DP >= 10 & FMT/GQ >= 30' -S . - | "
-# 		"{params.bgzip} > {output}"
-#
-# rule index_filtered_vcf:
-# 	input:
-# 		"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz"
-# 	output:
-# 		"vcf_joint/{population}.{genome}.{chrom}.filtered.vcf.gz.tbi"
-# 	params:
-# 		tabix = tabix_path
-# 	shell:
-# 		"{params.tabix} -p vcf {input}"
+# 		"{params.samtools} stats {input.bam} | grep ^SN | cut -f 2- > {output}"
