@@ -94,31 +94,17 @@ assemblies = ["pantro6"]
 
 rule all:
 	input:
-		"multiqc/multiqc_report.html",
-		"multiqc_trimmed/multiqc_report.html",
+		# "multiqc/multiqc_report.html",
+		# "multiqc_trimmed/multiqc_report.html",
 		# expand(
-		# 	"xyalign/reference/{assembly}.{ver}.fa.fai",
-		# 	assembly=assemblies, ver=["XY", "XXonly"]),
-		expand(
-			"stats/{sample}.{genome}.sorted.mkdup.bam.{tool}.stats",
-			sample=config["sample_names"], genome=assemblies, tool=["picard"]),
+		# 	"stats/{sample}.{genome}.sorted.mkdup.bam.{tool}.stats",
+		# 	sample=config["sample_names"], genome=assemblies, tool=["picard"]),
 		# expand(
-		# 	"vcf_genotyped/pantro6.{chrom}.gatk.called.raw.vcf.gz",
+		# 	"contamination_filter_vcf_genotyped/pantro6.{chrom}.gatk.called.raw.vcf.gz",
 		# 	chrom=config["chromosomes_to_analyze"]["pantro6"]),
 		expand(
-			"contamination_filter_vcf_genotyped/pantro6.{chrom}.gatk.called.raw.vcf.gz",
-			chrom=config["chromosomes_to_analyze"]["pantro6"]),
-		expand(
-			"mosdepth_results/{sample}.{genome}.total.mosdepth.summary.txt",
+			"mosdepth_results/{sample}.{genome}.total.total.nodups_mapq30_primaryonly.mosdepth.summary.txt",
 			sample=config["sample_names"], genome=assemblies)
-		# expand(
-		# 	"callable_sites/{sample}.{genome}.ONLYcallablesites.bed",
-		# 	sample=config["sample_names"], genome=assemblies),
-		# expand(
-		# 	"vcf_combined/{population}.{genome}.combined.filtered_{type}.vcf.gz.tbi",
-		# 	population=["allpan"],
-		# 	genome=assemblies,
-		# 	type=["allvariant"])
 
 rule prefetch_sra:
 	output:
@@ -577,15 +563,15 @@ rule mosdepth_total:
 		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
 		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
 	output:
-		"mosdepth_results/{sample}.{genome}.total.mosdepth.summary.txt"
+		"mosdepth_results/{sample}.{genome}.total.total.nodups_mapq30_primaryonly.mosdepth.summary.txt"
 	params:
 		mosdepth = mosdepth_path,
-		prefix = "mosdepth_results/{sample}.{genome}.total",
+		prefix = "mosdepth_results/{sample}.{genome}.total.total.nodups_mapq30_primaryonly",
 		threads = 4,
 		mem = 16,
 		t = long
 	shell:
-		"{params.mosdepth} --fast-mode -F 1024 {params.prefix} {input.bam}"
+		"{params.mosdepth} --fast-mode -F 1024 -F 256 --mapq 30 {params.prefix} {input.bam}"
 
 rule samtools_mkdups:
 	input:
