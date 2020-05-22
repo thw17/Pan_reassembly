@@ -103,7 +103,7 @@ rule all:
 		# 	"contamination_filter_vcf_genotyped/pantro6.{chrom}.gatk.called.raw.vcf.gz",
 		# 	chrom=config["chromosomes_to_analyze"]["pantro6"]),
 		expand(
-			"mosdepth_results/{sample}.{genome}.total.total.nodups_mapq30_primaryonly.mosdepth.summary.txt",
+			"mosdepth_results/{sample}.{genome}.total.total.nodups_mapq30.mosdepth.summary.txt",
 			sample=config["sample_names"], genome=assemblies)
 
 rule prefetch_sra:
@@ -563,15 +563,15 @@ rule mosdepth_total:
 		bam = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam",
 		bai = "processed_bams/{sample}.{genome}.sorted.merged.mkdup.bam.bai"
 	output:
-		"mosdepth_results/{sample}.{genome}.total.total.nodups_mapq30_primaryonly.mosdepth.summary.txt"
+		"mosdepth_results/{sample}.{genome}.total.total.nodups_mapq30.mosdepth.summary.txt"
 	params:
 		mosdepth = mosdepth_path,
-		prefix = "mosdepth_results/{sample}.{genome}.total.total.nodups_mapq30_primaryonly",
+		prefix = "mosdepth_results/{sample}.{genome}.total.total.nodups_mapq30",
 		threads = 4,
 		mem = 16,
 		t = long
 	shell:
-		"{params.mosdepth} --fast-mode -F 1024 -F 256 --mapq 30 {params.prefix} {input.bam}"
+		"{params.mosdepth} --fast-mode -F 1024 --mapq 30 {params.prefix} {input.bam}"
 
 rule samtools_mkdups:
 	input:
